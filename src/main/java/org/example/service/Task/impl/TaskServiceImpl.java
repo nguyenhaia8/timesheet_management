@@ -32,7 +32,8 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public List<TaskResponseDTO> getAllTasks() {
-        return taskRepository.findAll().stream()
+        return taskRepository.findAll()
+        .stream()
             .map(this::toTaskResponseDTO)
             .collect(Collectors.toList());
     }

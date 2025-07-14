@@ -29,7 +29,8 @@ public class TimeSheetServiceImpl implements TimeSheetService {
 
     @Override
     public List<TimeSheetResponseDTO> getAllTimeSheets() {
-        return timeSheetRepository.findAll().stream()
+        return timeSheetRepository.findAll()
+        .stream()
                 .map(this::toResponseDTO)
                 .collect(Collectors.toList());
     }

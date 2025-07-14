@@ -18,7 +18,8 @@ public class ProjectServiceImpl implements ProjectService{
 
     @Override
     public List<ProjectResponseDTO> findAll() {
-        return projectRepository.findAll().stream()
+        return projectRepository.findAll()
+        .stream()
             .map(p -> new ProjectResponseDTO(p.getProjectId(), p.getProjectName(), p.getDescription()))
             .collect(Collectors.toList());
     }
