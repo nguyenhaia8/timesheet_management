@@ -1,11 +1,9 @@
-package org.example;
+package org.example.test;
 
 import org.example.dto.request.EmployeeRequestDTO;
-import org.example.dto.response.EmployeeResponseDTO;
 import org.example.service.Employee.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
 //@Component
 public class EmployeeTest implements CommandLineRunner {
