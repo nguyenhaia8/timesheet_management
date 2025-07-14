@@ -1,4 +1,4 @@
-package dto.request;
+package org.example.dto.request;
 
 public record EmployeeRequestDTO(
         String employeeCode,
