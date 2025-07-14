@@ -5,7 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface EmployeeRepository extends JpaRepository<Employee, Long> {
-    // Spring Data JPA will automatically provide CRUD operations
+public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     // You can add custom query methods here if needed
 }

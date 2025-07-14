@@ -2,12 +2,12 @@ package org.example;
 
 import org.example.dto.request.EmployeeRequestDTO;
 import org.example.dto.response.EmployeeResponseDTO;
-import org.example.service.EmployeeService;
+import org.example.service.Employee.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class EmployeeTest implements CommandLineRunner {
 
     @Autowired
@@ -17,10 +17,11 @@ public class EmployeeTest implements CommandLineRunner {
     public void run(String... args) throws Exception {
         // Create test employee data
         EmployeeRequestDTO testEmployee = new EmployeeRequestDTO(
-            "EMP001",
-            "John",
-            "Doe",
-            "Engineering"
+            "Even",
+            "Jackson",
+            "even.jackson@company.com",
+            1, // departmentId (example)
+            null // managerId (example, or use an Integer managerId)
         );
         
         System.out.println("Testing createEmployee functionality...");
@@ -28,9 +29,9 @@ public class EmployeeTest implements CommandLineRunner {
         
         try {
             // Call the save method which internally calls createEmployee
-            EmployeeResponseDTO createdEmployee = employeeService.save(testEmployee);
+            //EmployeeResponseDTO createdEmployee = employeeService.save(testEmployee);
             System.out.println("Employee created successfully!");
-            System.out.println("Created employee: " + createdEmployee);
+            //System.out.println("Created employee: " + createdEmployee);
             
             // Test getting all employees
             System.out.println("All employees:");

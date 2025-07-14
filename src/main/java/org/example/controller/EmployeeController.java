@@ -2,7 +2,7 @@ package org.example.controller;
 
 import org.example.dto.request.EmployeeRequestDTO;
 import org.example.dto.response.EmployeeResponseDTO;
-import org.example.service.EmployeeService;
+import org.example.service.Employee.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -42,8 +42,12 @@ public class EmployeeController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<EmployeeResponseDTO> getEmployeeById(@PathVariable Long id) {
-        // This would need to be implemented in the service
-        return new ResponseEntity<>(HttpStatus.NOT_IMPLEMENTED);
+    public ResponseEntity<EmployeeResponseDTO> getEmployeeById(@PathVariable Integer id) {
+        EmployeeResponseDTO employee = employeeService.findById(id);
+        if (employee != null) {
+            return new ResponseEntity<>(employee, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 } 

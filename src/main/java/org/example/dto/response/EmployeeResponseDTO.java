@@ -1,11 +1,13 @@
 package org.example.dto.response;
 
 public record EmployeeResponseDTO(
-        Long id,
-        String employeeCode,
+        Integer employeeId,
         String firstName,
         String lastName,
-        String department
+        String email,
+        Integer departmentId,
+        String departmentName,
+        Integer managerId,
+        String managerName
 ) {
-
 }
