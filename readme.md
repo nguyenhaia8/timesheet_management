@@ -179,6 +179,7 @@ flowchart TD
 ## 8. Class Diagram
 
 ```mermaid
+
 classDiagram
     class Department {
         Integer departmentId
@@ -253,6 +254,7 @@ classDiagram
     TimeSheet "1" <-- "many" Approval : timeSheet
     Employee "1" <-- "many" Approval : approver
     Employee "1" <-- "1" User : employee
+
 ```
 
 ---
