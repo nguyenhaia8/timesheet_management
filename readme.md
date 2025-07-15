@@ -184,9 +184,26 @@ flowchart TD
 
 ## 9. Sequence Diagrams  
 
-### Example: Submit Timesheet  
-![Sequence Diagram](images/sequence_submit_timesheet.png)  
-*(Include controller -> service -> repository flow)*
+### Feature: Create a new Task  
+
+sequenceDiagram
+    participant Controller as TaskController
+    participant Service as TaskServiceImpl
+    participant ProjectRepo as ProjectRepository
+    participant UserRepo as UserRepository
+    participant TaskRepo as TaskRepository
+    participant Task as Task
+
+    Controller->>Service: createTask(taskRequestDTO)
+    Service->>ProjectRepo: findById(taskRequestDTO.projectId)
+    ProjectRepo-->>Service: Project
+    Service->>UserRepo: findById(taskRequestDTO.createdBy)
+    UserRepo-->>Service: User
+    Service->>Task: new Task(Project, taskName, description, User)
+    Service->>TaskRepo: save(Task)
+    TaskRepo-->>Service: saved Task
+    Service->>Service: toTaskResponseDTO(saved Task)
+    Service-->>Controller: TaskResponseDTO
 
 ---
 
