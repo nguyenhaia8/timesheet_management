@@ -176,9 +176,84 @@ flowchart TD
 
 ---
 
-## 8. Class Diagram  
-![Class Diagram](images/class_diagram.png)  
-*(Include Employee, Timesheet, Project, Account, Role, etc.)*
+## 8. Class Diagram
+
+```mermaid
+classDiagram
+    class Department {
+        Integer departmentId
+        String departmentName
+        String description
+    }
+
+    class Employee {
+        Integer employeeId
+        String firstName
+        String lastName
+        String email
+        Department department
+        Employee manager
+    }
+
+    class Project {
+        Integer projectId
+        String projectName
+        String description
+    }
+
+    class Task {
+        Integer taskId
+        Project project
+        String taskName
+        String description
+        User createdBy
+    }
+
+    class User {
+        Integer userId
+        String username
+        String password
+        Employee employee
+    }
+
+    class TimeSheet {
+        Integer timesheetId
+        Employee employee
+        LocalDate weekStartDate
+        BigDecimal totalHours
+        String status
+        LocalDate submittedDate
+    }
+
+    class TimeSheetEntry {
+        Integer entryId
+        TimeSheet timeSheet
+        Task task
+        LocalDate workDate
+        BigDecimal hoursWorked
+        String description
+    }
+
+    class Approval {
+        Integer approvalId
+        TimeSheet timeSheet
+        Employee approver
+        ApprovalStatus approvalStatus
+        LocalDateTime approvalDate
+        String comments
+    }
+
+    Department "1" <-- "many" Employee : department
+    Employee "0..1" <-- "many" Employee : manager
+    Project "1" <-- "many" Task : project
+    User "1" <-- "many" Task : createdBy
+    Employee "1" <-- "many" TimeSheet : employee
+    TimeSheet "1" <-- "many" TimeSheetEntry : timeSheet
+    Task "1" <-- "many" TimeSheetEntry : task
+    TimeSheet "1" <-- "many" Approval : timeSheet
+    Employee "1" <-- "many" Approval : approver
+    Employee "1" <-- "1" User : employee
+```
 
 ---
 
