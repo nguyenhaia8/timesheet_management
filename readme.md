@@ -186,6 +186,7 @@ flowchart TD
 
 ### Feature: Create a new Task  
 
+```mermaid
 sequenceDiagram
     participant Controller as TaskController
     participant Service as TaskServiceImpl
@@ -204,6 +205,7 @@ sequenceDiagram
     TaskRepo-->>Service: saved Task
     Service->>Service: toTaskResponseDTO(saved Task)
     Service-->>Controller: TaskResponseDTO
+```
 
 ---
 
