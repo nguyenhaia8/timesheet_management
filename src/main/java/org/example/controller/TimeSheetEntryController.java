@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/timesheet-entries")
-@CrossOrigin(origins = "*")
 public class TimeSheetEntryController {
 
     @Autowired
