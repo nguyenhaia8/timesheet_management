@@ -23,9 +23,12 @@ Include background, motivation, and significance of the problem.
 
 Describe the system from the user's perspective using user stories:
 
-- As a **[user role]**, I want to **[feature]** so that **[benefit]**.  
-- As a **[user role]**, I want to **[feature]** so that **[benefit]**.  
-- ...
+- As an **[Employee]**, I want to **[create a task]** for a given week so that my work hours are recorded and can be approved by my manager
+- As an **[Employee]**, I want to **[edit my task]** edit my timesheet before it is approved so that I can correct any mistakes.
+- As a **[Manager]**, I want to **[approve or reject]** submitted tasks so that only valid work hours are recorded.
+- As a **[Manager]**, I want to  **[assign tasks to employees]** so that work is distributed efficiently.
+- As a **[Manager]**, I want to  **[view all timesheets]** submitted by my team so that I can monitor their work hours.
+
 
 ---
 
@@ -33,19 +36,23 @@ Describe the system from the user's perspective using user stories:
 
 List the system's essential features and functionalities:
 
-- [Feature 1 description]  
-- [Feature 2 description]  
-- [Feature 3 description]  
-- ...
-
+- Employees must be able to view the list of tasks assigned to them.
+- Employees must be able to view the status of their submitted timesheets (pending, approved, rejected).
+- Employees must be able to create and submit timesheets for a given period (e.g., weekly).
+- Managers must be able to view all timesheets submitted by their team.
+- Managers must be able to approve or reject submitted timesheets.
+- The system must record the approval status and comments for each timesheet.
 ---
 
 ## 4.  Non-Functional Requirements
 
-- Language: [Java, JavaScript]  
-- Framework: [Spring Boot, React]  
-- Database: [MySQL, MongoDB]  
-- Tools: [Git, Postman]  
+- **Maintainability:**
+  - The codebase should follow clean code principles and be well-documented.
+  - The system should be modular, allowing for easy updates and bug fixes.
+
+- **Usability:**
+  - The user interface should be intuitive and easy to navigate for all user roles.
+  - The system should provide clear feedback for user actions (e.g., successful submission, errors).
 
 ---
 
@@ -124,14 +131,11 @@ flowchart TD
 
 ### 5.3 Technologies Used
 
-- **Java 21**
-- **Spring Boot 3**
-- **Spring Data JPA**
-- **MySQL 8**
-- **Maven**
-- **JUnit & Mockito** (for unit testing)
-- **Postman** (for API testing)
-- **Git & GitHub**
+
+- Language: [Java, JavaScript]  
+- Framework: [Spring Boot, React, JUnit]  
+- Database: [MySQL]  
+- Tools: [Git, GitHub, Postman]  
 
 ---
 
