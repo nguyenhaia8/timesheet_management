@@ -226,13 +226,69 @@ sequenceDiagram
 
 ---
 
-## 11. Installation & Deployment  
+## 11. Installation & Deployment
 
-### Step 1: Clone the Repository  
-```bash
-git clone https://github.com/your-username/timesheet-management.git
-cd timesheet-management
+### Step 1: Create the Database
 
+Create the MySQL database using the provided SQL script (adjust the script as needed for your environment):
 
+```sql
+CREATE DATABASE timesheet_management;
+-- Add additional table creation scripts as needed
 ```
+
+### Step 2: Clone the Repositories
+
+**Backend:**
+```bash
+git clone https://github.com/nguyenhaia8/timesheet_management.git
+cd timesheet_management
+```
+
+**Frontend:**
+```bash
+git clone [your-frontend-repo-url]
+cd [your-frontend-folder]
+```
+
+### Step 3: Configure the Database Connection
+
+Edit the backend configuration file at `src/main/resources/application.properties`:
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/timesheet_management
+spring.datasource.username=YOUR_DB_USERNAME
+spring.datasource.password=YOUR_DB_PASSWORD
+```
+
+Replace `YOUR_DB_USERNAME` and `YOUR_DB_PASSWORD` with your actual MySQL credentials.
+
+### Step 4: Run the Applications
+
+**Backend (Spring Boot):**
+```bash
+mvn clean compile
+mvn spring-boot:run
+```
+The backend will start on [http://localhost:8080](http://localhost:8080) by default.
+
+**Frontend (React or other):**
+```bash
+# If using npm
+npm install
+npm start
+
+# Or if using yarn
+yarn install
+yarn start
+```
+The frontend will typically start on [http://localhost:3000](http://localhost:3000) by default.
+
+---
+
+### Additional Notes
+
+- Ensure MySQL is running before starting the backend.
+- You may need to adjust CORS settings in the backend if accessing from a different frontend port.
+- For production deployment, configure environment variables and secure credentials appropriately.
 
