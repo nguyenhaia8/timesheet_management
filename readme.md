@@ -14,8 +14,7 @@
 
 ## 1. Problem Description
 
-Provide a clear and concise explanation of the real-world problem your project aims to solve.  
-Include background, motivation, and significance of the problem.
+The Timesheet Management System is designed to address the need for efficient, accurate, and user-friendly tracking of employee work hours within a current-week-only scope. It enables employees to create tasks linked to predefined projects, log daily work hours, and submit weekly timesheets for managerial approval. Managers can view, approve, or reject submissions from their direct reports, ensuring accountability and oversight. The system enforces critical business rules such as role-based access, daily hour limits, and real-time total calculations, streamlining the approval workflow and laying a scalable foundation for future enhancements like historical tracking, advanced reporting, and cross-team functionality.
 
 ---
 
@@ -405,8 +404,8 @@ cd timesheet_management
 
 **Frontend:**
 ```bash
-git clone [your-frontend-repo-url]
-cd [your-frontend-folder]
+git clone https://github.com/adisalem/timesheet-app
+cd timesheet-app
 ```
 
 ### Step 3: Configure the Database Connection
