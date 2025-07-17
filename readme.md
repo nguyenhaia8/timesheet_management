@@ -6,7 +6,7 @@
 
 **Team Members:**  
 - [Thanh Hai Nguyen] - [619562]  
-- [Adisalem Hadush Shiferaw] - [Student ID]  
+- [Adisalem Hadush Shiferaw] - [619567]  
 
 **Date of Submission:** [07/17/2025]  
 
@@ -26,8 +26,8 @@ Describe the system from the user's perspective using user stories:
 - As an **[Employee]**, I want to **[create a task]** for a given week so that my work hours are recorded and can be approved by my manager
 - As an **[Employee]**, I want to **[edit my task]** edit my timesheet before it is approved so that I can correct any mistakes.
 - As a **[Manager]**, I want to **[approve or reject]** submitted tasks so that only valid work hours are recorded.
-- As a **[Manager]**, I want to  **[assign tasks to employees]** so that work is distributed efficiently.
 - As a **[Manager]**, I want to  **[view all timesheets]** submitted by my team so that I can monitor their work hours.
+
 
 
 ---
@@ -36,11 +36,11 @@ Describe the system from the user's perspective using user stories:
 
 List the system's essential features and functionalities:
 
-- Employees must be able to view the list of tasks assigned to them.
-- Employees must be able to view the status of their submitted timesheets (pending, approved, rejected).
-- Employees must be able to create and submit timesheets for a given period (e.g., weekly).
-- Managers must be able to view all timesheets submitted by their team.
-- Managers must be able to approve or reject submitted timesheets.
+- Employees can create timesheet.
+- Employees can create weekly tasks
+- Employees able to view their task.
+- Managers able to view all timesheets submitted by their team.
+- Managers able to approve or reject submitted timesheets.
 - The system must record the approval status and comments for each timesheet.
 ---
 
@@ -160,8 +160,7 @@ flowchart TD
 ---
 
 ## 6. Use Case Diagram(s)  
-![Use Case Diagram](images/use_case.png)  
-*(Replace with actual diagram)*
+![Use Case Diagram](images/usecase_diagram.png)
 
 ---
 
@@ -218,11 +217,17 @@ sequenceDiagram
 - **Login Page**  
   ![Login Screenshot](images/login.png)
 
-- **Timesheet Submission Form**  
-  ![Timesheet Form](images/submit_form.png)
+- **Employees Page**  
+  ![Employee Page](images/listEmployee.png)
 
-- **Admin Dashboard**  
-  ![Admin Dashboard](images/admin_dashboard.png)
+- **Task Page**  
+  ![Task Page](images/listTask.png)
+
+- **Create new task**  
+  ![Create new task](images/createTask.png)
+
+- **Edit task**  
+  ![Edit task](images/editTask.png)
 
 ---
 
@@ -233,8 +238,161 @@ sequenceDiagram
 Create the MySQL database using the provided SQL script (adjust the script as needed for your environment):
 
 ```sql
-CREATE DATABASE timesheet_management;
--- Add additional table creation scripts as needed
+-- MySQL Timesheet Management Database Script
+-- Ensure database exists and use it
+CREATE DATABASE IF NOT EXISTS timesheet_management;
+USE timesheet_management;
+
+-- Drop tables if they exist (for clean recreation)
+DROP TABLE IF EXISTS Approval;
+DROP TABLE IF EXISTS Timesheet_Entry;
+DROP TABLE IF EXISTS Timesheet;
+DROP TABLE IF EXISTS Task;
+DROP TABLE IF EXISTS Project;
+DROP TABLE IF EXISTS Employee;
+DROP TABLE IF EXISTS Department;
+DROP TABLE IF EXISTS Users;
+
+-- Create Department table
+CREATE TABLE Department (
+    department_id INT AUTO_INCREMENT PRIMARY KEY,
+    department_name VARCHAR(50) NOT NULL UNIQUE,
+    description TEXT
+);
+
+-- Create Employee table
+CREATE TABLE Employee (
+    employee_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    department_id INT,
+    manager_id INT,
+    FOREIGN KEY (department_id) REFERENCES Department(department_id),
+    FOREIGN KEY (manager_id) REFERENCES Employee(employee_id)
+);
+
+-- Create Project table
+CREATE TABLE Project (
+    project_id INT AUTO_INCREMENT PRIMARY KEY,
+    project_name VARCHAR(100) NOT NULL,
+    description TEXT
+);
+
+-- Create Users table (moved before Task table to resolve foreign key dependency)
+CREATE TABLE Users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    employee_id INT NOT NULL UNIQUE,
+    FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
+);
+
+-- Create Task table
+CREATE TABLE Task (
+    task_id INT AUTO_INCREMENT PRIMARY KEY,
+    project_id INT NOT NULL,
+    task_name VARCHAR(100) NOT NULL,
+    description TEXT,
+    created_by INT,
+    FOREIGN KEY (project_id) REFERENCES Project(project_id),
+    FOREIGN KEY (created_by) REFERENCES Users(user_id)
+);
+
+-- Create Timesheet table
+CREATE TABLE Timesheet (
+    timesheet_id INT AUTO_INCREMENT PRIMARY KEY,
+    employee_id INT NOT NULL,
+    week_start_date DATE NOT NULL,
+    total_hours DECIMAL(5,2) DEFAULT 0.00,
+    status VARCHAR(20) DEFAULT 'DRAFT',
+    submitted_date DATE,
+    FOREIGN KEY (employee_id) REFERENCES Employee(employee_id)
+);
+
+-- Create Timesheet_Entry table
+CREATE TABLE Timesheet_Entry (
+    entry_id INT AUTO_INCREMENT PRIMARY KEY,
+    timesheet_id INT NOT NULL,
+    task_id INT NOT NULL,
+    work_date DATE NOT NULL,
+    hours_worked DECIMAL(4,2) NOT NULL,
+    description TEXT,
+    FOREIGN KEY (timesheet_id) REFERENCES Timesheet(timesheet_id),
+    FOREIGN KEY (task_id) REFERENCES Task(task_id)
+);
+
+-- Create Approval table
+CREATE TABLE Approval (
+    approval_id INT AUTO_INCREMENT PRIMARY KEY,
+    timesheet_id INT NOT NULL,
+    approver_id INT NOT NULL,
+    approval_status VARCHAR(20) DEFAULT 'PENDING',
+    approval_date TIMESTAMP NULL,
+    comments TEXT,
+    FOREIGN KEY (timesheet_id) REFERENCES Timesheet(timesheet_id),
+    FOREIGN KEY (approver_id) REFERENCES Employee(employee_id)
+);
+
+-- Insert sample data
+
+-- Sample Departments
+INSERT INTO Department (department_name, description) VALUES
+('Development', 'Software development team'),
+('Testing', 'Quality assurance and testing team'),
+('Design', 'UI/UX design team'),
+('Management', 'Project and team management');
+
+-- Sample Employees
+INSERT INTO Employee (first_name, last_name, email, department_id, manager_id) VALUES
+('Sarah', 'Wilson', 'sarah.wilson@company.com', 4, NULL), -- CEO (no manager)
+('John', 'Doe', 'john.doe@company.com', 1, 1), -- Developer (manager: Sarah)
+('Jane', 'Smith', 'jane.smith@company.com', 1, 1), -- Developer (manager: Sarah)
+('Mike', 'Johnson', 'mike.johnson@company.com', 2, 1); -- Tester (manager: Sarah)
+
+-- Sample Users
+INSERT INTO Users (username, password, employee_id) VALUES
+('admin', 'admin123', 1), -- Sarah Wilson
+('jdoe', 'password123', 2), -- John Doe
+('jsmith', 'password456', 3), -- Jane Smith
+('mjohnson', 'password789', 4); -- Mike Johnson
+
+-- Sample Projects
+INSERT INTO Project (project_name, description) VALUES
+('Timesheet System', 'Employee timesheet management application'),
+('Mobile App', 'Company mobile application development'),
+('Website Redesign', 'Corporate website redesign project');
+
+-- Sample Tasks
+INSERT INTO Task (project_id, task_name, description, created_by) VALUES
+(1, 'Database Design', 'Design and create database schema', 1),
+(1, 'Backend Development', 'Develop REST API', 1),
+(1, 'Frontend Development', 'Create user interface', 1),
+(2, 'UI Design', 'Design mobile app interface', 2),
+(2, 'iOS Development', 'Develop iOS application', 2),
+(3, 'Homepage Design', 'Design new homepage layout', 3);
+
+-- Sample Timesheets
+INSERT INTO Timesheet (employee_id, week_start_date, total_hours, status) VALUES
+(2, '2025-07-07', 40.00, 'SUBMITTED'), -- John's timesheet
+(3, '2025-07-07', 38.50, 'DRAFT'),     -- Jane's timesheet
+(4, '2025-07-07', 35.00, 'SUBMITTED'); -- Mike's timesheet
+
+-- Sample Timesheet Entries
+INSERT INTO Timesheet_Entry (timesheet_id, task_id, work_date, hours_worked, description) VALUES
+(1, 1, '2025-07-07', 8.00, 'Created database schema and ER diagram'),
+(1, 2, '2025-07-08', 8.00, 'Implemented Employee and Project APIs'),
+(1, 2, '2025-07-09', 8.00, 'Implemented Timesheet APIs'),
+(1, 3, '2025-07-10', 8.00, 'Created login and dashboard pages'),
+(1, 3, '2025-07-11', 8.00, 'Implemented timesheet entry forms'),
+(2, 4, '2025-07-07', 6.50, 'Designed mobile app wireframes'),
+(2, 5, '2025-07-08', 8.00, 'Started iOS development setup'),
+(3, 6, '2025-07-07', 7.00, 'Homepage mockup design');
+
+-- Sample Approvals
+INSERT INTO Approval (timesheet_id, approver_id, approval_status, approval_date, comments) VALUES
+(1, 1, 'APPROVED', '2025-07-12 09:30:00', 'Good work on the database design'),
+(3, 1, 'PENDING', NULL, NULL); -- Mike's timesheet pending approval
 ```
 
 ### Step 2: Clone the Repositories
