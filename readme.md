@@ -228,6 +228,14 @@ sequenceDiagram
 - **Edit task**  
   ![Edit task](images/editTask.png)
 
+- **Approval Page**  
+  ![Approval Page](images/listApproval.png)
+
+- **Approval Detail**  
+  ![Approval Detail](images/viewDetail.png)
+
+- **Review Approval**  
+  ![Review Approval](images/reviewApprove.png)
 ---
 
 ## 11. Installation & Deployment
