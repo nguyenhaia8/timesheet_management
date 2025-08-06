@@ -324,9 +324,7 @@ Authorization: Bearer <your-jwt-token>
 {
   "employeeId": "integer",
   "periodStartDate": "date",
-  "periodEndDate": "date",
-  "status": "string",
-  "totalHours": "decimal"
+  "periodEndDate": "date"
 }
 ```
 

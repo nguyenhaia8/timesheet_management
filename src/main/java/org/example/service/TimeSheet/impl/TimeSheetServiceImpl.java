@@ -9,6 +9,7 @@ import org.example.repository.EmployeeRepository;
 import org.example.service.TimeSheet.TimeSheetService;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -43,18 +44,12 @@ public class TimeSheetServiceImpl implements TimeSheetService {
         Employee employee = employeeRepository.findById(dto.employeeId())
                 .orElseThrow(() -> new RuntimeException("Employee not found with id: " + dto.employeeId()));
 
-        TimeSheet timeSheet = new TimeSheet(
-                employee,
-                dto.periodStartDate(),
-                dto.periodEndDate()
-        );
-
-        if (dto.status() != null) {
-            timeSheet.setStatus(TimeSheet.TimeSheetStatus.valueOf(dto.status().toUpperCase()));
-        }
-        if (dto.totalHours() != null) {
-            timeSheet.setTotalHours(dto.totalHours());
-        }
+        TimeSheet timeSheet = new TimeSheet();
+        timeSheet.setEmployee(employee);
+        timeSheet.setPeriodStartDate(dto.periodStartDate());
+        timeSheet.setPeriodEndDate(dto.periodEndDate());
+        timeSheet.setStatus(TimeSheet.TimeSheetStatus.DRAFT);
+        timeSheet.setSubmissionDate(LocalDateTime.now());
 
         TimeSheet saved = timeSheetRepository.save(timeSheet);
         return toTimeSheetResponseDTO(saved);
@@ -71,13 +66,6 @@ public class TimeSheetServiceImpl implements TimeSheetService {
         existingTimeSheet.setEmployee(employee);
         existingTimeSheet.setPeriodStartDate(dto.periodStartDate());
         existingTimeSheet.setPeriodEndDate(dto.periodEndDate());
-        
-        if (dto.status() != null) {
-            existingTimeSheet.setStatus(TimeSheet.TimeSheetStatus.valueOf(dto.status().toUpperCase()));
-        }
-        if (dto.totalHours() != null) {
-            existingTimeSheet.setTotalHours(dto.totalHours());
-        }
 
         TimeSheet updated = timeSheetRepository.save(existingTimeSheet);
         return toTimeSheetResponseDTO(updated);
