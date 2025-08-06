@@ -8,6 +8,7 @@ import org.example.model.Employee;
 import org.example.model.Role;
 import org.example.model.User;
 import org.example.model.UserRole;
+import org.example.repository.DepartmentRepository;
 import org.example.repository.EmployeeRepository;
 import org.example.repository.RoleRepository;
 import org.example.repository.UserRepository;
@@ -42,6 +43,9 @@ public class AuthController {
 
     @Autowired
     private EmployeeRepository employeeRepository;
+
+    @Autowired
+    private DepartmentRepository departmentRepository;
 
     @Autowired
     private RoleRepository roleRepository;
@@ -121,16 +125,49 @@ public class AuthController {
             return ResponseEntity.badRequest().body(new MessageResponseDTO("Error: Username is already taken!"));
         }
 
-        // Check if employee exists
-        Optional<Employee> employeeOpt = employeeRepository.findById(signupRequest.getEmployeeId());
-        if (employeeOpt.isEmpty()) {
-            return ResponseEntity.badRequest().body(new MessageResponseDTO("Error: Employee not found!"));
+        // Validate department exists
+        if (signupRequest.getDepartmentId() != null) {
+            var departmentOpt = departmentRepository.findById(signupRequest.getDepartmentId());
+            if (departmentOpt.isEmpty()) {
+                return ResponseEntity.badRequest().body(new MessageResponseDTO("Error: Department not found!"));
+            }
         }
 
+        // Validate manager exists if provided
+        Employee manager = null;
+        if (signupRequest.getManagerId() != null) {
+            var managerOpt = employeeRepository.findById(signupRequest.getManagerId());
+            if (managerOpt.isEmpty()) {
+                return ResponseEntity.badRequest().body(new MessageResponseDTO("Error: Manager not found!"));
+            }
+            manager = managerOpt.get();
+        }
+
+        // Create new employee first
+        Employee employee = new Employee();
+        employee.setFirstName(signupRequest.getFirstName());
+        employee.setLastName(signupRequest.getLastName());
+        employee.setEmail(signupRequest.getEmail());
+        employee.setPosition(signupRequest.getPosition());
+        
+        if (signupRequest.getDepartmentId() != null) {
+            employee.setDepartment(departmentRepository.findById(signupRequest.getDepartmentId()).get());
+        }
+        
+        if (manager != null) {
+            employee.setManager(manager);
+        }
+        
+        employee.setCreatedAt(LocalDateTime.now());
+        employee.setUpdatedAt(LocalDateTime.now());
+
+        employee = employeeRepository.save(employee);
+
+        // Create user linked to the new employee
         User user = new User();
         user.setUserName(signupRequest.getUserName());
         user.setPassword(passwordEncoder.encode(signupRequest.getPassword()));
-        user.setEmployee(employeeOpt.get());
+        user.setEmployee(employee);
         user.setIsActive(true);
         user.setCreatedAt(LocalDateTime.now());
         user.setUpdatedAt(LocalDateTime.now());

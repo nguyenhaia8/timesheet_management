@@ -41,17 +41,26 @@ Authorization: Bearer <your-jwt-token>
 
 #### Signup
 - **POST** `/api/auth/signup`
-- **Description**: Register a new user
+- **Description**: Register a new user by first creating an employee record, then creating a user account linked to that employee
 - **Authentication**: Not required
 - **Request Body**:
   ```json
   {
     "userName": "newuser",
     "password": "password123",
-    "employeeId": 1,
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@company.com",
+    "position": "Software Developer",
+    "departmentId": 1,
+    "managerId": 2,
     "roles": ["EMPLOYEE"]
   }
   ```
+- **Process**:
+  1. Creates a new employee record with the provided employee information
+  2. Creates a new user account linked to the newly created employee
+  3. Assigns the specified roles to the user
 - **Response**:
   ```json
   {
@@ -349,7 +358,12 @@ Authorization: Bearer <your-jwt-token>
 {
   "userName": "string",
   "password": "string",
-  "employeeId": "integer",
+  "firstName": "string",
+  "lastName": "string",
+  "email": "string",
+  "position": "string",
+  "departmentId": "integer",
+  "managerId": "integer",
   "roles": ["string"]
 }
 ```
