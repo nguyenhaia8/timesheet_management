@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.example.dto.request.TimeSheetRequestDTO;
 import org.example.dto.response.TimeSheetResponseDTO;
+import org.example.dto.response.TimeSheetDetailResponseDTO;
 
 public interface TimeSheetService {
     List<TimeSheetResponseDTO> findAll();
@@ -11,4 +12,5 @@ public interface TimeSheetService {
     TimeSheetResponseDTO save(TimeSheetRequestDTO timeSheetRequestDTO);
     TimeSheetResponseDTO update(Integer id, TimeSheetRequestDTO timeSheetRequestDTO);
     void deleteById(Integer id);
+    TimeSheetDetailResponseDTO findDetailById(Integer id);
 }

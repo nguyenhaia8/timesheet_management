@@ -2,6 +2,7 @@ package org.example.controller;
 
 import org.example.dto.request.TimeSheetRequestDTO;
 import org.example.dto.response.TimeSheetResponseDTO;
+import org.example.dto.response.TimeSheetDetailResponseDTO;
 import org.example.service.TimeSheet.TimeSheetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -57,6 +58,19 @@ public class TimeSheetController {
             } else {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/{id}/detail")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or #id == authentication.principal.employee.employeeId")
+    public ResponseEntity<TimeSheetDetailResponseDTO> getTimeSheetDetailById(@PathVariable Integer id) {
+        try {
+            TimeSheetDetailResponseDTO timeSheetDetail = timeSheetService.findDetailById(id);
+            return new ResponseEntity<>(timeSheetDetail, HttpStatus.OK);
+        } catch (RuntimeException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }

@@ -88,6 +88,13 @@ public class TimeSheetEntryServiceImpl implements TimeSheetEntryService {
         timeSheetEntryRepository.deleteById(id);
     }
 
+    @Override
+    public List<TimeSheetEntryResponseDTO> findByTimesheetId(Integer timesheetId) {
+        return timeSheetEntryRepository.findByTimesheetTimesheetId(timesheetId).stream()
+                .map(this::toTimeSheetEntryResponseDTO)
+                .collect(Collectors.toList());
+    }
+
     private TimeSheetEntryResponseDTO toTimeSheetEntryResponseDTO(TimeSheetEntry timeSheetEntry) {
         return new TimeSheetEntryResponseDTO(
                 timeSheetEntry.getEntryId(),

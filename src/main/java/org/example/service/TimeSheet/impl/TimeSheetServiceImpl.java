@@ -2,13 +2,16 @@ package org.example.service.TimeSheet.impl;
 
 import org.example.dto.request.TimeSheetRequestDTO;
 import org.example.dto.response.TimeSheetResponseDTO;
+import org.example.dto.response.TimeSheetDetailResponseDTO;
 import org.example.model.TimeSheet;
 import org.example.model.Employee;
 import org.example.repository.TimeSheetRepository;
 import org.example.repository.EmployeeRepository;
 import org.example.service.TimeSheet.TimeSheetService;
+import org.example.service.TimeSheetEntry.TimeSheetEntryService;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,10 +21,14 @@ public class TimeSheetServiceImpl implements TimeSheetService {
 
     private final TimeSheetRepository timeSheetRepository;
     private final EmployeeRepository employeeRepository;
+    private final TimeSheetEntryService timeSheetEntryService;
 
-    public TimeSheetServiceImpl(TimeSheetRepository timeSheetRepository, EmployeeRepository employeeRepository) {
+    public TimeSheetServiceImpl(TimeSheetRepository timeSheetRepository, 
+                              EmployeeRepository employeeRepository,
+                              TimeSheetEntryService timeSheetEntryService) {
         this.timeSheetRepository = timeSheetRepository;
         this.employeeRepository = employeeRepository;
+        this.timeSheetEntryService = timeSheetEntryService;
     }
 
     @Override
@@ -74,6 +81,34 @@ public class TimeSheetServiceImpl implements TimeSheetService {
     @Override
     public void deleteById(Integer id) {
         timeSheetRepository.deleteById(id);
+    }
+
+    @Override
+    public TimeSheetDetailResponseDTO findDetailById(Integer id) {
+        TimeSheet timeSheet = timeSheetRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Timesheet not found with id: " + id));
+        
+        // Get timesheet entries for this timesheet
+        var timeSheetEntries = timeSheetEntryService.findByTimesheetId(id);
+        
+        // Calculate total hours from entries
+        BigDecimal calculatedTotalHours = timeSheetEntries.stream()
+                .map(entry -> entry.hoursWorked())
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+        
+        return new TimeSheetDetailResponseDTO(
+                timeSheet.getTimesheetId(),
+                timeSheet.getEmployee() != null ? timeSheet.getEmployee().getEmployeeId() : null,
+                timeSheet.getEmployee() != null ? 
+                    timeSheet.getEmployee().getFirstName() + " " + timeSheet.getEmployee().getLastName() : null,
+                timeSheet.getPeriodStartDate(),
+                timeSheet.getPeriodEndDate(),
+                timeSheet.getStatus() != null ? timeSheet.getStatus().name() : null,
+                timeSheet.getSubmissionDate(),
+                timeSheet.getTotalHours(),
+                timeSheetEntries,
+                calculatedTotalHours
+        );
     }
 
     private TimeSheetResponseDTO toTimeSheetResponseDTO(TimeSheet timeSheet) {

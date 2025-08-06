@@ -113,6 +113,41 @@ Authorization: Bearer <your-jwt-token>
   }
   ```
 
+#### Get Detailed TimeSheet by ID
+- **GET** `/api/timesheets/{id}/detail`
+- **Description**: Get detailed timesheet by ID, including all entries and calculated total hours
+- **Authentication**: Required (ADMIN, MANAGER, or own timesheet)
+- **Response**: `TimeSheetDetailResponseDTO` (200 OK) or 404 Not Found
+
+---
+
+#### TimeSheetDetailResponseDTO
+```json
+{
+  "timesheetId": "integer",
+  "employeeId": "integer",
+  "employeeName": "string",
+  "periodStartDate": "date",
+  "periodEndDate": "date",
+  "status": "string",
+  "submissionDate": "datetime",
+  "totalHours": "decimal",
+  "timeSheetEntries": [
+    {
+      "entryId": "integer",
+      "timesheetId": "integer",
+      "date": "date",
+      "projectId": "integer",
+      "projectName": "string",
+      "taskDescription": "string",
+      "hoursWorked": "decimal"
+    }
+    // ... more entries
+  ],
+  "calculatedTotalHours": "decimal"
+}
+```
+
 ---
 
 ### 3. TimeSheet Entries (`/api/timesheet-entries`)
