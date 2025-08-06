@@ -1,4 +1,6 @@
 package org.example.dto.request;
 
-public record DepartmentRequestDTO (Integer departmentId){
-}
+public record DepartmentRequestDTO(
+    String name,
+    Integer headEmployeeId
+) {}

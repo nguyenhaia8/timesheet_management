@@ -6,9 +6,9 @@ import org.example.dto.request.TimeSheetRequestDTO;
 import org.example.dto.response.TimeSheetResponseDTO;
 
 public interface TimeSheetService {
-    List<TimeSheetResponseDTO> getAllTimeSheets();
-    TimeSheetResponseDTO getTimeSheetById(Integer id);
-    TimeSheetResponseDTO createTimeSheet(TimeSheetRequestDTO timeSheetRequestDTO);
-    TimeSheetResponseDTO updateTimeSheet(Integer id, TimeSheetRequestDTO timeSheetRequestDTO);
-    boolean deleteTimeSheet(Integer id);
+    List<TimeSheetResponseDTO> findAll();
+    TimeSheetResponseDTO findById(Integer id);
+    TimeSheetResponseDTO save(TimeSheetRequestDTO timeSheetRequestDTO);
+    TimeSheetResponseDTO update(Integer id, TimeSheetRequestDTO timeSheetRequestDTO);
+    void deleteById(Integer id);
 }

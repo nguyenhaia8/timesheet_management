@@ -8,44 +8,22 @@ import org.example.service.TimeSheetEntry.TimeSheetEntryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/timesheet-entries")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class TimeSheetEntryController {
 
     @Autowired
     private TimeSheetEntryService timeSheetEntryService;
 
-    // Get all timesheet entries
-    @GetMapping
-    public ResponseEntity<List<TimeSheetEntryResponseDTO>> getAllTimeSheetEntries() {
-        try {
-            List<TimeSheetEntryResponseDTO> entries = timeSheetEntryService.getAllTimeSheetEntries();
-            return ResponseEntity.ok(entries);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-        }
-    }
-
-    // Get timesheet entry by ID
-    @GetMapping("/{id}")
-    public ResponseEntity<TimeSheetEntryResponseDTO> getTimeSheetEntryById(@PathVariable Integer id) {
-        try {
-            TimeSheetEntryResponseDTO entry = timeSheetEntryService.getTimeSheetEntryById(id);
-            return ResponseEntity.ok(entry);
-        } catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-        }
-    }
-
-    // Create new timesheet entry
     @PostMapping
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or hasRole('EMPLOYEE')")
     public ResponseEntity<TimeSheetEntryResponseDTO> createTimeSheetEntry(@RequestBody TimeSheetEntryRequestDTO timeSheetEntryRequestDTO) {
         try {
-            TimeSheetEntryResponseDTO createdEntry = timeSheetEntryService.createTimeSheetEntry(timeSheetEntryRequestDTO);
+            TimeSheetEntryResponseDTO createdEntry = timeSheetEntryService.save(timeSheetEntryRequestDTO);
             return ResponseEntity.status(HttpStatus.CREATED).body(createdEntry);
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
@@ -54,13 +32,39 @@ public class TimeSheetEntryController {
         }
     }
 
-    // Update timesheet entry
+    @GetMapping
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
+    public ResponseEntity<List<TimeSheetEntryResponseDTO>> getAllTimeSheetEntries() {
+        try {
+            List<TimeSheetEntryResponseDTO> entries = timeSheetEntryService.findAll();
+            return ResponseEntity.ok(entries);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+    @GetMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or hasRole('EMPLOYEE')")
+    public ResponseEntity<TimeSheetEntryResponseDTO> getTimeSheetEntryById(@PathVariable Integer id) {
+        try {
+            TimeSheetEntryResponseDTO entry = timeSheetEntryService.findById(id);
+            if (entry != null) {
+                return ResponseEntity.ok(entry);
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
     @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or hasRole('EMPLOYEE')")
     public ResponseEntity<TimeSheetEntryResponseDTO> updateTimeSheetEntry(
             @PathVariable Integer id,
             @RequestBody TimeSheetEntryRequestDTO timeSheetEntryRequestDTO) {
         try {
-            TimeSheetEntryResponseDTO updatedEntry = timeSheetEntryService.updateTimeSheetEntry(id, timeSheetEntryRequestDTO);
+            TimeSheetEntryResponseDTO updatedEntry = timeSheetEntryService.update(id, timeSheetEntryRequestDTO);
             return ResponseEntity.ok(updatedEntry);
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
@@ -69,16 +73,12 @@ public class TimeSheetEntryController {
         }
     }
 
-    // Delete timesheet entry
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
     public ResponseEntity<Object> deleteTimeSheetEntry(@PathVariable Integer id) {
         try {
-            boolean deleted = timeSheetEntryService.deleteTimeSheetEntry(id);
-            if (deleted) {
-                return ResponseEntity.ok(new DeleteResponse(true, "TimeSheetEntry deleted successfully"));
-            } else {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new DeleteResponse(false, "TimeSheetEntry not found"));
-            }
+            timeSheetEntryService.deleteById(id);
+            return ResponseEntity.ok(new DeleteResponse(true, "TimeSheetEntry deleted successfully"));
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new DeleteResponse(false, "TimeSheetEntry not found"));
         } catch (Exception e) {

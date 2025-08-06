@@ -1,4 +1,13 @@
 package org.example.dto.request;
 
-public record ProjectRequestDTO (Integer projectId){
-}
+import java.time.LocalDate;
+
+public record ProjectRequestDTO(
+    String name,
+    String description,
+    LocalDate startDate,
+    LocalDate endDate,
+    Integer clientId,
+    Integer projectManagerId,
+    String status
+) {}

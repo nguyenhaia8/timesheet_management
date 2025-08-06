@@ -6,12 +6,14 @@ import org.example.service.Employee.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/employees")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class EmployeeController {
 
     private final EmployeeService employeeService;
@@ -22,6 +24,7 @@ public class EmployeeController {
     }
 
     @PostMapping
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
     public ResponseEntity<EmployeeResponseDTO> createEmployee(@RequestBody EmployeeRequestDTO employeeRequestDTO) {
         try {
             EmployeeResponseDTO createdEmployee = employeeService.save(employeeRequestDTO);
@@ -32,6 +35,7 @@ public class EmployeeController {
     }
 
     @GetMapping
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
     public ResponseEntity<List<EmployeeResponseDTO>> getAllEmployees() {
         try {
             List<EmployeeResponseDTO> employees = employeeService.findAll();
@@ -42,6 +46,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or #id == authentication.principal.employee.employeeId")
     public ResponseEntity<EmployeeResponseDTO> getEmployeeById(@PathVariable Integer id) {
         EmployeeResponseDTO employee = employeeService.findById(id);
         if (employee != null) {

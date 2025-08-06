@@ -1,12 +1,8 @@
 package org.example.dto.request;
 
-import java.time.LocalDate;
-
-public record ApprovalRequestDTO (
-    Integer timeSheetId,
-    Integer approverId,
-    String approvalStatus,
-    LocalDate approvalDate,
+public record ApprovalRequestDTO(
+    Integer timesheetId,
+    Integer approvedBy,
+    String status,
     String comments
-){
-}
+) {}

@@ -1,110 +1,102 @@
 package org.example.service.TimeSheetEntry.impl;
 
-import java.math.BigDecimal;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.example.dto.request.TimeSheetEntryRequestDTO;
 import org.example.dto.response.TimeSheetEntryResponseDTO;
-import org.example.model.Task;
+import org.example.model.Project;
 import org.example.model.TimeSheet;
 import org.example.model.TimeSheetEntry;
-import org.example.repository.TaskRepository;
+import org.example.repository.ProjectRepository;
 import org.example.repository.TimeSheetEntryRepository;
 import org.example.repository.TimeSheetRepository;
 import org.example.service.TimeSheetEntry.TimeSheetEntryService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class TimeSheetEntryServiceImpl implements TimeSheetEntryService {
 
-    @Autowired
-    private TimeSheetEntryRepository timeSheetEntryRepository;
+    private final TimeSheetEntryRepository timeSheetEntryRepository;
+    private final TimeSheetRepository timeSheetRepository;
+    private final ProjectRepository projectRepository;
 
-    @Autowired
-    private TimeSheetRepository timeSheetRepository;
-
-    @Autowired
-    private TaskRepository taskRepository;
+    public TimeSheetEntryServiceImpl(TimeSheetEntryRepository timeSheetEntryRepository,
+                                   TimeSheetRepository timeSheetRepository,
+                                   ProjectRepository projectRepository) {
+        this.timeSheetEntryRepository = timeSheetEntryRepository;
+        this.timeSheetRepository = timeSheetRepository;
+        this.projectRepository = projectRepository;
+    }
 
     @Override
-    public List<TimeSheetEntryResponseDTO> getAllTimeSheetEntries() {
-        List<TimeSheetEntry> timeSheetEntries = timeSheetEntryRepository.findAll();
-        return timeSheetEntries.stream()
-                .map(this::convertToResponseDTO)
+    public TimeSheetEntryResponseDTO save(TimeSheetEntryRequestDTO timeSheetEntryRequestDTO) {
+        TimeSheet timeSheet = timeSheetRepository.findById(timeSheetEntryRequestDTO.timesheetId())
+                .orElseThrow(() -> new RuntimeException("Timesheet not found with id: " + timeSheetEntryRequestDTO.timesheetId()));
+
+        Project project = projectRepository.findById(timeSheetEntryRequestDTO.projectId())
+                .orElseThrow(() -> new RuntimeException("Project not found with id: " + timeSheetEntryRequestDTO.projectId()));
+
+        TimeSheetEntry timeSheetEntry = new TimeSheetEntry();
+        timeSheetEntry.setTimesheet(timeSheet);
+        timeSheetEntry.setDate(timeSheetEntryRequestDTO.date());
+        timeSheetEntry.setProject(project);
+        timeSheetEntry.setTaskDescription(timeSheetEntryRequestDTO.taskDescription());
+        timeSheetEntry.setHoursWorked(timeSheetEntryRequestDTO.hoursWorked());
+
+        TimeSheetEntry savedEntry = timeSheetEntryRepository.save(timeSheetEntry);
+        return toTimeSheetEntryResponseDTO(savedEntry);
+    }
+
+    @Override
+    public TimeSheetEntryResponseDTO update(Integer id, TimeSheetEntryRequestDTO timeSheetEntryRequestDTO) {
+        TimeSheetEntry existingEntry = timeSheetEntryRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Timesheet entry not found with id: " + id));
+
+        TimeSheet timeSheet = timeSheetRepository.findById(timeSheetEntryRequestDTO.timesheetId())
+                .orElseThrow(() -> new RuntimeException("Timesheet not found with id: " + timeSheetEntryRequestDTO.timesheetId()));
+
+        Project project = projectRepository.findById(timeSheetEntryRequestDTO.projectId())
+                .orElseThrow(() -> new RuntimeException("Project not found with id: " + timeSheetEntryRequestDTO.projectId()));
+
+        existingEntry.setTimesheet(timeSheet);
+        existingEntry.setDate(timeSheetEntryRequestDTO.date());
+        existingEntry.setProject(project);
+        existingEntry.setTaskDescription(timeSheetEntryRequestDTO.taskDescription());
+        existingEntry.setHoursWorked(timeSheetEntryRequestDTO.hoursWorked());
+
+        TimeSheetEntry updatedEntry = timeSheetEntryRepository.save(existingEntry);
+        return toTimeSheetEntryResponseDTO(updatedEntry);
+    }
+
+    @Override
+    public List<TimeSheetEntryResponseDTO> findAll() {
+        return timeSheetEntryRepository.findAll().stream()
+                .map(this::toTimeSheetEntryResponseDTO)
                 .collect(Collectors.toList());
     }
 
     @Override
-    public TimeSheetEntryResponseDTO getTimeSheetEntryById(Integer id) {
+    public TimeSheetEntryResponseDTO findById(Integer id) {
         TimeSheetEntry timeSheetEntry = timeSheetEntryRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("TimeSheetEntry not found with id: " + id));
-        return convertToResponseDTO(timeSheetEntry);
+                .orElseThrow(() -> new RuntimeException("Timesheet entry not found with id: " + id));
+        return toTimeSheetEntryResponseDTO(timeSheetEntry);
     }
 
     @Override
-    public TimeSheetEntryResponseDTO createTimeSheetEntry(TimeSheetEntryRequestDTO timeSheetEntryRequestDTO) {
-        // Validate required entities exist
-        TimeSheet timeSheet = timeSheetRepository.findById(timeSheetEntryRequestDTO.timeSheetId())
-                .orElseThrow(() -> new RuntimeException("TimeSheet not found with id: " + timeSheetEntryRequestDTO.timeSheetId()));
-        
-        Task task = taskRepository.findById(timeSheetEntryRequestDTO.taskId())
-                .orElseThrow(() -> new RuntimeException("Task not found with id: " + timeSheetEntryRequestDTO.taskId()));
-
-        // Create new TimeSheetEntry
-        TimeSheetEntry timeSheetEntry = new TimeSheetEntry();
-        timeSheetEntry.setTimeSheet(timeSheet);
-        timeSheetEntry.setTask(task);
-        timeSheetEntry.setWorkDate(timeSheetEntryRequestDTO.workDate());
-        timeSheetEntry.setHoursWorked(BigDecimal.valueOf(timeSheetEntryRequestDTO.hoursWorked()));
-        timeSheetEntry.setDescription(timeSheetEntryRequestDTO.description());
-
-        TimeSheetEntry savedEntry = timeSheetEntryRepository.save(timeSheetEntry);
-        return convertToResponseDTO(savedEntry);
-    }
-
-    @Override
-    public TimeSheetEntryResponseDTO updateTimeSheetEntry(Integer id, TimeSheetEntryRequestDTO timeSheetEntryRequestDTO) {
-        TimeSheetEntry existingEntry = timeSheetEntryRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("TimeSheetEntry not found with id: " + id));
-
-        // Validate required entities exist
-        TimeSheet timeSheet = timeSheetRepository.findById(timeSheetEntryRequestDTO.timeSheetId())
-                .orElseThrow(() -> new RuntimeException("TimeSheet not found with id: " + timeSheetEntryRequestDTO.timeSheetId()));
-        
-        Task task = taskRepository.findById(timeSheetEntryRequestDTO.taskId())
-                .orElseThrow(() -> new RuntimeException("Task not found with id: " + timeSheetEntryRequestDTO.taskId()));
-
-        // Update fields
-        existingEntry.setTimeSheet(timeSheet);
-        existingEntry.setTask(task);
-        existingEntry.setWorkDate(timeSheetEntryRequestDTO.workDate());
-        existingEntry.setHoursWorked(BigDecimal.valueOf(timeSheetEntryRequestDTO.hoursWorked()));
-        existingEntry.setDescription(timeSheetEntryRequestDTO.description());
-
-        TimeSheetEntry updatedEntry = timeSheetEntryRepository.save(existingEntry);
-        return convertToResponseDTO(updatedEntry);
-    }
-
-    @Override
-    public boolean deleteTimeSheetEntry(Integer id) {
-        if (!timeSheetEntryRepository.existsById(id)) {
-            throw new RuntimeException("TimeSheetEntry not found with id: " + id);
-        }
+    public void deleteById(Integer id) {
         timeSheetEntryRepository.deleteById(id);
-        return true;
     }
 
-    // Helper method to convert entity to response DTO
-    private TimeSheetEntryResponseDTO convertToResponseDTO(TimeSheetEntry timeSheetEntry) {
+    private TimeSheetEntryResponseDTO toTimeSheetEntryResponseDTO(TimeSheetEntry timeSheetEntry) {
         return new TimeSheetEntryResponseDTO(
                 timeSheetEntry.getEntryId(),
-                timeSheetEntry.getTimeSheet() != null ? timeSheetEntry.getTimeSheet().getTimesheetId() : null,
-                timeSheetEntry.getTask() != null ? timeSheetEntry.getTask().getTaskId() : null,
-                timeSheetEntry.getWorkDate(),
-                timeSheetEntry.getHoursWorked() != null ? timeSheetEntry.getHoursWorked().doubleValue() : null,
-                timeSheetEntry.getDescription()
+                timeSheetEntry.getTimesheet() != null ? timeSheetEntry.getTimesheet().getTimesheetId() : null,
+                timeSheetEntry.getDate(),
+                timeSheetEntry.getProject() != null ? timeSheetEntry.getProject().getProjectId() : null,
+                timeSheetEntry.getProject() != null ? timeSheetEntry.getProject().getName() : null,
+                timeSheetEntry.getTaskDescription(),
+                timeSheetEntry.getHoursWorked()
         );
     }
 }

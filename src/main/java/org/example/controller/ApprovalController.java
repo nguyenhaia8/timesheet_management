@@ -6,46 +6,50 @@ import org.example.service.Approval.ApprovalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/approvals")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class ApprovalController {
 
     @Autowired
     private ApprovalService approvalService;
 
-    // Get all approvals
     @GetMapping
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
     public ResponseEntity<List<ApprovalResponseDTO>> getAllApprovals() {
         try {
-            List<ApprovalResponseDTO> approvals = approvalService.getAllApprovals();
+            List<ApprovalResponseDTO> approvals = approvalService.findAll();
             return ResponseEntity.ok(approvals);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
 
-    // Get approval by ID
     @GetMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
     public ResponseEntity<ApprovalResponseDTO> getApprovalById(@PathVariable Integer id) {
         try {
-            ApprovalResponseDTO approval = approvalService.getApprovalById(id);
-            return ResponseEntity.ok(approval);
-        } catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            ApprovalResponseDTO approval = approvalService.findById(id);
+            if (approval != null) {
+                return ResponseEntity.ok(approval);
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            }
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
 
-    // Create new approval
     @PostMapping
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
     public ResponseEntity<ApprovalResponseDTO> createApproval(@RequestBody ApprovalRequestDTO approvalRequestDTO) {
         try {
-            ApprovalResponseDTO created = approvalService.createApproval(approvalRequestDTO);
+            ApprovalResponseDTO created = approvalService.save(approvalRequestDTO);
             return ResponseEntity.status(HttpStatus.CREATED).body(created);
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
@@ -54,11 +58,11 @@ public class ApprovalController {
         }
     }
 
-    // Update approval
     @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
     public ResponseEntity<ApprovalResponseDTO> updateApproval(@PathVariable Integer id, @RequestBody ApprovalRequestDTO approvalRequestDTO) {
         try {
-            ApprovalResponseDTO updated = approvalService.updateApproval(id, approvalRequestDTO);
+            ApprovalResponseDTO updated = approvalService.update(id, approvalRequestDTO);
             return ResponseEntity.ok(updated);
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
@@ -67,16 +71,12 @@ public class ApprovalController {
         }
     }
 
-    // Delete approval
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Object> deleteApproval(@PathVariable Integer id) {
         try {
-            boolean deleted = approvalService.deleteApproval(id);
-            if (deleted) {
-                return ResponseEntity.ok(new DeleteResponse(true, "Approval deleted successfully"));
-            } else {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new DeleteResponse(false, "Approval not found"));
-            }
+            approvalService.deleteById(id);
+            return ResponseEntity.ok(new DeleteResponse(true, "Approval deleted successfully"));
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new DeleteResponse(false, "Approval not found"));
         } catch (Exception e) {

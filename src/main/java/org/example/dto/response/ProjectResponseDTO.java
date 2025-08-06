@@ -1,7 +1,16 @@
 package org.example.dto.response;
 
-public record ProjectResponseDTO (
-        Integer projectId,
-        String projectName,
-        String description) {
-}
+import java.time.LocalDate;
+
+public record ProjectResponseDTO(
+    Integer projectId,
+    String name,
+    String description,
+    LocalDate startDate,
+    LocalDate endDate,
+    Integer clientId,
+    String clientName,
+    Integer projectManagerId,
+    String projectManagerName,
+    String status
+) {}

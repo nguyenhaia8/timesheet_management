@@ -6,45 +6,53 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "Approval")
 public class Approval {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "approvalId")
+    private Integer approvalId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "timesheetId", nullable = false)
+    private TimeSheet timesheet;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "approvedBy", nullable = false)
+    private Employee approvedBy;
+
+    @Column(name = "approvedAt")
+    private LocalDateTime approvedAt;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status")
+    private ApprovalStatus status = ApprovalStatus.PENDING;
+
+    @Column(name = "comments", columnDefinition = "TEXT")
+    private String comments;
+
+    @Column(name = "createdAt")
+    private LocalDateTime createdAt;
+
+    @Column(name = "updatedAt")
+    private LocalDateTime updatedAt;
+
     public enum ApprovalStatus {
         PENDING,
         APPROVED,
         REJECTED
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "approval_id")
-    private Integer approvalId;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "timesheet_id", nullable = false)
-    private TimeSheet timeSheet;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "approver_id", nullable = false)
-    private Employee approver;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "approval_status", length = 20)
-    private ApprovalStatus approvalStatus = ApprovalStatus.PENDING;
-
-    @Column(name = "approval_date")
-    private LocalDateTime approvalDate;
-
-    @Column(name = "comments", columnDefinition = "TEXT")
-    private String comments;
-
+    // Constructors
     public Approval() {}
 
-    public Approval(TimeSheet timeSheet, Employee approver, ApprovalStatus approvalStatus, LocalDateTime approvalDate, String comments) {
-        this.timeSheet = timeSheet;
-        this.approver = approver;
-        this.approvalStatus = approvalStatus;
-        this.approvalDate = approvalDate;
-        this.comments = comments;
+    public Approval(TimeSheet timesheet, Employee approvedBy) {
+        this.timesheet = timesheet;
+        this.approvedBy = approvedBy;
+        this.status = ApprovalStatus.PENDING;
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
+    // Getters and Setters
     public Integer getApprovalId() {
         return approvalId;
     }
@@ -53,36 +61,36 @@ public class Approval {
         this.approvalId = approvalId;
     }
 
-    public TimeSheet getTimeSheet() {
-        return timeSheet;
+    public TimeSheet getTimesheet() {
+        return timesheet;
     }
 
-    public void setTimeSheet(TimeSheet timeSheet) {
-        this.timeSheet = timeSheet;
+    public void setTimesheet(TimeSheet timesheet) {
+        this.timesheet = timesheet;
     }
 
-    public Employee getApprover() {
-        return approver;
+    public Employee getApprovedBy() {
+        return approvedBy;
     }
 
-    public void setApprover(Employee approver) {
-        this.approver = approver;
+    public void setApprovedBy(Employee approvedBy) {
+        this.approvedBy = approvedBy;
     }
 
-    public ApprovalStatus getApprovalStatus() {
-        return approvalStatus;
+    public LocalDateTime getApprovedAt() {
+        return approvedAt;
     }
 
-    public void setApprovalStatus(ApprovalStatus approvalStatus) {
-        this.approvalStatus = approvalStatus;
+    public void setApprovedAt(LocalDateTime approvedAt) {
+        this.approvedAt = approvedAt;
     }
 
-    public LocalDateTime getApprovalDate() {
-        return approvalDate;
+    public ApprovalStatus getStatus() {
+        return status;
     }
 
-    public void setApprovalDate(LocalDateTime approvalDate) {
-        this.approvalDate = approvalDate;
+    public void setStatus(ApprovalStatus status) {
+        this.status = status;
     }
 
     public String getComments() {
@@ -93,15 +101,19 @@ public class Approval {
         this.comments = comments;
     }
 
-    @Override
-    public String toString() {
-        return "Approval{" +
-                "approvalId=" + approvalId +
-                ", timeSheet=" + (timeSheet != null ? timeSheet.getTimesheetId() : null) +
-                ", approver=" + (approver != null ? approver.getEmployeeId() : null) +
-                ", approvalStatus='" + approvalStatus + '\'' +
-                ", approvalDate=" + approvalDate +
-                ", comments='" + comments + '\'' +
-                '}';
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

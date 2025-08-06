@@ -1,13 +1,13 @@
 package org.example.dto.response;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
-public record ApprovalResponseDTO (
-        Integer approvalId,
-        Integer timeSheetId,
-        Integer approverId,
-        String approvalStatus,
-        LocalDate approvalDate,
-        String comments
-) {
-}
+public record ApprovalResponseDTO(
+    Integer approvalId,
+    Integer timesheetId,
+    Integer approvedBy,
+    String approvedByName,
+    LocalDateTime approvedAt,
+    String status,
+    String comments
+) {}

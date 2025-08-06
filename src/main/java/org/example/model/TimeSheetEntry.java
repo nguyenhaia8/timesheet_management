@@ -3,103 +3,115 @@ package org.example.model;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "Timesheet_Entry")
+@Table(name = "TimesheetEntry")
 public class TimeSheetEntry {
-    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "entry_id")
+    @Column(name = "entryId")
     private Integer entryId;
-    
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "timesheet_id", nullable = false)
-    private TimeSheet timeSheet;
-    
+    @JoinColumn(name = "timesheetId", nullable = false)
+    private TimeSheet timesheet;
+
+    @Column(name = "date", nullable = false)
+    private LocalDate date;
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "task_id", nullable = false)
-    private Task task;
-    
-    @Column(name = "work_date", nullable = false)
-    private LocalDate workDate;
-    
-    @Column(name = "hours_worked", nullable = false, precision = 4, scale = 2)
+    @JoinColumn(name = "projectId", nullable = false)
+    private Project project;
+
+    @Column(name = "taskDescription", columnDefinition = "TEXT", nullable = false)
+    private String taskDescription;
+
+    @Column(name = "hoursWorked", precision = 4, scale = 2, nullable = false)
     private BigDecimal hoursWorked;
-    
-    @Column(name = "description", columnDefinition = "TEXT")
-    private String description;
-    
-    // Default constructor
+
+    @Column(name = "createdAt")
+    private LocalDateTime createdAt;
+
+    @Column(name = "updatedAt")
+    private LocalDateTime updatedAt;
+
+    // Constructors
     public TimeSheetEntry() {}
-    
-    // Constructor with all fields
-    public TimeSheetEntry(TimeSheet timeSheet, Task task, LocalDate workDate, BigDecimal hoursWorked, String description) {
-        this.timeSheet = timeSheet;
-        this.task = task;
-        this.workDate = workDate;
+
+    public TimeSheetEntry(TimeSheet timesheet, LocalDate date, Project project, 
+                         String taskDescription, BigDecimal hoursWorked) {
+        this.timesheet = timesheet;
+        this.date = date;
+        this.project = project;
+        this.taskDescription = taskDescription;
         this.hoursWorked = hoursWorked;
-        this.description = description;
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
-    
+
     // Getters and Setters
     public Integer getEntryId() {
         return entryId;
     }
-    
+
     public void setEntryId(Integer entryId) {
         this.entryId = entryId;
     }
-    
-    public TimeSheet getTimeSheet() {
-        return timeSheet;
+
+    public TimeSheet getTimesheet() {
+        return timesheet;
     }
-    
-    public void setTimeSheet(TimeSheet timeSheet) {
-        this.timeSheet = timeSheet;
+
+    public void setTimesheet(TimeSheet timesheet) {
+        this.timesheet = timesheet;
     }
-    
-    public Task getTask() {
-        return task;
+
+    public LocalDate getDate() {
+        return date;
     }
-    
-    public void setTask(Task task) {
-        this.task = task;
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
-    
-    public LocalDate getWorkDate() {
-        return workDate;
+
+    public Project getProject() {
+        return project;
     }
-    
-    public void setWorkDate(LocalDate workDate) {
-        this.workDate = workDate;
+
+    public void setProject(Project project) {
+        this.project = project;
     }
-    
+
+    public String getTaskDescription() {
+        return taskDescription;
+    }
+
+    public void setTaskDescription(String taskDescription) {
+        this.taskDescription = taskDescription;
+    }
+
     public BigDecimal getHoursWorked() {
         return hoursWorked;
     }
-    
+
     public void setHoursWorked(BigDecimal hoursWorked) {
         this.hoursWorked = hoursWorked;
     }
-    
-    public String getDescription() {
-        return description;
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
-    
-    public void setDescription(String description) {
-        this.description = description;
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
-    
-    @Override
-    public String toString() {
-        return "TimeSheetEntry{" +
-                "entryId=" + entryId +
-                ", timeSheet=" + (timeSheet != null ? timeSheet.getTimesheetId() : null) +
-                ", task=" + (task != null ? task.getTaskId() : null) +
-                ", workDate=" + workDate +
-                ", hoursWorked=" + hoursWorked +
-                ", description='" + description + '\'' +
-                '}';
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

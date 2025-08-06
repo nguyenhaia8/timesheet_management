@@ -6,9 +6,9 @@ import org.example.dto.request.ApprovalRequestDTO;
 import org.example.dto.response.ApprovalResponseDTO;
 
 public interface ApprovalService {
-    List<ApprovalResponseDTO> getAllApprovals();
-    ApprovalResponseDTO getApprovalById(Integer id);
-    ApprovalResponseDTO createApproval(ApprovalRequestDTO approvalRequestDTO);
-    ApprovalResponseDTO updateApproval(Integer id, ApprovalRequestDTO approvalRequestDTO);
-    boolean deleteApproval(Integer id);
+    ApprovalResponseDTO save(ApprovalRequestDTO approvalRequestDTO);
+    List<ApprovalResponseDTO> findAll();
+    ApprovalResponseDTO findById(Integer id);
+    ApprovalResponseDTO update(Integer id, ApprovalRequestDTO approvalRequestDTO);
+    void deleteById(Integer id);
 }

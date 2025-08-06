@@ -1,12 +1,12 @@
 package org.example.dto.request;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public record TimeSheetRequestDTO (
+public record TimeSheetRequestDTO(
     Integer employeeId,
-    LocalDate weekStartDate,
-    Double totalHours,
+    LocalDate periodStartDate,
+    LocalDate periodEndDate,
     String status,
-    LocalDate submittedDate
-){
-}
+    BigDecimal totalHours
+) {}

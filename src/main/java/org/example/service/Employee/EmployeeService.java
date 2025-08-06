@@ -9,4 +9,6 @@ public interface EmployeeService {
     EmployeeResponseDTO save(EmployeeRequestDTO employee);
     List<EmployeeResponseDTO> findAll();
     EmployeeResponseDTO findById(Integer id);
+    EmployeeResponseDTO update(Integer id, EmployeeRequestDTO employee);
+    void deleteById(Integer id);
 }

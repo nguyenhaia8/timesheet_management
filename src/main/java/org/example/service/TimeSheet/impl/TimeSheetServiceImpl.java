@@ -7,13 +7,10 @@ import org.example.model.Employee;
 import org.example.repository.TimeSheetRepository;
 import org.example.repository.EmployeeRepository;
 import org.example.service.TimeSheet.TimeSheetService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
-import java.math.BigDecimal;
 
 @Service
 public class TimeSheetServiceImpl implements TimeSheetService {
@@ -21,77 +18,87 @@ public class TimeSheetServiceImpl implements TimeSheetService {
     private final TimeSheetRepository timeSheetRepository;
     private final EmployeeRepository employeeRepository;
 
-    @Autowired
     public TimeSheetServiceImpl(TimeSheetRepository timeSheetRepository, EmployeeRepository employeeRepository) {
         this.timeSheetRepository = timeSheetRepository;
         this.employeeRepository = employeeRepository;
     }
 
     @Override
-    public List<TimeSheetResponseDTO> getAllTimeSheets() {
+    public List<TimeSheetResponseDTO> findAll() {
         return timeSheetRepository.findAll()
-        .stream()
-                .map(this::toResponseDTO)
+                .stream()
+                .map(this::toTimeSheetResponseDTO)
                 .collect(Collectors.toList());
     }
 
     @Override
-    public TimeSheetResponseDTO getTimeSheetById(Integer id) {
-        Optional<TimeSheet> timeSheet = timeSheetRepository.findById(id);
-        return timeSheet.map(this::toResponseDTO).orElse(null);
+    public TimeSheetResponseDTO findById(Integer id) {
+        return timeSheetRepository.findById(id)
+                .map(this::toTimeSheetResponseDTO)
+                .orElse(null);
     }
 
     @Override
-    public TimeSheetResponseDTO createTimeSheet(TimeSheetRequestDTO dto) {
-        Employee employee = employeeRepository.findById(dto.employeeId()).orElse(null);
-        if (employee == null) return null;
+    public TimeSheetResponseDTO save(TimeSheetRequestDTO dto) {
+        Employee employee = employeeRepository.findById(dto.employeeId())
+                .orElseThrow(() -> new RuntimeException("Employee not found with id: " + dto.employeeId()));
 
         TimeSheet timeSheet = new TimeSheet(
                 employee,
-                dto.weekStartDate(),
-                dto.totalHours() != null ? BigDecimal.valueOf(dto.totalHours()) : BigDecimal.ZERO,
-                dto.status() != null ? dto.status() : "DRAFT",
-                dto.submittedDate()
+                dto.periodStartDate(),
+                dto.periodEndDate()
         );
-        TimeSheet saved = timeSheetRepository.save(timeSheet);
-        return toResponseDTO(saved);
-    }
 
-    @Override
-    public TimeSheetResponseDTO updateTimeSheet(Integer id, TimeSheetRequestDTO dto) {
-        Optional<TimeSheet> existing = timeSheetRepository.findById(id);
-        if (existing.isEmpty()) return null;
-
-        TimeSheet timeSheet = existing.get();
-        Employee employee = employeeRepository.findById(dto.employeeId()).orElse(null);
-        if (employee != null) timeSheet.setEmployee(employee);
-        if (dto.weekStartDate() != null) timeSheet.setWeekStartDate(dto.weekStartDate());
-        if (dto.totalHours() != null) timeSheet.setTotalHours(BigDecimal.valueOf(dto.totalHours()));
-        if (dto.status() != null) timeSheet.setStatus(dto.status());
-        if (dto.submittedDate() != null) timeSheet.setSubmittedDate(dto.submittedDate());
-
-        TimeSheet updated = timeSheetRepository.save(timeSheet);
-        return toResponseDTO(updated);
-    }
-
-    @Override
-    public boolean deleteTimeSheet(Integer id) {
-        Optional<TimeSheet> timeSheet = timeSheetRepository.findById(id);
-        if (timeSheet.isPresent()) {
-            timeSheetRepository.deleteById(id);
-            return true;
+        if (dto.status() != null) {
+            timeSheet.setStatus(TimeSheet.TimeSheetStatus.valueOf(dto.status().toUpperCase()));
         }
-        return false;
+        if (dto.totalHours() != null) {
+            timeSheet.setTotalHours(dto.totalHours());
+        }
+
+        TimeSheet saved = timeSheetRepository.save(timeSheet);
+        return toTimeSheetResponseDTO(saved);
     }
 
-    private TimeSheetResponseDTO toResponseDTO(TimeSheet timeSheet) {
+    @Override
+    public TimeSheetResponseDTO update(Integer id, TimeSheetRequestDTO dto) {
+        TimeSheet existingTimeSheet = timeSheetRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Timesheet not found with id: " + id));
+
+        Employee employee = employeeRepository.findById(dto.employeeId())
+                .orElseThrow(() -> new RuntimeException("Employee not found with id: " + dto.employeeId()));
+
+        existingTimeSheet.setEmployee(employee);
+        existingTimeSheet.setPeriodStartDate(dto.periodStartDate());
+        existingTimeSheet.setPeriodEndDate(dto.periodEndDate());
+        
+        if (dto.status() != null) {
+            existingTimeSheet.setStatus(TimeSheet.TimeSheetStatus.valueOf(dto.status().toUpperCase()));
+        }
+        if (dto.totalHours() != null) {
+            existingTimeSheet.setTotalHours(dto.totalHours());
+        }
+
+        TimeSheet updated = timeSheetRepository.save(existingTimeSheet);
+        return toTimeSheetResponseDTO(updated);
+    }
+
+    @Override
+    public void deleteById(Integer id) {
+        timeSheetRepository.deleteById(id);
+    }
+
+    private TimeSheetResponseDTO toTimeSheetResponseDTO(TimeSheet timeSheet) {
         return new TimeSheetResponseDTO(
                 timeSheet.getTimesheetId(),
                 timeSheet.getEmployee() != null ? timeSheet.getEmployee().getEmployeeId() : null,
-                timeSheet.getWeekStartDate(),
-                timeSheet.getTotalHours() != null ? timeSheet.getTotalHours().doubleValue() : 0.0,
-                timeSheet.getStatus(),
-                timeSheet.getSubmittedDate()
+                timeSheet.getEmployee() != null ? 
+                    timeSheet.getEmployee().getFirstName() + " " + timeSheet.getEmployee().getLastName() : null,
+                timeSheet.getPeriodStartDate(),
+                timeSheet.getPeriodEndDate(),
+                timeSheet.getStatus() != null ? timeSheet.getStatus().name() : null,
+                timeSheet.getSubmissionDate(),
+                timeSheet.getTotalHours()
         );
     }
 }
