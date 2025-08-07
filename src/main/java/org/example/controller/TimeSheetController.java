@@ -1,6 +1,7 @@
 package org.example.controller;
 
 import org.example.dto.request.TimeSheetRequestDTO;
+import org.example.dto.request.TimeSheetWithEntriesRequestDTO;
 import org.example.dto.response.TimeSheetResponseDTO;
 import org.example.dto.response.TimeSheetDetailResponseDTO;
 import org.example.service.TimeSheet.TimeSheetService;
@@ -29,6 +30,19 @@ public class TimeSheetController {
     public ResponseEntity<TimeSheetResponseDTO> createTimeSheet(@RequestBody TimeSheetRequestDTO timeSheetRequestDTO) {
         try {
             TimeSheetResponseDTO createdTimeSheet = timeSheetService.save(timeSheetRequestDTO);
+            return new ResponseEntity<>(createdTimeSheet, HttpStatus.CREATED);
+        } catch (RuntimeException e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @PostMapping("/with-entries")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or hasRole('EMPLOYEE')")
+    public ResponseEntity<TimeSheetResponseDTO> createTimeSheetWithEntries(@RequestBody TimeSheetWithEntriesRequestDTO timeSheetWithEntriesRequestDTO) {
+        try {
+            TimeSheetResponseDTO createdTimeSheet = timeSheetService.saveWithEntries(timeSheetWithEntriesRequestDTO);
             return new ResponseEntity<>(createdTimeSheet, HttpStatus.CREATED);
         } catch (RuntimeException e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -71,6 +85,33 @@ public class TimeSheetController {
             return new ResponseEntity<>(timeSheetDetail, HttpStatus.OK);
         } catch (RuntimeException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/user")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or hasRole('EMPLOYEE')")
+    public ResponseEntity<List<TimeSheetResponseDTO>> getTimeSheetsByCurrentUser() {
+        try {
+            // Get the authenticated user's employeeId from the security context
+            org.springframework.security.core.Authentication authentication = 
+                org.springframework.security.core.context.SecurityContextHolder.getContext().getAuthentication();
+            
+            if (authentication == null || !authentication.isAuthenticated()) {
+                return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+            }
+            
+            // Cast to our User class to get employee information
+            org.example.model.User user = (org.example.model.User) authentication.getPrincipal();
+            Integer employeeId = user.getEmployee() != null ? user.getEmployee().getEmployeeId() : null;
+            
+            if (employeeId == null) {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+            
+            List<TimeSheetResponseDTO> timeSheets = timeSheetService.findByEmployeeId(employeeId);
+            return new ResponseEntity<>(timeSheets, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }

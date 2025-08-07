@@ -11,4 +11,5 @@ public interface ApprovalService {
     ApprovalResponseDTO findById(Integer id);
     ApprovalResponseDTO update(Integer id, ApprovalRequestDTO approvalRequestDTO);
     void deleteById(Integer id);
+    List<ApprovalResponseDTO> findByApprovedByEmployeeId(Integer employeeId);
 }

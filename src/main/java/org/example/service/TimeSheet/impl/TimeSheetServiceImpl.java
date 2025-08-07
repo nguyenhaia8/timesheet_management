@@ -1,6 +1,8 @@
 package org.example.service.TimeSheet.impl;
 
 import org.example.dto.request.TimeSheetRequestDTO;
+import org.example.dto.request.TimeSheetWithEntriesRequestDTO;
+import org.example.dto.request.TimeSheetEntryRequestDTO;
 import org.example.dto.response.TimeSheetResponseDTO;
 import org.example.dto.response.TimeSheetDetailResponseDTO;
 import org.example.model.TimeSheet;
@@ -10,6 +12,7 @@ import org.example.repository.EmployeeRepository;
 import org.example.service.TimeSheet.TimeSheetService;
 import org.example.service.TimeSheetEntry.TimeSheetEntryService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -63,6 +66,40 @@ public class TimeSheetServiceImpl implements TimeSheetService {
     }
 
     @Override
+    @Transactional
+    public TimeSheetResponseDTO saveWithEntries(TimeSheetWithEntriesRequestDTO dto) {
+        Employee employee = employeeRepository.findById(dto.employeeId())
+                .orElseThrow(() -> new RuntimeException("Employee not found with id: " + dto.employeeId()));
+
+        // Create and save the timesheet
+        TimeSheet timeSheet = new TimeSheet();
+        timeSheet.setEmployee(employee);
+        timeSheet.setPeriodStartDate(dto.periodStartDate());
+        timeSheet.setPeriodEndDate(dto.periodEndDate());
+        timeSheet.setStatus(TimeSheet.TimeSheetStatus.valueOf(dto.status()));
+        timeSheet.setSubmissionDate(dto.submissionDate());
+        timeSheet.setTotalHours(dto.totalHours());
+
+        TimeSheet savedTimeSheet = timeSheetRepository.save(timeSheet);
+
+        // Create and save timesheet entries
+        if (dto.timeSheetEntries() != null && !dto.timeSheetEntries().isEmpty()) {
+            for (TimeSheetEntryRequestDTO entryDto : dto.timeSheetEntries()) {
+                TimeSheetEntryRequestDTO newEntryDto = new TimeSheetEntryRequestDTO(
+                    savedTimeSheet.getTimesheetId(),
+                    entryDto.date(),
+                    entryDto.projectId(),
+                    entryDto.taskDescription(),
+                    entryDto.hoursWorked()
+                );
+                timeSheetEntryService.save(newEntryDto);
+            }
+        }
+
+        return toTimeSheetResponseDTO(savedTimeSheet);
+    }
+
+    @Override
     public TimeSheetResponseDTO update(Integer id, TimeSheetRequestDTO dto) {
         TimeSheet existingTimeSheet = timeSheetRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Timesheet not found with id: " + id));
@@ -111,7 +148,23 @@ public class TimeSheetServiceImpl implements TimeSheetService {
         );
     }
 
+    @Override
+    public List<TimeSheetResponseDTO> findByEmployeeId(Integer employeeId) {
+        return timeSheetRepository.findByEmployeeEmployeeId(employeeId)
+                .stream()
+                .map(this::toTimeSheetResponseDTO)
+                .collect(Collectors.toList());
+    }
+
     private TimeSheetResponseDTO toTimeSheetResponseDTO(TimeSheet timeSheet) {
+        // Get timesheet entries for this timesheet
+        var timeSheetEntries = timeSheetEntryService.findByTimesheetId(timeSheet.getTimesheetId());
+        
+        // Calculate total hours from entries
+        BigDecimal calculatedTotalHours = timeSheetEntries.stream()
+                .map(entry -> entry.hoursWorked())
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+        
         return new TimeSheetResponseDTO(
                 timeSheet.getTimesheetId(),
                 timeSheet.getEmployee() != null ? timeSheet.getEmployee().getEmployeeId() : null,
@@ -121,7 +174,9 @@ public class TimeSheetServiceImpl implements TimeSheetService {
                 timeSheet.getPeriodEndDate(),
                 timeSheet.getStatus() != null ? timeSheet.getStatus().name() : null,
                 timeSheet.getSubmissionDate(),
-                timeSheet.getTotalHours()
+                timeSheet.getTotalHours(),
+                timeSheetEntries,
+                calculatedTotalHours
         );
     }
 }

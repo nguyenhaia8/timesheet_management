@@ -43,12 +43,11 @@ public class UserServiceImpl implements UserService {
             return null;
         }
         return new UserResponseDTO(
-            user.getUserId(),
-            user.getUserName(),
             user.getEmployee() != null ? user.getEmployee().getEmployeeId() : null,
             user.getEmployee() != null ? user.getEmployee().getFirstName() : null,
             user.getEmployee() != null ? user.getEmployee().getLastName() : null,
-            user.getEmployee() != null ? user.getEmployee().getEmail() : null
+            user.getEmployee() != null ? user.getEmployee().getEmail() : null,
+            user.getEmployee() != null && user.getEmployee().getManager() != null ? user.getEmployee().getManager().getEmployeeId() : null
         );
     }
 
@@ -56,12 +55,11 @@ public class UserServiceImpl implements UserService {
     public List<UserResponseDTO> getAllUsers() {
         List<UserResponseDTO> users = userRepository.findAll().stream()
             .map(user -> new UserResponseDTO(
-                user.getUserId(),
-                user.getUserName(),
                 user.getEmployee() != null ? user.getEmployee().getEmployeeId() : null,
                 user.getEmployee() != null ? user.getEmployee().getFirstName() : null,
                 user.getEmployee() != null ? user.getEmployee().getLastName() : null,
-                user.getEmployee() != null ? user.getEmployee().getEmail() : null
+                user.getEmployee() != null ? user.getEmployee().getEmail() : null,
+                user.getEmployee() != null && user.getEmployee().getManager() != null ? user.getEmployee().getManager().getEmployeeId() : null
             ))
             .collect(Collectors.toList());
 

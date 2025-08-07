@@ -8,12 +8,21 @@ public class JwtResponseDTO {
     private Integer userId;
     private String userName;
     private List<String> roles;
+    private UserResponseDTO infoUser;
 
     public JwtResponseDTO(String token, Integer userId, String userName, List<String> roles) {
         this.token = token;
         this.userId = userId;
         this.userName = userName;
         this.roles = roles;
+    }
+
+    public JwtResponseDTO(String token, Integer userId, String userName, List<String> roles, UserResponseDTO infoUser) {
+        this.token = token;
+        this.userId = userId;
+        this.userName = userName;
+        this.roles = roles;
+        this.infoUser = infoUser;
     }
 
     public String getToken() {
@@ -54,5 +63,13 @@ public class JwtResponseDTO {
 
     public void setRoles(List<String> roles) {
         this.roles = roles;
+    }
+
+    public UserResponseDTO getInfoUser() {
+        return infoUser;
+    }
+
+    public void setInfoUser(UserResponseDTO infoUser) {
+        this.infoUser = infoUser;
     }
 } 

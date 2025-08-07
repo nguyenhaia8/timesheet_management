@@ -35,7 +35,14 @@ Authorization: Bearer <your-jwt-token>
     "type": "Bearer",
     "userId": 1,
     "userName": "admin",
-    "roles": ["ROLE_ADMIN"]
+    "roles": ["ROLE_ADMIN"],
+            "infoUser": {
+          "employeeId": 1,
+          "employeeFirstName": "John",
+          "employeeLastName": "Doe",
+          "employeeEmail": "john.doe@company.com",
+          "managerId": null
+        }
   }
   ```
 
@@ -127,6 +134,12 @@ Authorization: Bearer <your-jwt-token>
 - **Description**: Get detailed timesheet by ID, including all entries and calculated total hours
 - **Authentication**: Required (ADMIN, MANAGER, or own timesheet)
 - **Response**: `TimeSheetDetailResponseDTO` (200 OK) or 404 Not Found
+
+#### Get TimeSheets by Current User
+- **GET** `/api/timesheets/user`
+- **Description**: Get all timesheets for the currently authenticated user (based on JWT token)
+- **Authentication**: Required (ADMIN, MANAGER, EMPLOYEE)
+- **Response**: `List<TimeSheetResponseDTO>` (200 OK)
 
 ---
 
@@ -428,7 +441,14 @@ Authorization: Bearer <your-jwt-token>
   "type": "string",
   "userId": "integer",
   "userName": "string",
-  "roles": ["string"]
+  "roles": ["string"],
+  "infoUser": {
+  "employeeId": "integer",
+  "employeeFirstName": "string",
+  "employeeLastName": "string",
+  "employeeEmail": "string",
+  "managerId": "integer"
+}
 }
 ```
 
@@ -444,11 +464,24 @@ Authorization: Bearer <your-jwt-token>
 {
   "timesheetId": "integer",
   "employeeId": "integer",
+  "employeeName": "string",
   "periodStartDate": "date",
   "periodEndDate": "date",
   "status": "string",
   "submissionDate": "datetime",
-  "totalHours": "decimal"
+  "totalHours": "decimal",
+  "timeSheetEntries": [
+    {
+      "entryId": "integer",
+      "timesheetId": "integer",
+      "date": "date",
+      "projectId": "integer",
+      "projectName": "string",
+      "taskDescription": "string",
+      "hoursWorked": "decimal"
+    }
+  ],
+  "calculatedTotalHours": "decimal"
 }
 ```
 
@@ -459,6 +492,7 @@ Authorization: Bearer <your-jwt-token>
   "timesheetId": "integer",
   "date": "date",
   "projectId": "integer",
+  "projectName": "string",
   "taskDescription": "string",
   "hoursWorked": "decimal"
 }
@@ -502,11 +536,11 @@ Authorization: Bearer <your-jwt-token>
 #### UserResponseDTO
 ```json
 {
-  "userId": "integer",
-  "userName": "string",
   "employeeId": "integer",
-  "isActive": "boolean",
-  "lastLogin": "datetime"
+  "employeeFirstName": "string",
+  "employeeLastName": "string",
+  "employeeEmail": "string",
+  "managerId": "integer"
 }
 ```
 

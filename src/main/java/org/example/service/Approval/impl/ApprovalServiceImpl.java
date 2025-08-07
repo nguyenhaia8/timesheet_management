@@ -105,6 +105,14 @@ public class ApprovalServiceImpl implements ApprovalService {
         approvalRepository.deleteById(id);
     }
 
+    @Override
+    public List<ApprovalResponseDTO> findByApprovedByEmployeeId(Integer employeeId) {
+        return approvalRepository.findByApprovedByEmployeeId(employeeId)
+                .stream()
+                .map(this::toApprovalResponseDTO)
+                .collect(Collectors.toList());
+    }
+
     private ApprovalResponseDTO toApprovalResponseDTO(Approval approval) {
         return new ApprovalResponseDTO(
                 approval.getApprovalId(),

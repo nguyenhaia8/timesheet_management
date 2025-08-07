@@ -4,6 +4,7 @@ import org.example.dto.request.LoginRequestDTO;
 import org.example.dto.request.SignupRequestDTO;
 import org.example.dto.response.JwtResponseDTO;
 import org.example.dto.response.MessageResponseDTO;
+import org.example.dto.response.UserResponseDTO;
 import org.example.model.Employee;
 import org.example.model.Role;
 import org.example.model.User;
@@ -110,8 +111,17 @@ public class AuthController {
             userDetails.setLastLogin(LocalDateTime.now());
             userRepository.save(userDetails);
 
+            // Create UserResponseDTO with employee information
+            UserResponseDTO infoUser = new UserResponseDTO(
+                userDetails.getEmployee() != null ? userDetails.getEmployee().getEmployeeId() : null,
+                userDetails.getEmployee() != null ? userDetails.getEmployee().getFirstName() : null,
+                userDetails.getEmployee() != null ? userDetails.getEmployee().getLastName() : null,
+                userDetails.getEmployee() != null ? userDetails.getEmployee().getEmail() : null,
+                userDetails.getEmployee() != null && userDetails.getEmployee().getManager() != null ? userDetails.getEmployee().getManager().getEmployeeId() : null
+            );
+
             System.out.println("Login successful, returning JWT token");
-            return ResponseEntity.ok(new JwtResponseDTO(jwt, userDetails.getUserId(), userDetails.getUserName(), roles));
+            return ResponseEntity.ok(new JwtResponseDTO(jwt, userDetails.getUserId(), userDetails.getUserName(), roles, infoUser));
         } catch (Exception e) {
             System.out.println("Login failed with exception: " + e.getMessage());
             e.printStackTrace();

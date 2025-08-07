@@ -84,6 +84,33 @@ public class ApprovalController {
         }
     }
 
+    @GetMapping("/my-approvals")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
+    public ResponseEntity<List<ApprovalResponseDTO>> getMyApprovals() {
+        try {
+            // Get the authenticated user's employeeId from the security context
+            org.springframework.security.core.Authentication authentication = 
+                org.springframework.security.core.context.SecurityContextHolder.getContext().getAuthentication();
+            
+            if (authentication == null || !authentication.isAuthenticated()) {
+                return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+            }
+            
+            // Cast to our User class to get employee information
+            org.example.model.User user = (org.example.model.User) authentication.getPrincipal();
+            Integer employeeId = user.getEmployee() != null ? user.getEmployee().getEmployeeId() : null;
+            
+            if (employeeId == null) {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+            
+            List<ApprovalResponseDTO> approvals = approvalService.findByApprovedByEmployeeId(employeeId);
+            return new ResponseEntity<>(approvals, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
     // Inner class for delete response
     public static class DeleteResponse {
         private boolean status;
