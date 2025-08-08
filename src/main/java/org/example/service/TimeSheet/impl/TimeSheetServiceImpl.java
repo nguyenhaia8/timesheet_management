@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -151,6 +152,14 @@ public class TimeSheetServiceImpl implements TimeSheetService {
     @Override
     public List<TimeSheetResponseDTO> findByEmployeeId(Integer employeeId) {
         return timeSheetRepository.findByEmployeeEmployeeId(employeeId)
+                .stream()
+                .map(this::toTimeSheetResponseDTO)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<TimeSheetResponseDTO> findByEmployeeIdAndPeriod(Integer employeeId, LocalDate periodStart, LocalDate periodEnd) {
+        return timeSheetRepository.findByEmployeeEmployeeIdAndPeriodStartDateBetween(employeeId, periodStart, periodEnd)
                 .stream()
                 .map(this::toTimeSheetResponseDTO)
                 .collect(Collectors.toList());

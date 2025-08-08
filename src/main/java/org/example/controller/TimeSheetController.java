@@ -12,6 +12,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.time.LocalDate;
 
 @RestController
 @RequestMapping("/api/timesheets")
@@ -111,6 +112,20 @@ public class TimeSheetController {
             }
             
             List<TimeSheetResponseDTO> timeSheets = timeSheetService.findByEmployeeId(employeeId);
+            return new ResponseEntity<>(timeSheets, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/employee/{employeeId}")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or #employeeId == authentication.principal.employee.employeeId")
+    public ResponseEntity<List<TimeSheetResponseDTO>> getTimeSheetsByEmployeeAndPeriod(
+            @PathVariable Integer employeeId,
+            @RequestParam LocalDate periodStart,
+            @RequestParam LocalDate periodEnd) {
+        try {
+            List<TimeSheetResponseDTO> timeSheets = timeSheetService.findByEmployeeIdAndPeriod(employeeId, periodStart, periodEnd);
             return new ResponseEntity<>(timeSheets, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

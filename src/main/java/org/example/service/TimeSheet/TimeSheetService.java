@@ -1,6 +1,7 @@
 package org.example.service.TimeSheet;
 
 import java.util.List;
+import java.time.LocalDate;
 
 import org.example.dto.request.TimeSheetRequestDTO;
 import org.example.dto.request.TimeSheetWithEntriesRequestDTO;
@@ -16,4 +17,5 @@ public interface TimeSheetService {
     void deleteById(Integer id);
     TimeSheetDetailResponseDTO findDetailById(Integer id);
     List<TimeSheetResponseDTO> findByEmployeeId(Integer employeeId);
+    List<TimeSheetResponseDTO> findByEmployeeIdAndPeriod(Integer employeeId, LocalDate periodStart, LocalDate periodEnd);
 }

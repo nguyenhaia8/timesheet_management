@@ -13,4 +13,5 @@ public interface TimeSheetRepository extends JpaRepository<TimeSheet, Integer> {
     List<TimeSheet> findByEmployeeEmployeeIdAndStatus(Integer employeeId, TimeSheet.TimeSheetStatus status);
     List<TimeSheet> findByPeriodStartDateBetween(LocalDate startDate, LocalDate endDate);
     List<TimeSheet> findByStatus(TimeSheet.TimeSheetStatus status);
+    List<TimeSheet> findByEmployeeEmployeeIdAndPeriodStartDateBetween(Integer employeeId, LocalDate startDate, LocalDate endDate);
 } 
