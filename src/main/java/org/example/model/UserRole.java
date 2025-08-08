@@ -26,6 +26,9 @@ public class UserRole {
     @Column(name = "createdAt")
     private LocalDateTime createdAt;
 
+    @Column(name = "updatedAt")
+    private LocalDateTime updatedAt;
+
     // Constructors
     public UserRole() {}
 
@@ -34,6 +37,7 @@ public class UserRole {
         this.role = role;
         this.assignedDate = LocalDate.now();
         this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
     // Getters and Setters
@@ -75,5 +79,13 @@ public class UserRole {
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
     }
 } 

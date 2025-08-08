@@ -89,6 +89,11 @@ public class AuthController {
                                ", matches 'password123': " + matchesPassword123);
     }
 
+    @GetMapping("/health")
+    public ResponseEntity<?> healthCheck() {
+        return ResponseEntity.ok("Auth service is running");
+    }
+
     @PostMapping("/login")
     public ResponseEntity<?> authenticateUser(@RequestBody LoginRequestDTO loginRequest) {
         try {
@@ -131,9 +136,13 @@ public class AuthController {
 
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@RequestBody SignupRequestDTO signupRequest) {
-        if (userRepository.findByUserName(signupRequest.getUserName()) != null) {
-            return ResponseEntity.badRequest().body(new MessageResponseDTO("Error: Username is already taken!"));
-        }
+        System.out.println("Signup request received for user: " + signupRequest.getUserName());
+        
+        try {
+            if (userRepository.findByUserName(signupRequest.getUserName()) != null) {
+                System.out.println("Username already exists: " + signupRequest.getUserName());
+                return ResponseEntity.badRequest().body(new MessageResponseDTO("Error: Username is already taken!"));
+            }
 
         // Validate department exists
         if (signupRequest.getDepartmentId() != null) {
@@ -206,5 +215,10 @@ public class AuthController {
         }
 
         return ResponseEntity.ok(new MessageResponseDTO("User registered successfully!"));
+        } catch (Exception e) {
+            System.out.println("Error during signup: " + e.getMessage());
+            e.printStackTrace();
+            return ResponseEntity.status(500).body(new MessageResponseDTO("Error: " + e.getMessage()));
+        }
     }
 } 

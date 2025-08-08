@@ -15,8 +15,12 @@ public class CorsConfig {
         
         // Allow specific origins
         configuration.addAllowedOrigin("http://localhost:3000");
+        configuration.addAllowedOrigin("http://localhost:3001");
+        configuration.addAllowedOrigin("http://localhost:3002");
         configuration.addAllowedOrigin("http://localhost:8080");
         configuration.addAllowedOrigin("http://127.0.0.1:3000");
+        configuration.addAllowedOrigin("http://127.0.0.1:3001");
+        configuration.addAllowedOrigin("http://127.0.0.1:3002");
         configuration.addAllowedOrigin("http://127.0.0.1:8080");
         
         // Allow all methods
