@@ -138,6 +138,18 @@ public class TimeSheetController {
             @RequestParam LocalDate periodEnd) {
         try {
             List<TimeSheetResponseDTO> timeSheets = timeSheetService.findByEmployeeIdAndPeriod(employeeId, periodStart, periodEnd);
+            
+            return new ResponseEntity<>(timeSheets, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/employee/{employeeId}/all")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or hasRole('EMPLOYEE')")
+    public ResponseEntity<List<TimeSheetResponseDTO>> getTimeSheetsByEmployeeId(@PathVariable Integer employeeId) {
+        try {
+            List<TimeSheetResponseDTO> timeSheets = timeSheetService.findByEmployeeId(employeeId);
             return new ResponseEntity<>(timeSheets, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
