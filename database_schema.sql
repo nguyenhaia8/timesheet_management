@@ -1,17 +1,15 @@
--- Create database
-CREATE DATABASE IF NOT EXISTS timesheet_management;
-USE timesheet_management;
+-- Create database aligned with create_test_data.sql
+CREATE DATABASE IF NOT EXISTS timesheetdb;
+USE timesheetdb;
 
--- Create Department table
 CREATE TABLE Department (
     departmentId INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL UNIQUE,
+    name VARCHAR(255) NOT NULL,
     headEmployeeId INT,
     createdAt DATETIME NOT NULL,
     updatedAt DATETIME NOT NULL
 );
 
--- Create Employee table
 CREATE TABLE Employee (
     employeeId INT AUTO_INCREMENT PRIMARY KEY,
     firstName VARCHAR(255) NOT NULL,
@@ -28,20 +26,18 @@ CREATE TABLE Employee (
 
 -- Add foreign key for Department.headEmployeeId after Employee table is created
 ALTER TABLE Department
-ADD FOREIGN KEY (headEmployeeId) REFERENCES Employee(employeeId);
+  ADD CONSTRAINT fk_department_head FOREIGN KEY (headEmployeeId) REFERENCES Employee(employeeId);
 
--- Create Client table
 CREATE TABLE Client (
     clientId INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    email VARCHAR(255),
-    phone VARCHAR(50),
+    clientName VARCHAR(255) NOT NULL,
+    contactEmail VARCHAR(255),
+    contactPhone VARCHAR(50),
     address TEXT,
     createdAt DATETIME NOT NULL,
     updatedAt DATETIME NOT NULL
 );
 
--- Create Project table
 CREATE TABLE Project (
     projectId INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -53,35 +49,32 @@ CREATE TABLE Project (
     status ENUM('PLANNING', 'ACTIVE', 'COMPLETED', 'CANCELLED') DEFAULT 'PLANNING',
     createdAt DATETIME NOT NULL,
     updatedAt DATETIME NOT NULL,
-    FOREIGN KEY (clientId) REFERENCES Client(clientId),
-    FOREIGN KEY (projectManagerId) REFERENCES Employee(employeeId)
+    CONSTRAINT fk_project_client FOREIGN KEY (clientId) REFERENCES Client(clientId),
+    CONSTRAINT fk_project_manager FOREIGN KEY (projectManagerId) REFERENCES Employee(employeeId)
 );
 
--- Create EmployeeProject (junction table for many-to-many relationship)
 CREATE TABLE EmployeeProject (
     employeeProjectId INT AUTO_INCREMENT PRIMARY KEY,
     employeeId INT NOT NULL,
     projectId INT NOT NULL,
-    startDate DATE NOT NULL,
-    endDate DATE,
+    roleInProject VARCHAR(100),
+    assignedDate DATE,
+    isActive BOOLEAN DEFAULT TRUE,
     createdAt DATETIME NOT NULL,
     updatedAt DATETIME NOT NULL,
-    FOREIGN KEY (employeeId) REFERENCES Employee(employeeId),
-    FOREIGN KEY (projectId) REFERENCES Project(projectId)
+    CONSTRAINT fk_emp_proj_employee FOREIGN KEY (employeeId) REFERENCES Employee(employeeId),
+    CONSTRAINT fk_emp_proj_project FOREIGN KEY (projectId) REFERENCES Project(projectId)
 );
 
--- Create Role table
 CREATE TABLE Role (
     roleId INT AUTO_INCREMENT PRIMARY KEY,
     roleName VARCHAR(50) NOT NULL UNIQUE,
     description TEXT,
-    permissions TEXT,
-    assignedDate DATETIME,
+    permissions JSON,
     createdAt DATETIME NOT NULL,
     updatedAt DATETIME NOT NULL
 );
 
--- Create User table
 CREATE TABLE User (
     userId INT AUTO_INCREMENT PRIMARY KEY,
     userName VARCHAR(255) NOT NULL UNIQUE,
@@ -91,22 +84,20 @@ CREATE TABLE User (
     lastLogin DATETIME,
     createdAt DATETIME NOT NULL,
     updatedAt DATETIME NOT NULL,
-    FOREIGN KEY (employeeId) REFERENCES Employee(employeeId)
+    CONSTRAINT fk_user_employee FOREIGN KEY (employeeId) REFERENCES Employee(employeeId)
 );
 
--- Create UserRole (junction table for many-to-many relationship)
 CREATE TABLE UserRole (
     userRoleId INT AUTO_INCREMENT PRIMARY KEY,
     userId INT NOT NULL,
     roleId INT NOT NULL,
-    assignedDate DATETIME,
-    createdAt DATETIME NOT NULL,
-    updatedAt DATETIME NOT NULL,
-    FOREIGN KEY (userId) REFERENCES User(userId),
-    FOREIGN KEY (roleId) REFERENCES Role(roleId)
+    assignedDate DATE,
+    createdAt DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updatedAt DATETIME NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_userrole_user FOREIGN KEY (userId) REFERENCES User(userId),
+    CONSTRAINT fk_userrole_role FOREIGN KEY (roleId) REFERENCES Role(roleId)
 );
 
--- Create Timesheet table
 CREATE TABLE Timesheet (
     timesheetId INT AUTO_INCREMENT PRIMARY KEY,
     employeeId INT NOT NULL,
@@ -117,10 +108,9 @@ CREATE TABLE Timesheet (
     totalHours DECIMAL(5,2) DEFAULT 0.00,
     createdAt DATETIME NOT NULL,
     updatedAt DATETIME NOT NULL,
-    FOREIGN KEY (employeeId) REFERENCES Employee(employeeId)
+    CONSTRAINT fk_timesheet_employee FOREIGN KEY (employeeId) REFERENCES Employee(employeeId)
 );
 
--- Create TimesheetEntry table
 CREATE TABLE TimesheetEntry (
     entryId INT AUTO_INCREMENT PRIMARY KEY,
     timesheetId INT NOT NULL,
@@ -130,27 +120,27 @@ CREATE TABLE TimesheetEntry (
     hoursWorked DECIMAL(4,2) NOT NULL,
     createdAt DATETIME NOT NULL,
     updatedAt DATETIME NOT NULL,
-    FOREIGN KEY (timesheetId) REFERENCES Timesheet(timesheetId),
-    FOREIGN KEY (projectId) REFERENCES Project(projectId)
+    CONSTRAINT fk_entry_timesheet FOREIGN KEY (timesheetId) REFERENCES Timesheet(timesheetId),
+    CONSTRAINT fk_entry_project FOREIGN KEY (projectId) REFERENCES Project(projectId)
 );
 
--- Create Approval table
 CREATE TABLE Approval (
     approvalId INT AUTO_INCREMENT PRIMARY KEY,
     timesheetId INT NOT NULL,
-    approverId INT NOT NULL,
+    approvedBy INT NOT NULL,
+    approvedAt DATETIME,
     status ENUM('PENDING', 'APPROVED', 'REJECTED') DEFAULT 'PENDING',
     comments TEXT,
-    approvalDate DATETIME,
     createdAt DATETIME NOT NULL,
     updatedAt DATETIME NOT NULL,
-    FOREIGN KEY (timesheetId) REFERENCES Timesheet(timesheetId),
-    FOREIGN KEY (approverId) REFERENCES Employee(employeeId)
+    CONSTRAINT fk_approval_timesheet FOREIGN KEY (timesheetId) REFERENCES Timesheet(timesheetId),
+    CONSTRAINT fk_approval_approvedby FOREIGN KEY (approvedBy) REFERENCES Employee(employeeId)
 );
 
 -- Create indexes for better performance
 CREATE INDEX idx_employee_email ON Employee(email);
 CREATE INDEX idx_employee_department ON Employee(departmentId);
+CREATE INDEX idx_client_name ON Client(clientName);
 CREATE INDEX idx_project_client ON Project(clientId);
 CREATE INDEX idx_project_manager ON Project(projectManagerId);
 CREATE INDEX idx_timesheet_employee ON Timesheet(employeeId);
@@ -159,5 +149,5 @@ CREATE INDEX idx_timesheet_entry_timesheet ON TimesheetEntry(timesheetId);
 CREATE INDEX idx_timesheet_entry_project ON TimesheetEntry(projectId);
 CREATE INDEX idx_timesheet_entry_date ON TimesheetEntry(date);
 CREATE INDEX idx_approval_timesheet ON Approval(timesheetId);
-CREATE INDEX idx_approval_approver ON Approval(approverId);
-CREATE INDEX idx_user_employee ON User(employeeId); 
+CREATE INDEX idx_approval_approvedby ON Approval(approvedBy);
+CREATE INDEX idx_user_employee ON User(employeeId);

@@ -14,17 +14,19 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // Initialize default roles if they don't exist
-        if (roleRepository.count() == 0) {
-            Role adminRole = new Role("ADMIN", "Administrator with full access");
-            Role managerRole = new Role("MANAGER", "Manager with department access");
-            Role employeeRole = new Role("EMPLOYEE", "Regular employee");
+        // Ensure all required roles exist (idempotent)
+        ensureRoleExists("ADMIN", "Administrator with full access");
+        ensureRoleExists("MANAGER", "Manager with department access");
+        ensureRoleExists("EMPLOYEE", "Regular employee");
+    }
 
-            roleRepository.save(adminRole);
-            roleRepository.save(managerRole);
-            roleRepository.save(employeeRole);
-
-            System.out.println("Default roles initialized successfully!");
-        }
+    private void ensureRoleExists(String roleName, String description) {
+        roleRepository.findByRoleName(roleName)
+            .orElseGet(() -> {
+                Role role = new Role(roleName, description);
+                Role saved = roleRepository.save(role);
+                System.out.println("Initialized missing role: " + roleName);
+                return saved;
+            });
     }
 } 
