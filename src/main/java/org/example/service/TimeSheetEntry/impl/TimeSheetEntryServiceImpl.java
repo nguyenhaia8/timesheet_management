@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.time.LocalDateTime;
 
 @Service
 public class TimeSheetEntryServiceImpl implements TimeSheetEntryService {
@@ -43,6 +44,9 @@ public class TimeSheetEntryServiceImpl implements TimeSheetEntryService {
         timeSheetEntry.setProject(project);
         timeSheetEntry.setTaskDescription(timeSheetEntryRequestDTO.taskDescription());
         timeSheetEntry.setHoursWorked(timeSheetEntryRequestDTO.hoursWorked());
+        // Ensure timestamps to satisfy NOT NULL constraints
+        timeSheetEntry.setCreatedAt(LocalDateTime.now());
+        timeSheetEntry.setUpdatedAt(LocalDateTime.now());
 
         TimeSheetEntry savedEntry = timeSheetEntryRepository.save(timeSheetEntry);
         return toTimeSheetEntryResponseDTO(savedEntry);

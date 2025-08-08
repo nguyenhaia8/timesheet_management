@@ -61,6 +61,9 @@ public class TimeSheetServiceImpl implements TimeSheetService {
         timeSheet.setPeriodEndDate(dto.periodEndDate());
         timeSheet.setStatus(TimeSheet.TimeSheetStatus.DRAFT);
         timeSheet.setSubmissionDate(LocalDateTime.now());
+        // Ensure non-null timestamps for DB constraints
+        timeSheet.setCreatedAt(LocalDateTime.now());
+        timeSheet.setUpdatedAt(LocalDateTime.now());
 
         TimeSheet saved = timeSheetRepository.save(timeSheet);
         return toTimeSheetResponseDTO(saved);
@@ -78,8 +81,22 @@ public class TimeSheetServiceImpl implements TimeSheetService {
         timeSheet.setPeriodStartDate(dto.periodStartDate());
         timeSheet.setPeriodEndDate(dto.periodEndDate());
         timeSheet.setStatus(TimeSheet.TimeSheetStatus.valueOf(dto.status()));
-        timeSheet.setSubmissionDate(dto.submissionDate());
-        timeSheet.setTotalHours(dto.totalHours());
+        // Auto-fill submissionDate if not provided
+        timeSheet.setSubmissionDate(dto.submissionDate() != null ? dto.submissionDate() : LocalDateTime.now());
+
+        // Calculate total hours from entries if not provided
+        BigDecimal computedTotal = BigDecimal.ZERO;
+        if (dto.timeSheetEntries() != null && !dto.timeSheetEntries().isEmpty()) {
+            for (TimeSheetEntryRequestDTO entryDto : dto.timeSheetEntries()) {
+                if (entryDto.hoursWorked() != null) {
+                    computedTotal = computedTotal.add(entryDto.hoursWorked());
+                }
+            }
+        }
+        timeSheet.setTotalHours(dto.totalHours() != null ? dto.totalHours() : computedTotal);
+        // Ensure non-null timestamps for DB constraints
+        timeSheet.setCreatedAt(LocalDateTime.now());
+        timeSheet.setUpdatedAt(LocalDateTime.now());
 
         TimeSheet savedTimeSheet = timeSheetRepository.save(timeSheet);
 

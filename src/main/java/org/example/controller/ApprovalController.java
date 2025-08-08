@@ -13,7 +13,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/approvals")
-@CrossOrigin(origins = "*", maxAge = 3600)
 public class ApprovalController {
 
     @Autowired
@@ -46,7 +45,7 @@ public class ApprovalController {
     }
 
     @PostMapping
-    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or hasRole('EMPLOYEE')")
     public ResponseEntity<ApprovalResponseDTO> createApproval(@RequestBody ApprovalRequestDTO approvalRequestDTO) {
         try {
             ApprovalResponseDTO created = approvalService.save(approvalRequestDTO);

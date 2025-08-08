@@ -32,8 +32,16 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             throws ServletException, IOException {
         try {
             String jwt = getJwtFromRequest(request);
+            if (logger.isDebugEnabled()) {
+                logger.debug("JWT header present: {}", StringUtils.hasText(jwt));
+            }
 
-            if (StringUtils.hasText(jwt) && tokenProvider.validateToken(jwt)) {
+            boolean valid = StringUtils.hasText(jwt) && tokenProvider.validateToken(jwt);
+            if (logger.isDebugEnabled()) {
+                logger.debug("JWT valid: {} for uri {}", valid, request.getRequestURI());
+            }
+
+            if (valid) {
                 String username = tokenProvider.getUsernameFromJWT(jwt);
 
                 UserDetails userDetails = userService.loadUserByUsername(username);

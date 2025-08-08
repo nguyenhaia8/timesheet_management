@@ -3,6 +3,9 @@
 
 USE timesheetdb;
 
+-- Disable safe updates for this session to allow updates filtered by non-key columns
+SET SQL_SAFE_UPDATES = 0;
+
 -- Clear existing data (optional - uncomment if you want to start fresh)
 -- DELETE FROM UserRole;
 -- DELETE FROM User;
@@ -189,3 +192,6 @@ SELECT '=== TEST LOGIN CREDENTIALS ===' as info;
 SELECT userName, 'password123' as password, 
        (SELECT GROUP_CONCAT(r.roleName) FROM UserRole ur JOIN Role r ON ur.roleId = r.roleId WHERE ur.userId = u.userId) as roles
 FROM User u; 
+
+-- Re-enable safe updates at the end of the script
+SET SQL_SAFE_UPDATES = 1;

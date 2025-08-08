@@ -16,7 +16,19 @@ import java.time.LocalDate;
 
 @RestController
 @RequestMapping("/api/timesheets")
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(
+        origins = {
+            "http://localhost:3000",
+            "http://localhost:3001",
+            "http://localhost:3002",
+            "http://127.0.0.1:3000",
+            "http://127.0.0.1:3001",
+            "http://127.0.0.1:3002"
+        },
+        allowedHeaders = "*",
+        allowCredentials = "true",
+        maxAge = 3600
+)
 public class TimeSheetController {
 
     private final TimeSheetService timeSheetService;
@@ -119,7 +131,7 @@ public class TimeSheetController {
     }
 
     @GetMapping("/employee/{employeeId}")
-    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or #employeeId == authentication.principal.employee.employeeId")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or hasRole('EMPLOYEE')")
     public ResponseEntity<List<TimeSheetResponseDTO>> getTimeSheetsByEmployeeAndPeriod(
             @PathVariable Integer employeeId,
             @RequestParam LocalDate periodStart,
