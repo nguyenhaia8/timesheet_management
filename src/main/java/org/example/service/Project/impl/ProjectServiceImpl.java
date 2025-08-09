@@ -108,6 +108,9 @@ public class ProjectServiceImpl implements ProjectService {
                 project.getEndDate(),
                 project.getClient() != null ? project.getClient().getClientId() : null,
                 project.getClient() != null ? project.getClient().getClientName() : null,
+                project.getClient() != null ? project.getClient().getContactEmail() : null,
+                project.getClient() != null ? project.getClient().getContactPhone() : null,
+                project.getClient() != null ? project.getClient().getAddress() : null,
                 project.getProjectManager() != null ? project.getProjectManager().getEmployeeId() : null,
                 project.getProjectManager() != null ? 
                     project.getProjectManager().getFirstName() + " " + project.getProjectManager().getLastName() : null,
