@@ -11,43 +11,43 @@ WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
  =========|_|==============|___/=/_/_/_/
 [32m :: Spring Boot :: [39m              [2m (v3.2.0)[0;39m
 
-[2m2025-08-08T00:21:20.595-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.TimeSheetManagementApplication      [0;39m [2m:[0;39m Starting TimeSheetManagementApplication using Java 24.0.1 with PID 18682 (/Users/nguyenhai/MyProject/TimeSheetManagement/TimeSheetManagement/target/classes started by nguyenhai in /Users/nguyenhai/MyProject/TimeSheetManagement/TimeSheetManagement)
-[2m2025-08-08T00:21:20.596-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.TimeSheetManagementApplication      [0;39m [2m:[0;39m No active profile set, falling back to 1 default profile: "default"
-[2m2025-08-08T00:21:20.635-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [2m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-[2m2025-08-08T00:21:20.635-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [2m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-[2m2025-08-08T00:21:20.905-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[2m2025-08-08T00:21:20.940-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Finished Spring Data repository scanning in 31 ms. Found 11 JPA repository interfaces.
+[2m2025-08-09T16:03:48.292-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.TimeSheetManagementApplication      [0;39m [2m:[0;39m Starting TimeSheetManagementApplication using Java 24.0.1 with PID 11282 (/Users/nguyenhai/MyProject/TimeSheetManagement/TimeSheetManagement/target/classes started by nguyenhai in /Users/nguyenhai/MyProject/TimeSheetManagement/TimeSheetManagement)
+[2m2025-08-09T16:03:48.294-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.TimeSheetManagementApplication      [0;39m [2m:[0;39m No active profile set, falling back to 1 default profile: "default"
+[2m2025-08-09T16:03:48.324-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [2m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2m2025-08-09T16:03:48.324-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [2m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2m2025-08-09T16:03:48.604-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2m2025-08-09T16:03:48.640-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Finished Spring Data repository scanning in 33 ms. Found 11 JPA repository interfaces.
 WARNING: A restricted method in java.lang.System has been called
 WARNING: java.lang.System::load has been called by org.apache.tomcat.jni.Library in an unnamed module (file:/Users/nguyenhai/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.16/tomcat-embed-core-10.1.16.jar)
 WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
 WARNING: Restricted methods will be blocked in a future release unless native access is enabled
 
-[2m2025-08-08T00:21:21.216-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port 8080 (http)
-[2m2025-08-08T00:21:21.220-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.apache.catalina.core.StandardService  [0;39m [2m:[0;39m Starting service [Tomcat]
-[2m2025-08-08T00:21:21.220-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.apache.catalina.core.StandardEngine   [0;39m [2m:[0;39m Starting Servlet engine: [Apache Tomcat/10.1.16]
-[2m2025-08-08T00:21:21.235-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [2m:[0;39m Initializing Spring embedded WebApplicationContext
-[2m2025-08-08T00:21:21.236-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 599 ms
-[2m2025-08-08T00:21:21.304-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.hibernate.jpa.internal.util.LogHelper [0;39m [2m:[0;39m HHH000204: Processing PersistenceUnitInfo [name: default]
-[2m2025-08-08T00:21:21.322-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.Version                   [0;39m [2m:[0;39m HHH000412: Hibernate ORM core version 6.3.1.Final
-[2m2025-08-08T00:21:21.334-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.h.c.internal.RegionFactoryInitiator   [0;39m [2m:[0;39m HHH000026: Second-level cache disabled
-[2m2025-08-08T00:21:21.422-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.o.j.p.SpringPersistenceUnitInfo     [0;39m [2m:[0;39m No LoadTimeWeaver setup: ignoring JPA class transformer
-[2m2025-08-08T00:21:21.431-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Starting...
-[2m2025-08-08T00:21:21.619-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mcom.zaxxer.hikari.pool.HikariPool       [0;39m [2m:[0;39m HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2d5449d2
-[2m2025-08-08T00:21:21.620-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Start completed.
-[2m2025-08-08T00:21:21.642-05:00[0;39m [33m WARN[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.orm.deprecation           [0;39m [2m:[0;39m HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-[2m2025-08-08T00:21:22.077-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.h.e.t.j.p.i.JtaPlatformInitiator      [0;39m [2m:[0;39m HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[2m2025-08-08T00:21:22.169-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Initialized JPA EntityManagerFactory for persistence unit 'default'
-[2m2025-08-08T00:21:22.353-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m Filter 'jwtAuthenticationFilter' configured for use
-[2m2025-08-08T00:21:22.624-05:00[0;39m [33m WARN[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mJpaBaseConfiguration$JpaWebConfiguration[0;39m [2m:[0;39m spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[2m2025-08-08T00:21:22.724-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m 39 mappings in 'requestMappingHandlerMapping'
-[2m2025-08-08T00:21:22.785-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.w.s.handler.SimpleUrlHandlerMapping [0;39m [2m:[0;39m Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-[2m2025-08-08T00:21:22.814-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.s.web.DefaultSecurityFilterChain    [0;39m [2m:[0;39m Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6d6b452f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5a50b372, org.springframework.security.web.context.SecurityContextHolderFilter@2b03fc31, org.springframework.security.web.header.HeaderWriterFilter@366faf62, org.springframework.web.filter.CorsFilter@2acc6dee, org.springframework.security.web.authentication.logout.LogoutFilter@2ef84c46, org.example.security.JwtAuthenticationFilter@692271c6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e53194e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5c6c7c8a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4e7586fe, org.springframework.security.web.session.SessionManagementFilter@7ffa6edc, org.springframework.security.web.access.ExceptionTranslationFilter@22b0769b, org.springframework.security.web.access.intercept.AuthorizationFilter@15f45f17]
-[2m2025-08-08T00:21:22.856-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerAdapter[0;39m [2m:[0;39m ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-[2m2025-08-08T00:21:22.873-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.m.m.a.ExceptionHandlerExceptionResolver[0;39m [2m:[0;39m ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-[2m2025-08-08T00:21:22.950-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [2m:[0;39m LiveReload server is running on port 35729
-[2m2025-08-08T00:21:22.964-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port 8080 (http) with context path ''
-[2m2025-08-08T00:21:22.968-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.TimeSheetManagementApplication      [0;39m [2m:[0;39m Started TimeSheetManagementApplication in 2.522 seconds (process running for 2.747)
-[2m2025-08-08T00:21:23.036-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+[2m2025-08-09T16:03:48.930-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port 8080 (http)
+[2m2025-08-09T16:03:48.933-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.apache.catalina.core.StandardService  [0;39m [2m:[0;39m Starting service [Tomcat]
+[2m2025-08-09T16:03:48.934-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.apache.catalina.core.StandardEngine   [0;39m [2m:[0;39m Starting Servlet engine: [Apache Tomcat/10.1.16]
+[2m2025-08-09T16:03:48.955-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [2m:[0;39m Initializing Spring embedded WebApplicationContext
+[2m2025-08-09T16:03:48.956-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 632 ms
+[2m2025-08-09T16:03:49.023-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.hibernate.jpa.internal.util.LogHelper [0;39m [2m:[0;39m HHH000204: Processing PersistenceUnitInfo [name: default]
+[2m2025-08-09T16:03:49.044-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.Version                   [0;39m [2m:[0;39m HHH000412: Hibernate ORM core version 6.3.1.Final
+[2m2025-08-09T16:03:49.057-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.h.c.internal.RegionFactoryInitiator   [0;39m [2m:[0;39m HHH000026: Second-level cache disabled
+[2m2025-08-09T16:03:49.163-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.o.j.p.SpringPersistenceUnitInfo     [0;39m [2m:[0;39m No LoadTimeWeaver setup: ignoring JPA class transformer
+[2m2025-08-09T16:03:49.173-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Starting...
+[2m2025-08-09T16:03:49.358-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mcom.zaxxer.hikari.pool.HikariPool       [0;39m [2m:[0;39m HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@158e3932
+[2m2025-08-09T16:03:49.359-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Start completed.
+[2m2025-08-09T16:03:49.382-05:00[0;39m [33m WARN[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.orm.deprecation           [0;39m [2m:[0;39m HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2m2025-08-09T16:03:49.834-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.h.e.t.j.p.i.JtaPlatformInitiator      [0;39m [2m:[0;39m HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2m2025-08-09T16:03:49.957-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2m2025-08-09T16:03:50.149-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m Filter 'jwtAuthenticationFilter' configured for use
+[2m2025-08-09T16:03:50.418-05:00[0;39m [33m WARN[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mJpaBaseConfiguration$JpaWebConfiguration[0;39m [2m:[0;39m spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2m2025-08-09T16:03:50.500-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m 40 mappings in 'requestMappingHandlerMapping'
+[2m2025-08-09T16:03:50.558-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.w.s.handler.SimpleUrlHandlerMapping [0;39m [2m:[0;39m Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+[2m2025-08-09T16:03:50.585-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.s.web.DefaultSecurityFilterChain    [0;39m [2m:[0;39m Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@58c314ea, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7d38ecc4, org.springframework.security.web.context.SecurityContextHolderFilter@555637fb, org.springframework.security.web.header.HeaderWriterFilter@1dd1879c, org.springframework.web.filter.CorsFilter@13ca70f8, org.springframework.security.web.authentication.logout.LogoutFilter@3072a18d, org.example.security.JwtAuthenticationFilter@56be6a46, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@22843cf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@271335ba, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1b2de2ad, org.springframework.security.web.session.SessionManagementFilter@41aec831, org.springframework.security.web.access.ExceptionTranslationFilter@25396db3, org.springframework.security.web.access.intercept.AuthorizationFilter@3272e58b]
+[2m2025-08-09T16:03:50.627-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerAdapter[0;39m [2m:[0;39m ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+[2m2025-08-09T16:03:50.644-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.m.m.a.ExceptionHandlerExceptionResolver[0;39m [2m:[0;39m ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+[2m2025-08-09T16:03:50.720-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [2m:[0;39m LiveReload server is running on port 35729
+[2m2025-08-09T16:03:50.733-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port 8080 (http) with context path ''
+[2m2025-08-09T16:03:50.738-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.TimeSheetManagementApplication      [0;39m [2m:[0;39m Started TimeSheetManagementApplication in 2.594 seconds (process running for 2.758)
+[2m2025-08-09T16:03:50.810-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
     select
         r1_0.roleId,
         r1_0.createdAt,
@@ -71,7 +71,7 @@ Hibernate:
         Role r1_0 
     where
         r1_0.roleName=?
-[2m2025-08-08T00:21:23.043-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+[2m2025-08-09T16:03:50.816-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
     select
         r1_0.roleId,
         r1_0.createdAt,
@@ -95,7 +95,7 @@ Hibernate:
         Role r1_0 
     where
         r1_0.roleName=?
-[2m2025-08-08T00:21:23.045-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+[2m2025-08-09T16:03:50.818-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
     select
         r1_0.roleId,
         r1_0.createdAt,
@@ -119,24 +119,24 @@ Hibernate:
         Role r1_0 
     where
         r1_0.roleName=?
-[2m2025-08-08T00:21:32.943-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [2m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
-[2m2025-08-08T00:21:32.944-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
-[2m2025-08-08T00:21:32.944-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected StandardServletMultipartResolver
-[2m2025-08-08T00:21:32.944-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected AcceptHeaderLocaleResolver
-[2m2025-08-08T00:21:32.944-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected FixedThemeResolver
-[2m2025-08-08T00:21:32.945-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6d352e03
-[2m2025-08-08T00:21:32.945-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected org.springframework.web.servlet.support.SessionFlashMapManager@4c8af254
-[2m2025-08-08T00:21:32.945-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-[2m2025-08-08T00:21:32.945-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 1 ms
-[2m2025-08-08T00:21:32.951-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT header present: false
-[2m2025-08-08T00:21:32.951-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT valid: false for uri /api/auth/login
-[2m2025-08-08T00:21:32.953-05:00[0;39m [33m WARN[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.w.s.h.HandlerMappingIntrospector    [0;39m [2m:[0;39m Cache miss for REQUEST dispatch to '/api/auth/login' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
-[2m2025-08-08T00:21:32.957-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m POST "/api/auth/login", parameters={}
-[2m2025-08-08T00:21:32.958-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped to org.example.controller.AuthController#authenticateUser(LoginRequestDTO)
-[2m2025-08-08T00:21:32.988-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mm.m.a.RequestResponseBodyMethodProcessor[0;39m [2m:[0;39m Read "application/json;charset=UTF-8" to [org.example.dto.request.LoginRequestDTO@60ac30fc]
-Attempting login for user: test222
-[2m2025-08-08T00:21:33.085-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m Loading user by username: test222
-[2m2025-08-08T00:21:33.087-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+[2m2025-08-09T16:03:53.263-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [2m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2m2025-08-09T16:03:53.263-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
+[2m2025-08-09T16:03:53.263-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected StandardServletMultipartResolver
+[2m2025-08-09T16:03:53.263-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected AcceptHeaderLocaleResolver
+[2m2025-08-09T16:03:53.263-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected FixedThemeResolver
+[2m2025-08-09T16:03:53.264-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@35078a5e
+[2m2025-08-09T16:03:53.264-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected org.springframework.web.servlet.support.SessionFlashMapManager@4fc398b
+[2m2025-08-09T16:03:53.264-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+[2m2025-08-09T16:03:53.264-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 1 ms
+[2m2025-08-09T16:03:53.271-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT header present: false
+[2m2025-08-09T16:03:53.271-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT valid: false for uri /api/auth/login
+[2m2025-08-09T16:03:53.272-05:00[0;39m [33m WARN[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.w.s.h.HandlerMappingIntrospector    [0;39m [2m:[0;39m Cache miss for REQUEST dispatch to '/api/auth/login' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+[2m2025-08-09T16:03:53.277-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m POST "/api/auth/login", parameters={}
+[2m2025-08-09T16:03:53.278-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped to org.example.controller.AuthController#authenticateUser(LoginRequestDTO)
+[2m2025-08-09T16:03:53.308-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mm.m.a.RequestResponseBodyMethodProcessor[0;39m [2m:[0;39m Read "application/json;charset=UTF-8" to [org.example.dto.request.LoginRequestDTO@3c79c0e4]
+Attempting login for user: admin
+[2m2025-08-09T16:03:53.404-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m Loading user by username: admin
+[2m2025-08-09T16:03:53.407-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
     select
         u1_0.userId,
         u1_0.createdAt,
@@ -164,7 +164,7 @@ Hibernate:
         User u1_0 
     where
         u1_0.userName=?
-[2m2025-08-08T00:21:33.096-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+[2m2025-08-09T16:03:53.415-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
     select
         ur1_0.userId,
         ur1_0.userRoleId,
@@ -206,9 +206,9 @@ Hibernate:
             on r1_0.roleId=ur1_0.roleId 
     where
         ur1_0.userId=?
-[2m2025-08-08T00:21:33.099-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m User found: test222, isActive: true, authorities: [ROLE_EMPLOYEE]
-Authentication successful for user: test222
-[2m2025-08-08T00:21:33.216-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+[2m2025-08-09T16:03:53.418-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m User found: admin, isActive: true, authorities: [ROLE_ADMIN]
+Authentication successful for user: admin
+[2m2025-08-09T16:03:53.536-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
     update
         User 
     set
@@ -234,7 +234,7 @@ Hibernate:
         userName=? 
     where
         userId=?
-[2m2025-08-08T00:21:33.222-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+[2m2025-08-09T16:03:53.542-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
     select
         e1_0.employeeId,
         e1_0.createdAt,
@@ -265,13 +265,13 @@ Hibernate:
     where
         e1_0.employeeId=?
 Login successful, returning JWT token
-[2m2025-08-08T00:21:33.232-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-[2m2025-08-08T00:21:33.232-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Writing [org.example.dto.response.JwtResponseDTO@3f7f98e3]
-[2m2025-08-08T00:21:33.236-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed 200 OK
-[2m2025-08-08T00:21:33.250-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT header present: true
-[2m2025-08-08T00:21:33.258-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT valid: true for uri /api/approvals
-[2m2025-08-08T00:21:33.259-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m Loading user by username: test222
-[2m2025-08-08T00:21:33.259-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+[2m2025-08-09T16:03:53.551-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2m2025-08-09T16:03:53.551-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Writing [org.example.dto.response.JwtResponseDTO@1aab6a9a]
+[2m2025-08-09T16:03:53.556-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed 200 OK
+[2m2025-08-09T16:03:53.566-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT header present: true
+[2m2025-08-09T16:03:53.576-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT valid: true for uri /api/departments
+[2m2025-08-09T16:03:53.577-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m Loading user by username: admin
+[2m2025-08-09T16:03:53.578-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
     select
         u1_0.userId,
         u1_0.createdAt,
@@ -299,7 +299,7 @@ Hibernate:
         User u1_0 
     where
         u1_0.userName=?
-[2m2025-08-08T00:21:33.261-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+[2m2025-08-09T16:03:53.580-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
     select
         ur1_0.userId,
         ur1_0.userRoleId,
@@ -341,41 +341,28 @@ Hibernate:
             on r1_0.roleId=ur1_0.roleId 
     where
         ur1_0.userId=?
-[2m2025-08-08T00:21:33.262-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m User found: test222, isActive: true, authorities: [ROLE_EMPLOYEE]
-[2m2025-08-08T00:21:33.263-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m POST "/api/approvals", parameters={}
-[2m2025-08-08T00:21:33.263-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped to org.example.controller.ApprovalController#createApproval(ApprovalRequestDTO)
-[2m2025-08-08T00:21:33.266-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mm.m.a.RequestResponseBodyMethodProcessor[0;39m [2m:[0;39m Read "application/json;charset=UTF-8" to [ApprovalRequestDTO[timesheetId=8, approvedBy=11, status=PENDING, comments=]]
-[2m2025-08-08T00:21:33.280-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+[2m2025-08-09T16:03:53.581-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m User found: admin, isActive: true, authorities: [ROLE_ADMIN]
+[2m2025-08-09T16:03:53.582-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m GET "/api/departments", parameters={}
+[2m2025-08-09T16:03:53.582-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped to org.example.controller.DepartmentController#getAllDepartments()
+[2m2025-08-09T16:03:53.599-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
     select
-        ts1_0.timesheetId,
-        ts1_0.createdAt,
-        ts1_0.employeeId,
-        ts1_0.periodEndDate,
-        ts1_0.periodStartDate,
-        ts1_0.status,
-        ts1_0.submissionDate,
-        ts1_0.totalHours,
-        ts1_0.updatedAt 
+        d1_0.departmentId,
+        d1_0.createdAt,
+        d1_0.headEmployeeId,
+        d1_0.name,
+        d1_0.updatedAt 
     from
-        Timesheet ts1_0 
-    where
-        ts1_0.timesheetId=?
+        Department d1_0
 Hibernate: 
     select
-        ts1_0.timesheetId,
-        ts1_0.createdAt,
-        ts1_0.employeeId,
-        ts1_0.periodEndDate,
-        ts1_0.periodStartDate,
-        ts1_0.status,
-        ts1_0.submissionDate,
-        ts1_0.totalHours,
-        ts1_0.updatedAt 
+        d1_0.departmentId,
+        d1_0.createdAt,
+        d1_0.headEmployeeId,
+        d1_0.name,
+        d1_0.updatedAt 
     from
-        Timesheet ts1_0 
-    where
-        ts1_0.timesheetId=?
-[2m2025-08-08T00:21:33.283-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+        Department d1_0
+[2m2025-08-09T16:03:53.602-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
     select
         e1_0.employeeId,
         e1_0.createdAt,
@@ -405,27 +392,133 @@ Hibernate:
         Employee e1_0 
     where
         e1_0.employeeId=?
-[2m2025-08-08T00:21:33.287-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    insert 
-    into
-        Approval
-        (approvedAt, approvedBy, comments, createdAt, status, timesheetId, updatedAt) 
-    values
-        (?, ?, ?, ?, ?, ?, ?)
+[2m2025-08-09T16:03:53.604-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+    select
+        e1_0.employeeId,
+        e1_0.createdAt,
+        e1_0.departmentId,
+        e1_0.email,
+        e1_0.firstName,
+        e1_0.lastName,
+        e1_0.managerId,
+        e1_0.position,
+        e1_0.updatedAt 
+    from
+        Employee e1_0 
+    where
+        e1_0.employeeId=?
 Hibernate: 
-    insert 
-    into
-        Approval
-        (approvedAt, approvedBy, comments, createdAt, status, timesheetId, updatedAt) 
-    values
-        (?, ?, ?, ?, ?, ?, ?)
-[2m2025-08-08T00:21:33.294-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-[2m2025-08-08T00:21:33.296-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Writing [ApprovalResponseDTO[approvalId=6, timesheetId=8, approvedBy=11, approvedByName=Adis Smith, approvedA (truncated)...]
-[2m2025-08-08T00:21:33.296-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed 201 CREATED
-[2m2025-08-08T00:21:40.584-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[   File Watcher][0;39m [2m[0;39m[36mrtingClassPathChangeChangedEventListener[0;39m [2m:[0;39m Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
-[2m2025-08-08T00:21:40.590-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[       Thread-5][0;39m [2m[0;39m[36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Closing JPA EntityManagerFactory for persistence unit 'default'
-[2m2025-08-08T00:21:40.592-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[       Thread-5][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Shutdown initiated...
-[2m2025-08-08T00:21:40.594-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[       Thread-5][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Shutdown completed.
+    select
+        e1_0.employeeId,
+        e1_0.createdAt,
+        e1_0.departmentId,
+        e1_0.email,
+        e1_0.firstName,
+        e1_0.lastName,
+        e1_0.managerId,
+        e1_0.position,
+        e1_0.updatedAt 
+    from
+        Employee e1_0 
+    where
+        e1_0.employeeId=?
+[2m2025-08-09T16:03:53.605-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+    select
+        e1_0.employeeId,
+        e1_0.createdAt,
+        e1_0.departmentId,
+        e1_0.email,
+        e1_0.firstName,
+        e1_0.lastName,
+        e1_0.managerId,
+        e1_0.position,
+        e1_0.updatedAt 
+    from
+        Employee e1_0 
+    where
+        e1_0.employeeId=?
+Hibernate: 
+    select
+        e1_0.employeeId,
+        e1_0.createdAt,
+        e1_0.departmentId,
+        e1_0.email,
+        e1_0.firstName,
+        e1_0.lastName,
+        e1_0.managerId,
+        e1_0.position,
+        e1_0.updatedAt 
+    from
+        Employee e1_0 
+    where
+        e1_0.employeeId=?
+[2m2025-08-09T16:03:53.606-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+    select
+        e1_0.employeeId,
+        e1_0.createdAt,
+        e1_0.departmentId,
+        e1_0.email,
+        e1_0.firstName,
+        e1_0.lastName,
+        e1_0.managerId,
+        e1_0.position,
+        e1_0.updatedAt 
+    from
+        Employee e1_0 
+    where
+        e1_0.employeeId=?
+Hibernate: 
+    select
+        e1_0.employeeId,
+        e1_0.createdAt,
+        e1_0.departmentId,
+        e1_0.email,
+        e1_0.firstName,
+        e1_0.lastName,
+        e1_0.managerId,
+        e1_0.position,
+        e1_0.updatedAt 
+    from
+        Employee e1_0 
+    where
+        e1_0.employeeId=?
+[2m2025-08-09T16:03:53.607-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+    select
+        e1_0.employeeId,
+        e1_0.createdAt,
+        e1_0.departmentId,
+        e1_0.email,
+        e1_0.firstName,
+        e1_0.lastName,
+        e1_0.managerId,
+        e1_0.position,
+        e1_0.updatedAt 
+    from
+        Employee e1_0 
+    where
+        e1_0.employeeId=?
+Hibernate: 
+    select
+        e1_0.employeeId,
+        e1_0.createdAt,
+        e1_0.departmentId,
+        e1_0.email,
+        e1_0.firstName,
+        e1_0.lastName,
+        e1_0.managerId,
+        e1_0.position,
+        e1_0.updatedAt 
+    from
+        Employee e1_0 
+    where
+        e1_0.employeeId=?
+[2m2025-08-09T16:03:53.608-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Using 'application/json', given [application/json] and supported [application/json, application/*+json]
+[2m2025-08-09T16:03:53.609-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Writing [[DepartmentResponseDTO[departmentId=1, name=Software Development, headEmployeeId=1, headEmployeeName (truncated)...]
+[2m2025-08-09T16:03:53.610-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed 200 OK
+[2m2025-08-09T16:04:01.255-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[   File Watcher][0;39m [2m[0;39m[36mrtingClassPathChangeChangedEventListener[0;39m [2m:[0;39m Restarting due to 2 class path changes (0 additions, 0 deletions, 2 modifications)
+[2m2025-08-09T16:04:01.273-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[       Thread-5][0;39m [2m[0;39m[36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Closing JPA EntityManagerFactory for persistence unit 'default'
+[2m2025-08-09T16:04:01.276-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[       Thread-5][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Shutdown initiated...
+[2m2025-08-09T16:04:01.281-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[       Thread-5][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-1 - Shutdown completed.
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -435,35 +528,35 @@ Hibernate:
  =========|_|==============|___/=/_/_/_/
 [32m :: Spring Boot :: [39m              [2m (v3.2.0)[0;39m
 
-[2m2025-08-08T00:21:40.627-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.TimeSheetManagementApplication      [0;39m [2m:[0;39m Starting TimeSheetManagementApplication using Java 24.0.1 with PID 18682 (/Users/nguyenhai/MyProject/TimeSheetManagement/TimeSheetManagement/target/classes started by nguyenhai in /Users/nguyenhai/MyProject/TimeSheetManagement/TimeSheetManagement)
-[2m2025-08-08T00:21:40.627-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.TimeSheetManagementApplication      [0;39m [2m:[0;39m No active profile set, falling back to 1 default profile: "default"
-[2m2025-08-08T00:21:40.693-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[2m2025-08-08T00:21:40.704-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Finished Spring Data repository scanning in 11 ms. Found 11 JPA repository interfaces.
-[2m2025-08-08T00:21:40.776-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port 8080 (http)
-[2m2025-08-08T00:21:40.777-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.apache.catalina.core.StandardService  [0;39m [2m:[0;39m Starting service [Tomcat]
-[2m2025-08-08T00:21:40.777-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.apache.catalina.core.StandardEngine   [0;39m [2m:[0;39m Starting Servlet engine: [Apache Tomcat/10.1.16]
-[2m2025-08-08T00:21:40.780-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [2m:[0;39m Initializing Spring embedded WebApplicationContext
-[2m2025-08-08T00:21:40.780-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 152 ms
-[2m2025-08-08T00:21:40.807-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.hibernate.jpa.internal.util.LogHelper [0;39m [2m:[0;39m HHH000204: Processing PersistenceUnitInfo [name: default]
-[2m2025-08-08T00:21:40.808-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.h.c.internal.RegionFactoryInitiator   [0;39m [2m:[0;39m HHH000026: Second-level cache disabled
-[2m2025-08-08T00:21:40.810-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.o.j.p.SpringPersistenceUnitInfo     [0;39m [2m:[0;39m No LoadTimeWeaver setup: ignoring JPA class transformer
-[2m2025-08-08T00:21:40.810-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-2 - Starting...
-[2m2025-08-08T00:21:40.824-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mcom.zaxxer.hikari.pool.HikariPool       [0;39m [2m:[0;39m HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@10933d49
-[2m2025-08-08T00:21:40.824-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-2 - Start completed.
-[2m2025-08-08T00:21:40.825-05:00[0;39m [33m WARN[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.orm.deprecation           [0;39m [2m:[0;39m HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-[2m2025-08-08T00:21:40.895-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.h.e.t.j.p.i.JtaPlatformInitiator      [0;39m [2m:[0;39m HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[2m2025-08-08T00:21:40.983-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Initialized JPA EntityManagerFactory for persistence unit 'default'
-[2m2025-08-08T00:21:41.048-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m Filter 'jwtAuthenticationFilter' configured for use
-[2m2025-08-08T00:21:41.261-05:00[0;39m [33m WARN[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mJpaBaseConfiguration$JpaWebConfiguration[0;39m [2m:[0;39m spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[2m2025-08-08T00:21:41.296-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m 39 mappings in 'requestMappingHandlerMapping'
-[2m2025-08-08T00:21:41.333-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.w.s.handler.SimpleUrlHandlerMapping [0;39m [2m:[0;39m Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-[2m2025-08-08T00:21:41.352-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.s.web.DefaultSecurityFilterChain    [0;39m [2m:[0;39m Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7622149e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4ec3be11, org.springframework.security.web.context.SecurityContextHolderFilter@cc6197d, org.springframework.security.web.header.HeaderWriterFilter@33b5ca6c, org.springframework.web.filter.CorsFilter@8737c41, org.springframework.security.web.authentication.logout.LogoutFilter@3a305d26, org.example.security.JwtAuthenticationFilter@2d1e8a3a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@498da845, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5476edb2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6eb33306, org.springframework.security.web.session.SessionManagementFilter@1478dba5, org.springframework.security.web.access.ExceptionTranslationFilter@377e4e1e, org.springframework.security.web.access.intercept.AuthorizationFilter@7d2370b1]
-[2m2025-08-08T00:21:41.375-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerAdapter[0;39m [2m:[0;39m ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-[2m2025-08-08T00:21:41.381-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.m.m.a.ExceptionHandlerExceptionResolver[0;39m [2m:[0;39m ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-[2m2025-08-08T00:21:41.430-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [2m:[0;39m LiveReload server is running on port 35729
-[2m2025-08-08T00:21:41.435-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port 8080 (http) with context path ''
-[2m2025-08-08T00:21:41.437-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.TimeSheetManagementApplication      [0;39m [2m:[0;39m Started TimeSheetManagementApplication in 0.818 seconds (process running for 21.217)
-[2m2025-08-08T00:21:41.456-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+[2m2025-08-09T16:04:01.331-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.TimeSheetManagementApplication      [0;39m [2m:[0;39m Starting TimeSheetManagementApplication using Java 24.0.1 with PID 11282 (/Users/nguyenhai/MyProject/TimeSheetManagement/TimeSheetManagement/target/classes started by nguyenhai in /Users/nguyenhai/MyProject/TimeSheetManagement/TimeSheetManagement)
+[2m2025-08-09T16:04:01.331-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.TimeSheetManagementApplication      [0;39m [2m:[0;39m No active profile set, falling back to 1 default profile: "default"
+[2m2025-08-09T16:04:01.396-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2m2025-08-09T16:04:01.407-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Finished Spring Data repository scanning in 10 ms. Found 11 JPA repository interfaces.
+[2m2025-08-09T16:04:01.474-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port 8080 (http)
+[2m2025-08-09T16:04:01.475-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.apache.catalina.core.StandardService  [0;39m [2m:[0;39m Starting service [Tomcat]
+[2m2025-08-09T16:04:01.475-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.apache.catalina.core.StandardEngine   [0;39m [2m:[0;39m Starting Servlet engine: [Apache Tomcat/10.1.16]
+[2m2025-08-09T16:04:01.478-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [2m:[0;39m Initializing Spring embedded WebApplicationContext
+[2m2025-08-09T16:04:01.478-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 146 ms
+[2m2025-08-09T16:04:01.508-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.hibernate.jpa.internal.util.LogHelper [0;39m [2m:[0;39m HHH000204: Processing PersistenceUnitInfo [name: default]
+[2m2025-08-09T16:04:01.510-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.h.c.internal.RegionFactoryInitiator   [0;39m [2m:[0;39m HHH000026: Second-level cache disabled
+[2m2025-08-09T16:04:01.511-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.o.j.p.SpringPersistenceUnitInfo     [0;39m [2m:[0;39m No LoadTimeWeaver setup: ignoring JPA class transformer
+[2m2025-08-09T16:04:01.512-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-2 - Starting...
+[2m2025-08-09T16:04:01.522-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mcom.zaxxer.hikari.pool.HikariPool       [0;39m [2m:[0;39m HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@597df988
+[2m2025-08-09T16:04:01.523-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-2 - Start completed.
+[2m2025-08-09T16:04:01.523-05:00[0;39m [33m WARN[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.orm.deprecation           [0;39m [2m:[0;39m HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[2m2025-08-09T16:04:01.595-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.h.e.t.j.p.i.JtaPlatformInitiator      [0;39m [2m:[0;39m HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2m2025-08-09T16:04:01.674-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2m2025-08-09T16:04:01.742-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m Filter 'jwtAuthenticationFilter' configured for use
+[2m2025-08-09T16:04:01.962-05:00[0;39m [33m WARN[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mJpaBaseConfiguration$JpaWebConfiguration[0;39m [2m:[0;39m spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2m2025-08-09T16:04:02.001-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m 40 mappings in 'requestMappingHandlerMapping'
+[2m2025-08-09T16:04:02.039-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.w.s.handler.SimpleUrlHandlerMapping [0;39m [2m:[0;39m Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+[2m2025-08-09T16:04:02.058-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.s.web.DefaultSecurityFilterChain    [0;39m [2m:[0;39m Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3d818271, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@29a58216, org.springframework.security.web.context.SecurityContextHolderFilter@6d0543cd, org.springframework.security.web.header.HeaderWriterFilter@4e083545, org.springframework.web.filter.CorsFilter@36c729b, org.springframework.security.web.authentication.logout.LogoutFilter@6d8f37e0, org.example.security.JwtAuthenticationFilter@57d120ff, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@48e78147, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@474a2703, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d05bd6f, org.springframework.security.web.session.SessionManagementFilter@307ba1ff, org.springframework.security.web.access.ExceptionTranslationFilter@11868832, org.springframework.security.web.access.intercept.AuthorizationFilter@f7230a1]
+[2m2025-08-09T16:04:02.080-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerAdapter[0;39m [2m:[0;39m ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+[2m2025-08-09T16:04:02.087-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.m.m.a.ExceptionHandlerExceptionResolver[0;39m [2m:[0;39m ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+[2m2025-08-09T16:04:02.136-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [2m:[0;39m LiveReload server is running on port 35729
+[2m2025-08-09T16:04:02.143-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port 8080 (http) with context path ''
+[2m2025-08-09T16:04:02.145-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.TimeSheetManagementApplication      [0;39m [2m:[0;39m Started TimeSheetManagementApplication in 0.825 seconds (process running for 14.166)
+[2m2025-08-09T16:04:02.163-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
     select
         r1_0.roleId,
         r1_0.createdAt,
@@ -487,7 +580,7 @@ Hibernate:
         Role r1_0 
     where
         r1_0.roleName=?
-[2m2025-08-08T00:21:41.458-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+[2m2025-08-09T16:04:02.165-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
     select
         r1_0.roleId,
         r1_0.createdAt,
@@ -511,7 +604,7 @@ Hibernate:
         Role r1_0 
     where
         r1_0.roleName=?
-[2m2025-08-08T00:21:41.459-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+[2m2025-08-09T16:04:02.166-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
     select
         r1_0.roleId,
         r1_0.createdAt,
@@ -535,25 +628,20 @@ Hibernate:
         Role r1_0 
     where
         r1_0.roleName=?
-[2m2025-08-08T00:21:41.460-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.ConditionEvaluationDeltaLoggingListener[0;39m [2m:[0;39m Condition evaluation unchanged
-[2m2025-08-08T00:22:01.130-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [2m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
-[2m2025-08-08T00:22:01.130-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
-[2m2025-08-08T00:22:01.130-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected StandardServletMultipartResolver
-[2m2025-08-08T00:22:01.130-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected AcceptHeaderLocaleResolver
-[2m2025-08-08T00:22:01.130-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected FixedThemeResolver
-[2m2025-08-08T00:22:01.132-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1769a12d
-[2m2025-08-08T00:22:01.132-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected org.springframework.web.servlet.support.SessionFlashMapManager@20ffd24b
-[2m2025-08-08T00:22:01.132-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-[2m2025-08-08T00:22:01.132-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 2 ms
-[2m2025-08-08T00:22:01.133-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT header present: false
-[2m2025-08-08T00:22:01.133-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT valid: false for uri /api/auth/login
-[2m2025-08-08T00:22:01.134-05:00[0;39m [33m WARN[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.w.s.h.HandlerMappingIntrospector    [0;39m [2m:[0;39m Cache miss for REQUEST dispatch to '/api/auth/login' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
-[2m2025-08-08T00:22:01.134-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m POST "/api/auth/login", parameters={}
-[2m2025-08-08T00:22:01.134-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped to org.example.controller.AuthController#authenticateUser(LoginRequestDTO)
-[2m2025-08-08T00:22:01.137-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mm.m.a.RequestResponseBodyMethodProcessor[0;39m [2m:[0;39m Read "application/json;charset=UTF-8" to [org.example.dto.request.LoginRequestDTO@4c21bcee]
-Attempting login for user: adis
-[2m2025-08-08T00:22:01.253-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m Loading user by username: adis
-[2m2025-08-08T00:22:01.254-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+[2m2025-08-09T16:04:02.167-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.ConditionEvaluationDeltaLoggingListener[0;39m [2m:[0;39m Condition evaluation unchanged
+[2m2025-08-09T16:04:12.741-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [2m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2m2025-08-09T16:04:12.741-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
+[2m2025-08-09T16:04:12.741-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected StandardServletMultipartResolver
+[2m2025-08-09T16:04:12.741-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected AcceptHeaderLocaleResolver
+[2m2025-08-09T16:04:12.741-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected FixedThemeResolver
+[2m2025-08-09T16:04:12.742-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@717befcb
+[2m2025-08-09T16:04:12.743-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected org.springframework.web.servlet.support.SessionFlashMapManager@1a5f29f5
+[2m2025-08-09T16:04:12.743-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+[2m2025-08-09T16:04:12.743-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 2 ms
+[2m2025-08-09T16:04:12.744-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT header present: true
+[2m2025-08-09T16:04:12.747-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT valid: true for uri /api/departments
+[2m2025-08-09T16:04:12.749-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m Loading user by username: adis
+[2m2025-08-09T16:04:12.752-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
     select
         u1_0.userId,
         u1_0.createdAt,
@@ -581,7 +669,7 @@ Hibernate:
         User u1_0 
     where
         u1_0.userName=?
-[2m2025-08-08T00:22:01.256-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+[2m2025-08-09T16:04:12.754-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
     select
         ur1_0.userId,
         ur1_0.userRoleId,
@@ -623,695 +711,11 @@ Hibernate:
             on r1_0.roleId=ur1_0.roleId 
     where
         ur1_0.userId=?
-[2m2025-08-08T00:22:01.257-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m User found: adis, isActive: true, authorities: [ROLE_ADMIN]
-Authentication successful for user: adis
-[2m2025-08-08T00:22:01.351-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    update
-        User 
-    set
-        createdAt=?,
-        employeeId=?,
-        isActive=?,
-        lastLogin=?,
-        password=?,
-        updatedAt=?,
-        userName=? 
-    where
-        userId=?
-Hibernate: 
-    update
-        User 
-    set
-        createdAt=?,
-        employeeId=?,
-        isActive=?,
-        lastLogin=?,
-        password=?,
-        updatedAt=?,
-        userName=? 
-    where
-        userId=?
-[2m2025-08-08T00:22:01.353-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        e1_0.employeeId,
-        e1_0.createdAt,
-        e1_0.departmentId,
-        e1_0.email,
-        e1_0.firstName,
-        e1_0.lastName,
-        e1_0.managerId,
-        e1_0.position,
-        e1_0.updatedAt 
-    from
-        Employee e1_0 
-    where
-        e1_0.employeeId=?
-Hibernate: 
-    select
-        e1_0.employeeId,
-        e1_0.createdAt,
-        e1_0.departmentId,
-        e1_0.email,
-        e1_0.firstName,
-        e1_0.lastName,
-        e1_0.managerId,
-        e1_0.position,
-        e1_0.updatedAt 
-    from
-        Employee e1_0 
-    where
-        e1_0.employeeId=?
-Login successful, returning JWT token
-[2m2025-08-08T00:22:01.356-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-[2m2025-08-08T00:22:01.356-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Writing [org.example.dto.response.JwtResponseDTO@41bfdb4]
-[2m2025-08-08T00:22:01.357-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed 200 OK
-[2m2025-08-08T00:22:28.710-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT header present: true
-[2m2025-08-08T00:22:28.712-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT valid: true for uri /api/approvals/my-approvals
-[2m2025-08-08T00:22:28.713-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m Loading user by username: adis
-[2m2025-08-08T00:22:28.715-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-Hibernate: 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-[2m2025-08-08T00:22:28.717-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        ur1_0.userId,
-        ur1_0.userRoleId,
-        ur1_0.assignedDate,
-        ur1_0.createdAt,
-        ur1_0.roleId,
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt,
-        ur1_0.updatedAt 
-    from
-        UserRole ur1_0 
-    left join
-        Role r1_0 
-            on r1_0.roleId=ur1_0.roleId 
-    where
-        ur1_0.userId=?
-Hibernate: 
-    select
-        ur1_0.userId,
-        ur1_0.userRoleId,
-        ur1_0.assignedDate,
-        ur1_0.createdAt,
-        ur1_0.roleId,
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt,
-        ur1_0.updatedAt 
-    from
-        UserRole ur1_0 
-    left join
-        Role r1_0 
-            on r1_0.roleId=ur1_0.roleId 
-    where
-        ur1_0.userId=?
-[2m2025-08-08T00:22:28.718-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m User found: adis, isActive: true, authorities: [ROLE_ADMIN]
-[2m2025-08-08T00:22:28.719-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m GET "/api/approvals/my-approvals", parameters={}
-[2m2025-08-08T00:22:28.719-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped to org.example.controller.ApprovalController#getMyApprovals()
-[2m2025-08-08T00:22:28.721-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        a1_0.approvalId,
-        a1_0.approvedAt,
-        a1_0.approvedBy,
-        a1_0.comments,
-        a1_0.createdAt,
-        a1_0.status,
-        a1_0.timesheetId,
-        a1_0.updatedAt 
-    from
-        Approval a1_0 
-    where
-        a1_0.approvedBy=?
-Hibernate: 
-    select
-        a1_0.approvalId,
-        a1_0.approvedAt,
-        a1_0.approvedBy,
-        a1_0.comments,
-        a1_0.createdAt,
-        a1_0.status,
-        a1_0.timesheetId,
-        a1_0.updatedAt 
-    from
-        Approval a1_0 
-    where
-        a1_0.approvedBy=?
-[2m2025-08-08T00:22:28.723-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        e1_0.employeeId,
-        e1_0.createdAt,
-        e1_0.departmentId,
-        e1_0.email,
-        e1_0.firstName,
-        e1_0.lastName,
-        e1_0.managerId,
-        e1_0.position,
-        e1_0.updatedAt 
-    from
-        Employee e1_0 
-    where
-        e1_0.employeeId=?
-Hibernate: 
-    select
-        e1_0.employeeId,
-        e1_0.createdAt,
-        e1_0.departmentId,
-        e1_0.email,
-        e1_0.firstName,
-        e1_0.lastName,
-        e1_0.managerId,
-        e1_0.position,
-        e1_0.updatedAt 
-    from
-        Employee e1_0 
-    where
-        e1_0.employeeId=?
-[2m2025-08-08T00:22:28.724-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-[2m2025-08-08T00:22:28.725-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Writing [[ApprovalResponseDTO[approvalId=6, timesheetId=8, approvedBy=11, approvedByName=Adis Smith, approved (truncated)...]
-[2m2025-08-08T00:22:28.726-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed 200 OK
-[2m2025-08-08T00:24:56.227-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT header present: true
-[2m2025-08-08T00:24:56.229-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT valid: true for uri /api/approvals/6
-[2m2025-08-08T00:24:56.229-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m Loading user by username: adis
-[2m2025-08-08T00:24:56.231-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-Hibernate: 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-[2m2025-08-08T00:24:56.233-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        ur1_0.userId,
-        ur1_0.userRoleId,
-        ur1_0.assignedDate,
-        ur1_0.createdAt,
-        ur1_0.roleId,
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt,
-        ur1_0.updatedAt 
-    from
-        UserRole ur1_0 
-    left join
-        Role r1_0 
-            on r1_0.roleId=ur1_0.roleId 
-    where
-        ur1_0.userId=?
-Hibernate: 
-    select
-        ur1_0.userId,
-        ur1_0.userRoleId,
-        ur1_0.assignedDate,
-        ur1_0.createdAt,
-        ur1_0.roleId,
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt,
-        ur1_0.updatedAt 
-    from
-        UserRole ur1_0 
-    left join
-        Role r1_0 
-            on r1_0.roleId=ur1_0.roleId 
-    where
-        ur1_0.userId=?
-[2m2025-08-08T00:24:56.235-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m User found: adis, isActive: true, authorities: [ROLE_ADMIN]
-[2m2025-08-08T00:24:56.236-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m PUT "/api/approvals/6", parameters={}
-[2m2025-08-08T00:24:56.236-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped to org.example.controller.ApprovalController#updateApproval(Integer, ApprovalRequestDTO)
-[2m2025-08-08T00:24:56.237-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36mm.m.a.RequestResponseBodyMethodProcessor[0;39m [2m:[0;39m Read "application/json;charset=UTF-8" to [ApprovalRequestDTO[timesheetId=8, approvedBy=11, status=APPROVED, comments=Approved after review]]
-[2m2025-08-08T00:24:56.239-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        a1_0.approvalId,
-        a1_0.approvedAt,
-        a1_0.approvedBy,
-        a1_0.comments,
-        a1_0.createdAt,
-        a1_0.status,
-        a1_0.timesheetId,
-        a1_0.updatedAt 
-    from
-        Approval a1_0 
-    where
-        a1_0.approvalId=?
-Hibernate: 
-    select
-        a1_0.approvalId,
-        a1_0.approvedAt,
-        a1_0.approvedBy,
-        a1_0.comments,
-        a1_0.createdAt,
-        a1_0.status,
-        a1_0.timesheetId,
-        a1_0.updatedAt 
-    from
-        Approval a1_0 
-    where
-        a1_0.approvalId=?
-[2m2025-08-08T00:24:56.242-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        ts1_0.timesheetId,
-        ts1_0.createdAt,
-        ts1_0.employeeId,
-        ts1_0.periodEndDate,
-        ts1_0.periodStartDate,
-        ts1_0.status,
-        ts1_0.submissionDate,
-        ts1_0.totalHours,
-        ts1_0.updatedAt 
-    from
-        Timesheet ts1_0 
-    where
-        ts1_0.timesheetId=?
-Hibernate: 
-    select
-        ts1_0.timesheetId,
-        ts1_0.createdAt,
-        ts1_0.employeeId,
-        ts1_0.periodEndDate,
-        ts1_0.periodStartDate,
-        ts1_0.status,
-        ts1_0.submissionDate,
-        ts1_0.totalHours,
-        ts1_0.updatedAt 
-    from
-        Timesheet ts1_0 
-    where
-        ts1_0.timesheetId=?
-[2m2025-08-08T00:24:56.247-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        e1_0.employeeId,
-        e1_0.createdAt,
-        e1_0.departmentId,
-        e1_0.email,
-        e1_0.firstName,
-        e1_0.lastName,
-        e1_0.managerId,
-        e1_0.position,
-        e1_0.updatedAt 
-    from
-        Employee e1_0 
-    where
-        e1_0.employeeId=?
-Hibernate: 
-    select
-        e1_0.employeeId,
-        e1_0.createdAt,
-        e1_0.departmentId,
-        e1_0.email,
-        e1_0.firstName,
-        e1_0.lastName,
-        e1_0.managerId,
-        e1_0.position,
-        e1_0.updatedAt 
-    from
-        Employee e1_0 
-    where
-        e1_0.employeeId=?
-[2m2025-08-08T00:24:56.250-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    update
-        Approval 
-    set
-        approvedAt=?,
-        approvedBy=?,
-        comments=?,
-        createdAt=?,
-        status=?,
-        timesheetId=?,
-        updatedAt=? 
-    where
-        approvalId=?
-Hibernate: 
-    update
-        Approval 
-    set
-        approvedAt=?,
-        approvedBy=?,
-        comments=?,
-        createdAt=?,
-        status=?,
-        timesheetId=?,
-        updatedAt=? 
-    where
-        approvalId=?
-[2m2025-08-08T00:24:56.254-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-[2m2025-08-08T00:24:56.254-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Writing [ApprovalResponseDTO[approvalId=6, timesheetId=8, approvedBy=11, approvedByName=Adis Smith, approvedA (truncated)...]
-[2m2025-08-08T00:24:56.254-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed 200 OK
-[2m2025-08-08T00:25:02.588-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT header present: true
-[2m2025-08-08T00:25:02.590-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT valid: true for uri /api/approvals/my-approvals
-[2m2025-08-08T00:25:02.591-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m Loading user by username: adis
-[2m2025-08-08T00:25:02.592-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-Hibernate: 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-[2m2025-08-08T00:25:02.595-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        ur1_0.userId,
-        ur1_0.userRoleId,
-        ur1_0.assignedDate,
-        ur1_0.createdAt,
-        ur1_0.roleId,
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt,
-        ur1_0.updatedAt 
-    from
-        UserRole ur1_0 
-    left join
-        Role r1_0 
-            on r1_0.roleId=ur1_0.roleId 
-    where
-        ur1_0.userId=?
-Hibernate: 
-    select
-        ur1_0.userId,
-        ur1_0.userRoleId,
-        ur1_0.assignedDate,
-        ur1_0.createdAt,
-        ur1_0.roleId,
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt,
-        ur1_0.updatedAt 
-    from
-        UserRole ur1_0 
-    left join
-        Role r1_0 
-            on r1_0.roleId=ur1_0.roleId 
-    where
-        ur1_0.userId=?
-[2m2025-08-08T00:25:02.597-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m User found: adis, isActive: true, authorities: [ROLE_ADMIN]
-[2m2025-08-08T00:25:02.597-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m GET "/api/approvals/my-approvals", parameters={}
-[2m2025-08-08T00:25:02.598-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped to org.example.controller.ApprovalController#getMyApprovals()
-[2m2025-08-08T00:25:02.600-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        a1_0.approvalId,
-        a1_0.approvedAt,
-        a1_0.approvedBy,
-        a1_0.comments,
-        a1_0.createdAt,
-        a1_0.status,
-        a1_0.timesheetId,
-        a1_0.updatedAt 
-    from
-        Approval a1_0 
-    where
-        a1_0.approvedBy=?
-Hibernate: 
-    select
-        a1_0.approvalId,
-        a1_0.approvedAt,
-        a1_0.approvedBy,
-        a1_0.comments,
-        a1_0.createdAt,
-        a1_0.status,
-        a1_0.timesheetId,
-        a1_0.updatedAt 
-    from
-        Approval a1_0 
-    where
-        a1_0.approvedBy=?
-[2m2025-08-08T00:25:02.601-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        e1_0.employeeId,
-        e1_0.createdAt,
-        e1_0.departmentId,
-        e1_0.email,
-        e1_0.firstName,
-        e1_0.lastName,
-        e1_0.managerId,
-        e1_0.position,
-        e1_0.updatedAt 
-    from
-        Employee e1_0 
-    where
-        e1_0.employeeId=?
-Hibernate: 
-    select
-        e1_0.employeeId,
-        e1_0.createdAt,
-        e1_0.departmentId,
-        e1_0.email,
-        e1_0.firstName,
-        e1_0.lastName,
-        e1_0.managerId,
-        e1_0.position,
-        e1_0.updatedAt 
-    from
-        Employee e1_0 
-    where
-        e1_0.employeeId=?
-[2m2025-08-08T00:25:02.602-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-[2m2025-08-08T00:25:02.602-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Writing [[ApprovalResponseDTO[approvalId=6, timesheetId=8, approvedBy=11, approvedByName=Adis Smith, approved (truncated)...]
-[2m2025-08-08T00:25:02.603-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed 200 OK
-[2m2025-08-08T00:29:36.001-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[   File Watcher][0;39m [2m[0;39m[36mrtingClassPathChangeChangedEventListener[0;39m [2m:[0;39m Restarting due to 78 class path changes (0 additions, 0 deletions, 78 modifications)
-[2m2025-08-08T00:29:36.004-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[       Thread-7][0;39m [2m[0;39m[36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Closing JPA EntityManagerFactory for persistence unit 'default'
-[2m2025-08-08T00:29:36.005-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[       Thread-7][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-2 - Shutdown initiated...
-[2m2025-08-08T00:29:36.007-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[       Thread-7][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-2 - Shutdown completed.
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
-[32m :: Spring Boot :: [39m              [2m (v3.2.0)[0;39m
-
-[2m2025-08-08T00:29:36.046-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.TimeSheetManagementApplication      [0;39m [2m:[0;39m Starting TimeSheetManagementApplication using Java 24.0.1 with PID 18682 (/Users/nguyenhai/MyProject/TimeSheetManagement/TimeSheetManagement/target/classes started by nguyenhai in /Users/nguyenhai/MyProject/TimeSheetManagement/TimeSheetManagement)
-[2m2025-08-08T00:29:36.046-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.TimeSheetManagementApplication      [0;39m [2m:[0;39m No active profile set, falling back to 1 default profile: "default"
-[2m2025-08-08T00:29:36.105-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[2m2025-08-08T00:29:36.115-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Finished Spring Data repository scanning in 10 ms. Found 11 JPA repository interfaces.
-[2m2025-08-08T00:29:36.184-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port 8080 (http)
-[2m2025-08-08T00:29:36.184-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.apache.catalina.core.StandardService  [0;39m [2m:[0;39m Starting service [Tomcat]
-[2m2025-08-08T00:29:36.184-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.apache.catalina.core.StandardEngine   [0;39m [2m:[0;39m Starting Servlet engine: [Apache Tomcat/10.1.16]
-[2m2025-08-08T00:29:36.188-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [2m:[0;39m Initializing Spring embedded WebApplicationContext
-[2m2025-08-08T00:29:36.188-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 142 ms
-[2m2025-08-08T00:29:36.215-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.hibernate.jpa.internal.util.LogHelper [0;39m [2m:[0;39m HHH000204: Processing PersistenceUnitInfo [name: default]
-[2m2025-08-08T00:29:36.215-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.h.c.internal.RegionFactoryInitiator   [0;39m [2m:[0;39m HHH000026: Second-level cache disabled
-[2m2025-08-08T00:29:36.216-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.o.j.p.SpringPersistenceUnitInfo     [0;39m [2m:[0;39m No LoadTimeWeaver setup: ignoring JPA class transformer
-[2m2025-08-08T00:29:36.217-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-3 - Starting...
-[2m2025-08-08T00:29:36.229-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mcom.zaxxer.hikari.pool.HikariPool       [0;39m [2m:[0;39m HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7b8beaf8
-[2m2025-08-08T00:29:36.229-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-3 - Start completed.
-[2m2025-08-08T00:29:36.230-05:00[0;39m [33m WARN[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.orm.deprecation           [0;39m [2m:[0;39m HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-[2m2025-08-08T00:29:36.293-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.h.e.t.j.p.i.JtaPlatformInitiator      [0;39m [2m:[0;39m HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[2m2025-08-08T00:29:36.370-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Initialized JPA EntityManagerFactory for persistence unit 'default'
-[2m2025-08-08T00:29:36.433-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m Filter 'jwtAuthenticationFilter' configured for use
-[2m2025-08-08T00:29:36.656-05:00[0;39m [33m WARN[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mJpaBaseConfiguration$JpaWebConfiguration[0;39m [2m:[0;39m spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[2m2025-08-08T00:29:36.692-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m 39 mappings in 'requestMappingHandlerMapping'
-[2m2025-08-08T00:29:36.730-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.w.s.handler.SimpleUrlHandlerMapping [0;39m [2m:[0;39m Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-[2m2025-08-08T00:29:36.750-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.s.web.DefaultSecurityFilterChain    [0;39m [2m:[0;39m Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@35ba32d2, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2e788a2b, org.springframework.security.web.context.SecurityContextHolderFilter@40844bba, org.springframework.security.web.header.HeaderWriterFilter@32f5c5e1, org.springframework.web.filter.CorsFilter@d207d8c, org.springframework.security.web.authentication.logout.LogoutFilter@3aa43fb9, org.example.security.JwtAuthenticationFilter@442a857c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@45cf0448, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@59091bdd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@e38dab4, org.springframework.security.web.session.SessionManagementFilter@5f1bd186, org.springframework.security.web.access.ExceptionTranslationFilter@fc151eb, org.springframework.security.web.access.intercept.AuthorizationFilter@16b2b521]
-[2m2025-08-08T00:29:36.772-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerAdapter[0;39m [2m:[0;39m ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-[2m2025-08-08T00:29:36.778-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.m.m.a.ExceptionHandlerExceptionResolver[0;39m [2m:[0;39m ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-[2m2025-08-08T00:29:36.827-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [2m:[0;39m LiveReload server is running on port 35729
-[2m2025-08-08T00:29:36.833-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port 8080 (http) with context path ''
-[2m2025-08-08T00:29:36.835-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.TimeSheetManagementApplication      [0;39m [2m:[0;39m Started TimeSheetManagementApplication in 0.797 seconds (process running for 496.596)
-[2m2025-08-08T00:29:36.854-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt 
-    from
-        Role r1_0 
-    where
-        r1_0.roleName=?
-Hibernate: 
-    select
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt 
-    from
-        Role r1_0 
-    where
-        r1_0.roleName=?
-[2m2025-08-08T00:29:36.856-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt 
-    from
-        Role r1_0 
-    where
-        r1_0.roleName=?
-Hibernate: 
-    select
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt 
-    from
-        Role r1_0 
-    where
-        r1_0.roleName=?
-[2m2025-08-08T00:29:36.857-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt 
-    from
-        Role r1_0 
-    where
-        r1_0.roleName=?
-Hibernate: 
-    select
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt 
-    from
-        Role r1_0 
-    where
-        r1_0.roleName=?
-[2m2025-08-08T00:29:36.858-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.ConditionEvaluationDeltaLoggingListener[0;39m [2m:[0;39m Condition evaluation unchanged
-[2m2025-08-08T00:30:03.562-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [2m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
-[2m2025-08-08T00:30:03.562-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Initializing Servlet 'dispatcherServlet'
-[2m2025-08-08T00:30:03.563-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected StandardServletMultipartResolver
-[2m2025-08-08T00:30:03.563-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected AcceptHeaderLocaleResolver
-[2m2025-08-08T00:30:03.563-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected FixedThemeResolver
-[2m2025-08-08T00:30:03.564-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1c409e0
-[2m2025-08-08T00:30:03.564-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Detected org.springframework.web.servlet.support.SessionFlashMapManager@443e0f67
-[2m2025-08-08T00:30:03.564-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-[2m2025-08-08T00:30:03.564-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 2 ms
-[2m2025-08-08T00:30:03.565-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT header present: false
-[2m2025-08-08T00:30:03.565-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT valid: false for uri /api/auth/signup
-[2m2025-08-08T00:30:03.565-05:00[0;39m [33m WARN[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.w.s.h.HandlerMappingIntrospector    [0;39m [2m:[0;39m Cache miss for REQUEST dispatch to '/api/auth/signup' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
-[2m2025-08-08T00:30:03.565-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m POST "/api/auth/signup", parameters={}
-[2m2025-08-08T00:30:03.565-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped to org.example.controller.AuthController#registerUser(SignupRequestDTO)
-[2m2025-08-08T00:30:03.567-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mm.m.a.RequestResponseBodyMethodProcessor[0;39m [2m:[0;39m Read "application/json;charset=UTF-8" to [org.example.dto.request.SignupRequestDTO@4ca17a6f]
-Signup request received for user: adis
-[2m2025-08-08T00:30:03.569-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-Hibernate: 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-[2m2025-08-08T00:30:03.571-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+[2m2025-08-09T16:04:12.756-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m User found: adis, isActive: true, authorities: [ROLE_ADMIN]
+[2m2025-08-09T16:04:12.756-05:00[0;39m [33m WARN[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.s.w.s.h.HandlerMappingIntrospector    [0;39m [2m:[0;39m Cache miss for REQUEST dispatch to '/api/departments' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+[2m2025-08-09T16:04:12.757-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m GET "/api/departments", parameters={}
+[2m2025-08-09T16:04:12.757-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped to org.example.controller.DepartmentController#getAllDepartments()
+[2m2025-08-09T16:04:12.760-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
     select
         d1_0.departmentId,
         d1_0.createdAt,
@@ -1319,9 +723,7 @@ Hibernate:
         d1_0.name,
         d1_0.updatedAt 
     from
-        Department d1_0 
-    where
-        d1_0.departmentId=?
+        Department d1_0
 Hibernate: 
     select
         d1_0.departmentId,
@@ -1330,184 +732,8 @@ Hibernate:
         d1_0.name,
         d1_0.updatedAt 
     from
-        Department d1_0 
-    where
-        d1_0.departmentId=?
-[2m2025-08-08T00:30:03.574-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    insert 
-    into
-        Employee
-        (createdAt, departmentId, email, firstName, lastName, managerId, position, updatedAt) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    insert 
-    into
-        Employee
-        (createdAt, departmentId, email, firstName, lastName, managerId, position, updatedAt) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?)
-[2m2025-08-08T00:30:03.695-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    insert 
-    into
-        User
-        (createdAt, employeeId, isActive, lastLogin, password, updatedAt, userName) 
-    values
-        (?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    insert 
-    into
-        User
-        (createdAt, employeeId, isActive, lastLogin, password, updatedAt, userName) 
-    values
-        (?, ?, ?, ?, ?, ?, ?)
-[2m2025-08-08T00:30:03.698-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt 
-    from
-        Role r1_0 
-    where
-        r1_0.roleName=?
-Hibernate: 
-    select
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt 
-    from
-        Role r1_0 
-    where
-        r1_0.roleName=?
-[2m2025-08-08T00:30:03.699-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    insert 
-    into
-        UserRole
-        (assignedDate, createdAt, roleId, updatedAt, userId) 
-    values
-        (?, ?, ?, ?, ?)
-Hibernate: 
-    insert 
-    into
-        UserRole
-        (assignedDate, createdAt, roleId, updatedAt, userId) 
-    values
-        (?, ?, ?, ?, ?)
-[2m2025-08-08T00:30:03.702-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-[2m2025-08-08T00:30:03.702-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Writing [org.example.dto.response.MessageResponseDTO@268fe9cc]
-[2m2025-08-08T00:30:03.703-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-2][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed 200 OK
-[2m2025-08-08T00:30:35.609-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT header present: false
-[2m2025-08-08T00:30:35.609-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT valid: false for uri /api/auth/login
-[2m2025-08-08T00:30:35.609-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m POST "/api/auth/login", parameters={}
-[2m2025-08-08T00:30:35.610-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped to org.example.controller.AuthController#authenticateUser(LoginRequestDTO)
-[2m2025-08-08T00:30:35.611-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mm.m.a.RequestResponseBodyMethodProcessor[0;39m [2m:[0;39m Read "application/json;charset=UTF-8" to [org.example.dto.request.LoginRequestDTO@16b27931]
-Attempting login for user: adis
-[2m2025-08-08T00:30:35.725-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m Loading user by username: adis
-[2m2025-08-08T00:30:35.726-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-Hibernate: 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-[2m2025-08-08T00:30:35.728-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        ur1_0.userId,
-        ur1_0.userRoleId,
-        ur1_0.assignedDate,
-        ur1_0.createdAt,
-        ur1_0.roleId,
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt,
-        ur1_0.updatedAt 
-    from
-        UserRole ur1_0 
-    left join
-        Role r1_0 
-            on r1_0.roleId=ur1_0.roleId 
-    where
-        ur1_0.userId=?
-Hibernate: 
-    select
-        ur1_0.userId,
-        ur1_0.userRoleId,
-        ur1_0.assignedDate,
-        ur1_0.createdAt,
-        ur1_0.roleId,
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt,
-        ur1_0.updatedAt 
-    from
-        UserRole ur1_0 
-    left join
-        Role r1_0 
-            on r1_0.roleId=ur1_0.roleId 
-    where
-        ur1_0.userId=?
-[2m2025-08-08T00:30:35.729-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m User found: adis, isActive: true, authorities: [ROLE_ADMIN]
-Authentication successful for user: adis
-[2m2025-08-08T00:30:35.822-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    update
-        User 
-    set
-        createdAt=?,
-        employeeId=?,
-        isActive=?,
-        lastLogin=?,
-        password=?,
-        updatedAt=?,
-        userName=? 
-    where
-        userId=?
-Hibernate: 
-    update
-        User 
-    set
-        createdAt=?,
-        employeeId=?,
-        isActive=?,
-        lastLogin=?,
-        password=?,
-        updatedAt=?,
-        userName=? 
-    where
-        userId=?
-[2m2025-08-08T00:30:35.825-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+        Department d1_0
+[2m2025-08-09T16:04:12.764-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
     select
         e1_0.employeeId,
         e1_0.createdAt,
@@ -1537,67 +763,7 @@ Hibernate:
         Employee e1_0 
     where
         e1_0.employeeId=?
-Login successful, returning JWT token
-[2m2025-08-08T00:30:35.828-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-[2m2025-08-08T00:30:35.828-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Writing [org.example.dto.response.JwtResponseDTO@246835b8]
-[2m2025-08-08T00:30:35.828-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-3][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed 200 OK
-[2m2025-08-08T00:30:46.688-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT header present: false
-[2m2025-08-08T00:30:46.689-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT valid: false for uri /api/auth/signup
-[2m2025-08-08T00:30:46.689-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m POST "/api/auth/signup", parameters={}
-[2m2025-08-08T00:30:46.689-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped to org.example.controller.AuthController#registerUser(SignupRequestDTO)
-[2m2025-08-08T00:30:46.690-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mm.m.a.RequestResponseBodyMethodProcessor[0;39m [2m:[0;39m Read "application/json;charset=UTF-8" to [org.example.dto.request.SignupRequestDTO@af97a74]
-Signup request received for user: test222
-[2m2025-08-08T00:30:46.692-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-Hibernate: 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-[2m2025-08-08T00:30:46.694-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        d1_0.departmentId,
-        d1_0.createdAt,
-        d1_0.headEmployeeId,
-        d1_0.name,
-        d1_0.updatedAt 
-    from
-        Department d1_0 
-    where
-        d1_0.departmentId=?
-Hibernate: 
-    select
-        d1_0.departmentId,
-        d1_0.createdAt,
-        d1_0.headEmployeeId,
-        d1_0.name,
-        d1_0.updatedAt 
-    from
-        Department d1_0 
-    where
-        d1_0.departmentId=?
-[2m2025-08-08T00:30:46.698-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+[2m2025-08-09T16:04:12.765-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
     select
         e1_0.employeeId,
         e1_0.createdAt,
@@ -1627,181 +793,7 @@ Hibernate:
         Employee e1_0 
     where
         e1_0.employeeId=?
-[2m2025-08-08T00:30:46.701-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    insert 
-    into
-        Employee
-        (createdAt, departmentId, email, firstName, lastName, managerId, position, updatedAt) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    insert 
-    into
-        Employee
-        (createdAt, departmentId, email, firstName, lastName, managerId, position, updatedAt) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?)
-[2m2025-08-08T00:30:46.819-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    insert 
-    into
-        User
-        (createdAt, employeeId, isActive, lastLogin, password, updatedAt, userName) 
-    values
-        (?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    insert 
-    into
-        User
-        (createdAt, employeeId, isActive, lastLogin, password, updatedAt, userName) 
-    values
-        (?, ?, ?, ?, ?, ?, ?)
-[2m2025-08-08T00:30:46.822-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt 
-    from
-        Role r1_0 
-    where
-        r1_0.roleName=?
-Hibernate: 
-    select
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt 
-    from
-        Role r1_0 
-    where
-        r1_0.roleName=?
-[2m2025-08-08T00:30:46.823-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    insert 
-    into
-        UserRole
-        (assignedDate, createdAt, roleId, updatedAt, userId) 
-    values
-        (?, ?, ?, ?, ?)
-Hibernate: 
-    insert 
-    into
-        UserRole
-        (assignedDate, createdAt, roleId, updatedAt, userId) 
-    values
-        (?, ?, ?, ?, ?)
-[2m2025-08-08T00:30:46.824-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-[2m2025-08-08T00:30:46.824-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Writing [org.example.dto.response.MessageResponseDTO@42b4ae06]
-[2m2025-08-08T00:30:46.825-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed 200 OK
-[2m2025-08-08T00:30:53.001-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-5][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT header present: false
-[2m2025-08-08T00:30:53.001-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-5][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT valid: false for uri /api/auth/login
-[2m2025-08-08T00:30:53.001-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-5][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m POST "/api/auth/login", parameters={}
-[2m2025-08-08T00:30:53.001-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-5][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped to org.example.controller.AuthController#authenticateUser(LoginRequestDTO)
-[2m2025-08-08T00:30:53.002-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-5][0;39m [2m[0;39m[36mm.m.a.RequestResponseBodyMethodProcessor[0;39m [2m:[0;39m Read "application/json;charset=UTF-8" to [org.example.dto.request.LoginRequestDTO@768ee744]
-Attempting login for user: test222
-[2m2025-08-08T00:30:53.002-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-5][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m Loading user by username: test222
-[2m2025-08-08T00:30:53.004-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-5][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-Hibernate: 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-[2m2025-08-08T00:30:53.006-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-5][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        ur1_0.userId,
-        ur1_0.userRoleId,
-        ur1_0.assignedDate,
-        ur1_0.createdAt,
-        ur1_0.roleId,
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt,
-        ur1_0.updatedAt 
-    from
-        UserRole ur1_0 
-    left join
-        Role r1_0 
-            on r1_0.roleId=ur1_0.roleId 
-    where
-        ur1_0.userId=?
-Hibernate: 
-    select
-        ur1_0.userId,
-        ur1_0.userRoleId,
-        ur1_0.assignedDate,
-        ur1_0.createdAt,
-        ur1_0.roleId,
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt,
-        ur1_0.updatedAt 
-    from
-        UserRole ur1_0 
-    left join
-        Role r1_0 
-            on r1_0.roleId=ur1_0.roleId 
-    where
-        ur1_0.userId=?
-[2m2025-08-08T00:30:53.007-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-5][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m User found: test222, isActive: true, authorities: [ROLE_EMPLOYEE]
-Authentication successful for user: test222
-[2m2025-08-08T00:30:53.124-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-5][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    update
-        User 
-    set
-        createdAt=?,
-        employeeId=?,
-        isActive=?,
-        lastLogin=?,
-        password=?,
-        updatedAt=?,
-        userName=? 
-    where
-        userId=?
-Hibernate: 
-    update
-        User 
-    set
-        createdAt=?,
-        employeeId=?,
-        isActive=?,
-        lastLogin=?,
-        password=?,
-        updatedAt=?,
-        userName=? 
-    where
-        userId=?
-[2m2025-08-08T00:30:53.126-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-5][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+[2m2025-08-09T16:04:12.766-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
     select
         e1_0.employeeId,
         e1_0.createdAt,
@@ -1831,199 +823,7 @@ Hibernate:
         Employee e1_0 
     where
         e1_0.employeeId=?
-Login successful, returning JWT token
-[2m2025-08-08T00:30:53.127-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-5][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-[2m2025-08-08T00:30:53.127-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-5][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Writing [org.example.dto.response.JwtResponseDTO@44b751fe]
-[2m2025-08-08T00:30:53.127-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-5][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed 200 OK
-[2m2025-08-08T00:31:12.805-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT header present: true
-[2m2025-08-08T00:31:12.807-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT valid: true for uri /api/timesheets/employee/12
-[2m2025-08-08T00:31:12.808-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m Loading user by username: test222
-[2m2025-08-08T00:31:12.810-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-Hibernate: 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-[2m2025-08-08T00:31:12.812-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        ur1_0.userId,
-        ur1_0.userRoleId,
-        ur1_0.assignedDate,
-        ur1_0.createdAt,
-        ur1_0.roleId,
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt,
-        ur1_0.updatedAt 
-    from
-        UserRole ur1_0 
-    left join
-        Role r1_0 
-            on r1_0.roleId=ur1_0.roleId 
-    where
-        ur1_0.userId=?
-Hibernate: 
-    select
-        ur1_0.userId,
-        ur1_0.userRoleId,
-        ur1_0.assignedDate,
-        ur1_0.createdAt,
-        ur1_0.roleId,
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt,
-        ur1_0.updatedAt 
-    from
-        UserRole ur1_0 
-    left join
-        Role r1_0 
-            on r1_0.roleId=ur1_0.roleId 
-    where
-        ur1_0.userId=?
-[2m2025-08-08T00:31:12.814-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m User found: test222, isActive: true, authorities: [ROLE_EMPLOYEE]
-[2m2025-08-08T00:31:12.816-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m GET "/api/timesheets/employee/12?periodStart=2024-08-12&periodEnd=2024-08-18", parameters={masked}
-[2m2025-08-08T00:31:12.816-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped to org.example.controller.TimeSheetController#getTimeSheetsByEmployeeAndPeriod(Integer, LocalDate, LocalDate)
-[2m2025-08-08T00:31:12.822-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        ts1_0.timesheetId,
-        ts1_0.createdAt,
-        ts1_0.employeeId,
-        ts1_0.periodEndDate,
-        ts1_0.periodStartDate,
-        ts1_0.status,
-        ts1_0.submissionDate,
-        ts1_0.totalHours,
-        ts1_0.updatedAt 
-    from
-        Timesheet ts1_0 
-    where
-        ts1_0.employeeId=? 
-        and ts1_0.periodStartDate between ? and ?
-Hibernate: 
-    select
-        ts1_0.timesheetId,
-        ts1_0.createdAt,
-        ts1_0.employeeId,
-        ts1_0.periodEndDate,
-        ts1_0.periodStartDate,
-        ts1_0.status,
-        ts1_0.submissionDate,
-        ts1_0.totalHours,
-        ts1_0.updatedAt 
-    from
-        Timesheet ts1_0 
-    where
-        ts1_0.employeeId=? 
-        and ts1_0.periodStartDate between ? and ?
-[2m2025-08-08T00:31:12.824-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-[2m2025-08-08T00:31:12.824-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Writing [[]]
-[2m2025-08-08T00:31:12.826-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-6][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed 200 OK
-[2m2025-08-08T00:31:25.544-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT header present: true
-[2m2025-08-08T00:31:25.545-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT valid: true for uri /api/timesheets/with-entries
-[2m2025-08-08T00:31:25.546-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m Loading user by username: test222
-[2m2025-08-08T00:31:25.548-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-Hibernate: 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-[2m2025-08-08T00:31:25.550-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        ur1_0.userId,
-        ur1_0.userRoleId,
-        ur1_0.assignedDate,
-        ur1_0.createdAt,
-        ur1_0.roleId,
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt,
-        ur1_0.updatedAt 
-    from
-        UserRole ur1_0 
-    left join
-        Role r1_0 
-            on r1_0.roleId=ur1_0.roleId 
-    where
-        ur1_0.userId=?
-Hibernate: 
-    select
-        ur1_0.userId,
-        ur1_0.userRoleId,
-        ur1_0.assignedDate,
-        ur1_0.createdAt,
-        ur1_0.roleId,
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt,
-        ur1_0.updatedAt 
-    from
-        UserRole ur1_0 
-    left join
-        Role r1_0 
-            on r1_0.roleId=ur1_0.roleId 
-    where
-        ur1_0.userId=?
-[2m2025-08-08T00:31:25.551-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m User found: test222, isActive: true, authorities: [ROLE_EMPLOYEE]
-[2m2025-08-08T00:31:25.552-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m POST "/api/timesheets/with-entries", parameters={}
-[2m2025-08-08T00:31:25.552-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped to org.example.controller.TimeSheetController#createTimeSheetWithEntries(TimeSheetWithEntriesRequestDTO)
-[2m2025-08-08T00:31:25.558-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36mm.m.a.RequestResponseBodyMethodProcessor[0;39m [2m:[0;39m Read "application/json;charset=UTF-8" to [TimeSheetWithEntriesRequestDTO[employeeId=12, periodStartDate=2024-08-12, periodEndDate=2024-08-18,  (truncated)...]
-[2m2025-08-08T00:31:25.559-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+[2m2025-08-09T16:04:12.767-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
     select
         e1_0.employeeId,
         e1_0.createdAt,
@@ -2053,280 +853,7 @@ Hibernate:
         Employee e1_0 
     where
         e1_0.employeeId=?
-[2m2025-08-08T00:31:25.560-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    insert 
-    into
-        Timesheet
-        (createdAt, employeeId, periodEndDate, periodStartDate, status, submissionDate, totalHours, updatedAt) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    insert 
-    into
-        Timesheet
-        (createdAt, employeeId, periodEndDate, periodStartDate, status, submissionDate, totalHours, updatedAt) 
-    values
-        (?, ?, ?, ?, ?, ?, ?, ?)
-[2m2025-08-08T00:31:25.562-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        p1_0.projectId,
-        p1_0.clientId,
-        p1_0.createdAt,
-        p1_0.description,
-        p1_0.endDate,
-        p1_0.name,
-        p1_0.projectManagerId,
-        p1_0.startDate,
-        p1_0.status,
-        p1_0.updatedAt 
-    from
-        Project p1_0 
-    where
-        p1_0.projectId=?
-Hibernate: 
-    select
-        p1_0.projectId,
-        p1_0.clientId,
-        p1_0.createdAt,
-        p1_0.description,
-        p1_0.endDate,
-        p1_0.name,
-        p1_0.projectManagerId,
-        p1_0.startDate,
-        p1_0.status,
-        p1_0.updatedAt 
-    from
-        Project p1_0 
-    where
-        p1_0.projectId=?
-[2m2025-08-08T00:31:25.563-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    insert 
-    into
-        TimesheetEntry
-        (createdAt, date, hoursWorked, projectId, taskDescription, timesheetId, updatedAt) 
-    values
-        (?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    insert 
-    into
-        TimesheetEntry
-        (createdAt, date, hoursWorked, projectId, taskDescription, timesheetId, updatedAt) 
-    values
-        (?, ?, ?, ?, ?, ?, ?)
-[2m2025-08-08T00:31:25.564-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    insert 
-    into
-        TimesheetEntry
-        (createdAt, date, hoursWorked, projectId, taskDescription, timesheetId, updatedAt) 
-    values
-        (?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    insert 
-    into
-        TimesheetEntry
-        (createdAt, date, hoursWorked, projectId, taskDescription, timesheetId, updatedAt) 
-    values
-        (?, ?, ?, ?, ?, ?, ?)
-[2m2025-08-08T00:31:25.566-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        tse1_0.entryId,
-        tse1_0.createdAt,
-        tse1_0.date,
-        tse1_0.hoursWorked,
-        tse1_0.projectId,
-        tse1_0.taskDescription,
-        tse1_0.timesheetId,
-        tse1_0.updatedAt 
-    from
-        TimesheetEntry tse1_0 
-    where
-        tse1_0.timesheetId=?
-Hibernate: 
-    select
-        tse1_0.entryId,
-        tse1_0.createdAt,
-        tse1_0.date,
-        tse1_0.hoursWorked,
-        tse1_0.projectId,
-        tse1_0.taskDescription,
-        tse1_0.timesheetId,
-        tse1_0.updatedAt 
-    from
-        TimesheetEntry tse1_0 
-    where
-        tse1_0.timesheetId=?
-[2m2025-08-08T00:31:25.570-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-[2m2025-08-08T00:31:25.573-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Writing [TimeSheetResponseDTO[timesheetId=8, employeeId=12, employeeName=New Employee Smith, periodStartDate= (truncated)...]
-[2m2025-08-08T00:31:25.576-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-7][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed 201 CREATED
-[2m2025-08-08T00:31:31.015-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-8][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT header present: true
-[2m2025-08-08T00:31:31.016-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-8][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT valid: true for uri /api/timesheets/employee/12
-[2m2025-08-08T00:31:31.016-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-8][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m Loading user by username: test222
-[2m2025-08-08T00:31:31.018-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-8][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-Hibernate: 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-[2m2025-08-08T00:31:31.021-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-8][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        ur1_0.userId,
-        ur1_0.userRoleId,
-        ur1_0.assignedDate,
-        ur1_0.createdAt,
-        ur1_0.roleId,
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt,
-        ur1_0.updatedAt 
-    from
-        UserRole ur1_0 
-    left join
-        Role r1_0 
-            on r1_0.roleId=ur1_0.roleId 
-    where
-        ur1_0.userId=?
-Hibernate: 
-    select
-        ur1_0.userId,
-        ur1_0.userRoleId,
-        ur1_0.assignedDate,
-        ur1_0.createdAt,
-        ur1_0.roleId,
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt,
-        ur1_0.updatedAt 
-    from
-        UserRole ur1_0 
-    left join
-        Role r1_0 
-            on r1_0.roleId=ur1_0.roleId 
-    where
-        ur1_0.userId=?
-[2m2025-08-08T00:31:31.023-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-8][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m User found: test222, isActive: true, authorities: [ROLE_EMPLOYEE]
-[2m2025-08-08T00:31:31.024-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-8][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m GET "/api/timesheets/employee/12?periodStart=2024-08-12&periodEnd=2024-08-18", parameters={masked}
-[2m2025-08-08T00:31:31.024-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-8][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped to org.example.controller.TimeSheetController#getTimeSheetsByEmployeeAndPeriod(Integer, LocalDate, LocalDate)
-[2m2025-08-08T00:31:31.025-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-8][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        ts1_0.timesheetId,
-        ts1_0.createdAt,
-        ts1_0.employeeId,
-        ts1_0.periodEndDate,
-        ts1_0.periodStartDate,
-        ts1_0.status,
-        ts1_0.submissionDate,
-        ts1_0.totalHours,
-        ts1_0.updatedAt 
-    from
-        Timesheet ts1_0 
-    where
-        ts1_0.employeeId=? 
-        and ts1_0.periodStartDate between ? and ?
-Hibernate: 
-    select
-        ts1_0.timesheetId,
-        ts1_0.createdAt,
-        ts1_0.employeeId,
-        ts1_0.periodEndDate,
-        ts1_0.periodStartDate,
-        ts1_0.status,
-        ts1_0.submissionDate,
-        ts1_0.totalHours,
-        ts1_0.updatedAt 
-    from
-        Timesheet ts1_0 
-    where
-        ts1_0.employeeId=? 
-        and ts1_0.periodStartDate between ? and ?
-[2m2025-08-08T00:31:31.027-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-8][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        tse1_0.entryId,
-        tse1_0.createdAt,
-        tse1_0.date,
-        tse1_0.hoursWorked,
-        tse1_0.projectId,
-        tse1_0.taskDescription,
-        tse1_0.timesheetId,
-        tse1_0.updatedAt 
-    from
-        TimesheetEntry tse1_0 
-    where
-        tse1_0.timesheetId=?
-Hibernate: 
-    select
-        tse1_0.entryId,
-        tse1_0.createdAt,
-        tse1_0.date,
-        tse1_0.hoursWorked,
-        tse1_0.projectId,
-        tse1_0.taskDescription,
-        tse1_0.timesheetId,
-        tse1_0.updatedAt 
-    from
-        TimesheetEntry tse1_0 
-    where
-        tse1_0.timesheetId=?
-[2m2025-08-08T00:31:31.028-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-8][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        p1_0.projectId,
-        p1_0.clientId,
-        p1_0.createdAt,
-        p1_0.description,
-        p1_0.endDate,
-        p1_0.name,
-        p1_0.projectManagerId,
-        p1_0.startDate,
-        p1_0.status,
-        p1_0.updatedAt 
-    from
-        Project p1_0 
-    where
-        p1_0.projectId=?
-Hibernate: 
-    select
-        p1_0.projectId,
-        p1_0.clientId,
-        p1_0.createdAt,
-        p1_0.description,
-        p1_0.endDate,
-        p1_0.name,
-        p1_0.projectManagerId,
-        p1_0.startDate,
-        p1_0.status,
-        p1_0.updatedAt 
-    from
-        Project p1_0 
-    where
-        p1_0.projectId=?
-[2m2025-08-08T00:31:31.029-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-8][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
+[2m2025-08-09T16:04:12.768-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
     select
         e1_0.employeeId,
         e1_0.createdAt,
@@ -2356,608 +883,9 @@ Hibernate:
         Employee e1_0 
     where
         e1_0.employeeId=?
-[2m2025-08-08T00:31:31.030-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-8][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-[2m2025-08-08T00:31:31.030-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-8][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Writing [[TimeSheetResponseDTO[timesheetId=8, employeeId=12, employeeName=New Employee Smith, periodStartDate (truncated)...]
-[2m2025-08-08T00:31:31.031-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-8][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed 200 OK
-[2m2025-08-08T00:31:46.551-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT header present: true
-[2m2025-08-08T00:31:46.553-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT valid: true for uri /api/approvals
-[2m2025-08-08T00:31:46.555-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m Loading user by username: test222
-[2m2025-08-08T00:31:46.556-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-Hibernate: 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-[2m2025-08-08T00:31:46.558-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        ur1_0.userId,
-        ur1_0.userRoleId,
-        ur1_0.assignedDate,
-        ur1_0.createdAt,
-        ur1_0.roleId,
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt,
-        ur1_0.updatedAt 
-    from
-        UserRole ur1_0 
-    left join
-        Role r1_0 
-            on r1_0.roleId=ur1_0.roleId 
-    where
-        ur1_0.userId=?
-Hibernate: 
-    select
-        ur1_0.userId,
-        ur1_0.userRoleId,
-        ur1_0.assignedDate,
-        ur1_0.createdAt,
-        ur1_0.roleId,
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt,
-        ur1_0.updatedAt 
-    from
-        UserRole ur1_0 
-    left join
-        Role r1_0 
-            on r1_0.roleId=ur1_0.roleId 
-    where
-        ur1_0.userId=?
-[2m2025-08-08T00:31:46.560-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m User found: test222, isActive: true, authorities: [ROLE_EMPLOYEE]
-[2m2025-08-08T00:31:46.562-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m POST "/api/approvals", parameters={}
-[2m2025-08-08T00:31:46.562-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped to org.example.controller.ApprovalController#createApproval(ApprovalRequestDTO)
-[2m2025-08-08T00:31:46.564-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [2m[0;39m[36mm.m.a.RequestResponseBodyMethodProcessor[0;39m [2m:[0;39m Read "application/json;charset=UTF-8" to [ApprovalRequestDTO[timesheetId=8, approvedBy=11, status=PENDING, comments=]]
-[2m2025-08-08T00:31:46.567-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        ts1_0.timesheetId,
-        ts1_0.createdAt,
-        ts1_0.employeeId,
-        ts1_0.periodEndDate,
-        ts1_0.periodStartDate,
-        ts1_0.status,
-        ts1_0.submissionDate,
-        ts1_0.totalHours,
-        ts1_0.updatedAt 
-    from
-        Timesheet ts1_0 
-    where
-        ts1_0.timesheetId=?
-Hibernate: 
-    select
-        ts1_0.timesheetId,
-        ts1_0.createdAt,
-        ts1_0.employeeId,
-        ts1_0.periodEndDate,
-        ts1_0.periodStartDate,
-        ts1_0.status,
-        ts1_0.submissionDate,
-        ts1_0.totalHours,
-        ts1_0.updatedAt 
-    from
-        Timesheet ts1_0 
-    where
-        ts1_0.timesheetId=?
-[2m2025-08-08T00:31:46.569-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        e1_0.employeeId,
-        e1_0.createdAt,
-        e1_0.departmentId,
-        e1_0.email,
-        e1_0.firstName,
-        e1_0.lastName,
-        e1_0.managerId,
-        e1_0.position,
-        e1_0.updatedAt 
-    from
-        Employee e1_0 
-    where
-        e1_0.employeeId=?
-Hibernate: 
-    select
-        e1_0.employeeId,
-        e1_0.createdAt,
-        e1_0.departmentId,
-        e1_0.email,
-        e1_0.firstName,
-        e1_0.lastName,
-        e1_0.managerId,
-        e1_0.position,
-        e1_0.updatedAt 
-    from
-        Employee e1_0 
-    where
-        e1_0.employeeId=?
-[2m2025-08-08T00:31:46.571-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    insert 
-    into
-        Approval
-        (approvedAt, approvedBy, comments, createdAt, status, timesheetId, updatedAt) 
-    values
-        (?, ?, ?, ?, ?, ?, ?)
-Hibernate: 
-    insert 
-    into
-        Approval
-        (approvedAt, approvedBy, comments, createdAt, status, timesheetId, updatedAt) 
-    values
-        (?, ?, ?, ?, ?, ?, ?)
-[2m2025-08-08T00:31:46.574-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-[2m2025-08-08T00:31:46.574-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Writing [ApprovalResponseDTO[approvalId=6, timesheetId=8, approvedBy=11, approvedByName=Adis Smith, approvedA (truncated)...]
-[2m2025-08-08T00:31:46.575-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-9][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed 201 CREATED
-[2m2025-08-08T00:32:07.100-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT header present: true
-[2m2025-08-08T00:32:07.102-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT valid: true for uri /api/approvals/my-approvals
-[2m2025-08-08T00:32:07.103-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m Loading user by username: adis
-[2m2025-08-08T00:32:07.105-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-Hibernate: 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-[2m2025-08-08T00:32:07.107-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        ur1_0.userId,
-        ur1_0.userRoleId,
-        ur1_0.assignedDate,
-        ur1_0.createdAt,
-        ur1_0.roleId,
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt,
-        ur1_0.updatedAt 
-    from
-        UserRole ur1_0 
-    left join
-        Role r1_0 
-            on r1_0.roleId=ur1_0.roleId 
-    where
-        ur1_0.userId=?
-Hibernate: 
-    select
-        ur1_0.userId,
-        ur1_0.userRoleId,
-        ur1_0.assignedDate,
-        ur1_0.createdAt,
-        ur1_0.roleId,
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt,
-        ur1_0.updatedAt 
-    from
-        UserRole ur1_0 
-    left join
-        Role r1_0 
-            on r1_0.roleId=ur1_0.roleId 
-    where
-        ur1_0.userId=?
-[2m2025-08-08T00:32:07.108-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m User found: adis, isActive: true, authorities: [ROLE_ADMIN]
-[2m2025-08-08T00:32:07.109-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m GET "/api/approvals/my-approvals", parameters={}
-[2m2025-08-08T00:32:07.109-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped to org.example.controller.ApprovalController#getMyApprovals()
-[2m2025-08-08T00:32:07.111-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        a1_0.approvalId,
-        a1_0.approvedAt,
-        a1_0.approvedBy,
-        a1_0.comments,
-        a1_0.createdAt,
-        a1_0.status,
-        a1_0.timesheetId,
-        a1_0.updatedAt 
-    from
-        Approval a1_0 
-    where
-        a1_0.approvedBy=?
-Hibernate: 
-    select
-        a1_0.approvalId,
-        a1_0.approvedAt,
-        a1_0.approvedBy,
-        a1_0.comments,
-        a1_0.createdAt,
-        a1_0.status,
-        a1_0.timesheetId,
-        a1_0.updatedAt 
-    from
-        Approval a1_0 
-    where
-        a1_0.approvedBy=?
-[2m2025-08-08T00:32:07.113-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        e1_0.employeeId,
-        e1_0.createdAt,
-        e1_0.departmentId,
-        e1_0.email,
-        e1_0.firstName,
-        e1_0.lastName,
-        e1_0.managerId,
-        e1_0.position,
-        e1_0.updatedAt 
-    from
-        Employee e1_0 
-    where
-        e1_0.employeeId=?
-Hibernate: 
-    select
-        e1_0.employeeId,
-        e1_0.createdAt,
-        e1_0.departmentId,
-        e1_0.email,
-        e1_0.firstName,
-        e1_0.lastName,
-        e1_0.managerId,
-        e1_0.position,
-        e1_0.updatedAt 
-    from
-        Employee e1_0 
-    where
-        e1_0.employeeId=?
-[2m2025-08-08T00:32:07.114-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-[2m2025-08-08T00:32:07.114-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Writing [[ApprovalResponseDTO[approvalId=6, timesheetId=8, approvedBy=11, approvedByName=Adis Smith, approved (truncated)...]
-[2m2025-08-08T00:32:07.114-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[io-8080-exec-10][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed 200 OK
-[2m2025-08-08T00:32:16.040-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT header present: true
-[2m2025-08-08T00:32:16.041-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m JWT valid: true for uri /api/approvals/6
-[2m2025-08-08T00:32:16.041-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m Loading user by username: adis
-[2m2025-08-08T00:32:16.042-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-Hibernate: 
-    select
-        u1_0.userId,
-        u1_0.createdAt,
-        u1_0.employeeId,
-        u1_0.isActive,
-        u1_0.lastLogin,
-        u1_0.password,
-        u1_0.updatedAt,
-        u1_0.userName 
-    from
-        User u1_0 
-    where
-        u1_0.userName=?
-[2m2025-08-08T00:32:16.043-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        ur1_0.userId,
-        ur1_0.userRoleId,
-        ur1_0.assignedDate,
-        ur1_0.createdAt,
-        ur1_0.roleId,
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt,
-        ur1_0.updatedAt 
-    from
-        UserRole ur1_0 
-    left join
-        Role r1_0 
-            on r1_0.roleId=ur1_0.roleId 
-    where
-        ur1_0.userId=?
-Hibernate: 
-    select
-        ur1_0.userId,
-        ur1_0.userRoleId,
-        ur1_0.assignedDate,
-        ur1_0.createdAt,
-        ur1_0.roleId,
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt,
-        ur1_0.updatedAt 
-    from
-        UserRole ur1_0 
-    left join
-        Role r1_0 
-            on r1_0.roleId=ur1_0.roleId 
-    where
-        ur1_0.userId=?
-[2m2025-08-08T00:32:16.044-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.e.service.User.impl.UserServiceImpl   [0;39m [2m:[0;39m User found: adis, isActive: true, authorities: [ROLE_ADMIN]
-[2m2025-08-08T00:32:16.044-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m PUT "/api/approvals/6", parameters={}
-[2m2025-08-08T00:32:16.044-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m Mapped to org.example.controller.ApprovalController#updateApproval(Integer, ApprovalRequestDTO)
-[2m2025-08-08T00:32:16.045-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mm.m.a.RequestResponseBodyMethodProcessor[0;39m [2m:[0;39m Read "application/json;charset=UTF-8" to [ApprovalRequestDTO[timesheetId=8, approvedBy=11, status=APPROVED, comments=Approved after review]]
-[2m2025-08-08T00:32:16.046-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        a1_0.approvalId,
-        a1_0.approvedAt,
-        a1_0.approvedBy,
-        a1_0.comments,
-        a1_0.createdAt,
-        a1_0.status,
-        a1_0.timesheetId,
-        a1_0.updatedAt 
-    from
-        Approval a1_0 
-    where
-        a1_0.approvalId=?
-Hibernate: 
-    select
-        a1_0.approvalId,
-        a1_0.approvedAt,
-        a1_0.approvedBy,
-        a1_0.comments,
-        a1_0.createdAt,
-        a1_0.status,
-        a1_0.timesheetId,
-        a1_0.updatedAt 
-    from
-        Approval a1_0 
-    where
-        a1_0.approvalId=?
-[2m2025-08-08T00:32:16.048-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        ts1_0.timesheetId,
-        ts1_0.createdAt,
-        ts1_0.employeeId,
-        ts1_0.periodEndDate,
-        ts1_0.periodStartDate,
-        ts1_0.status,
-        ts1_0.submissionDate,
-        ts1_0.totalHours,
-        ts1_0.updatedAt 
-    from
-        Timesheet ts1_0 
-    where
-        ts1_0.timesheetId=?
-Hibernate: 
-    select
-        ts1_0.timesheetId,
-        ts1_0.createdAt,
-        ts1_0.employeeId,
-        ts1_0.periodEndDate,
-        ts1_0.periodStartDate,
-        ts1_0.status,
-        ts1_0.submissionDate,
-        ts1_0.totalHours,
-        ts1_0.updatedAt 
-    from
-        Timesheet ts1_0 
-    where
-        ts1_0.timesheetId=?
-[2m2025-08-08T00:32:16.050-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        e1_0.employeeId,
-        e1_0.createdAt,
-        e1_0.departmentId,
-        e1_0.email,
-        e1_0.firstName,
-        e1_0.lastName,
-        e1_0.managerId,
-        e1_0.position,
-        e1_0.updatedAt 
-    from
-        Employee e1_0 
-    where
-        e1_0.employeeId=?
-Hibernate: 
-    select
-        e1_0.employeeId,
-        e1_0.createdAt,
-        e1_0.departmentId,
-        e1_0.email,
-        e1_0.firstName,
-        e1_0.lastName,
-        e1_0.managerId,
-        e1_0.position,
-        e1_0.updatedAt 
-    from
-        Employee e1_0 
-    where
-        e1_0.employeeId=?
-[2m2025-08-08T00:32:16.052-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    update
-        Approval 
-    set
-        approvedAt=?,
-        approvedBy=?,
-        comments=?,
-        createdAt=?,
-        status=?,
-        timesheetId=?,
-        updatedAt=? 
-    where
-        approvalId=?
-Hibernate: 
-    update
-        Approval 
-    set
-        approvedAt=?,
-        approvedBy=?,
-        comments=?,
-        createdAt=?,
-        status=?,
-        timesheetId=?,
-        updatedAt=? 
-    where
-        approvalId=?
-[2m2025-08-08T00:32:16.054-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Using 'application/json', given [*/*] and supported [application/json, application/*+json]
-[2m2025-08-08T00:32:16.054-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Writing [ApprovalResponseDTO[approvalId=6, timesheetId=8, approvedBy=11, approvedByName=Adis Smith, approvedA (truncated)...]
-[2m2025-08-08T00:32:16.054-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[nio-8080-exec-1][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed 200 OK
-[2m2025-08-08T00:37:31.986-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[   File Watcher][0;39m [2m[0;39m[36mrtingClassPathChangeChangedEventListener[0;39m [2m:[0;39m Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-[2m2025-08-08T00:37:31.995-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[      Thread-11][0;39m [2m[0;39m[36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Closing JPA EntityManagerFactory for persistence unit 'default'
-[2m2025-08-08T00:37:31.995-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[      Thread-11][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-3 - Shutdown initiated...
-[2m2025-08-08T00:37:31.998-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[      Thread-11][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-3 - Shutdown completed.
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
-[32m :: Spring Boot :: [39m              [2m (v3.2.0)[0;39m
-
-[2m2025-08-08T00:37:32.052-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.TimeSheetManagementApplication      [0;39m [2m:[0;39m Starting TimeSheetManagementApplication using Java 24.0.1 with PID 18682 (/Users/nguyenhai/MyProject/TimeSheetManagement/TimeSheetManagement/target/classes started by nguyenhai in /Users/nguyenhai/MyProject/TimeSheetManagement/TimeSheetManagement)
-[2m2025-08-08T00:37:32.052-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.TimeSheetManagementApplication      [0;39m [2m:[0;39m No active profile set, falling back to 1 default profile: "default"
-[2m2025-08-08T00:37:32.115-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[2m2025-08-08T00:37:32.125-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.s.d.r.c.RepositoryConfigurationDelegate[0;39m [2m:[0;39m Finished Spring Data repository scanning in 9 ms. Found 11 JPA repository interfaces.
-[2m2025-08-08T00:37:32.195-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat initialized with port 8080 (http)
-[2m2025-08-08T00:37:32.195-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.apache.catalina.core.StandardService  [0;39m [2m:[0;39m Starting service [Tomcat]
-[2m2025-08-08T00:37:32.195-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.apache.catalina.core.StandardEngine   [0;39m [2m:[0;39m Starting Servlet engine: [Apache Tomcat/10.1.16]
-[2m2025-08-08T00:37:32.198-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [2m:[0;39m Initializing Spring embedded WebApplicationContext
-[2m2025-08-08T00:37:32.198-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mw.s.c.ServletWebServerApplicationContext[0;39m [2m:[0;39m Root WebApplicationContext: initialization completed in 145 ms
-[2m2025-08-08T00:37:32.226-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.hibernate.jpa.internal.util.LogHelper [0;39m [2m:[0;39m HHH000204: Processing PersistenceUnitInfo [name: default]
-[2m2025-08-08T00:37:32.227-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.h.c.internal.RegionFactoryInitiator   [0;39m [2m:[0;39m HHH000026: Second-level cache disabled
-[2m2025-08-08T00:37:32.228-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.o.j.p.SpringPersistenceUnitInfo     [0;39m [2m:[0;39m No LoadTimeWeaver setup: ignoring JPA class transformer
-[2m2025-08-08T00:37:32.228-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-4 - Starting...
-[2m2025-08-08T00:37:32.243-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mcom.zaxxer.hikari.pool.HikariPool       [0;39m [2m:[0;39m HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6e45c893
-[2m2025-08-08T00:37:32.243-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-4 - Start completed.
-[2m2025-08-08T00:37:32.243-05:00[0;39m [33m WARN[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.orm.deprecation           [0;39m [2m:[0;39m HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-[2m2025-08-08T00:37:32.301-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.h.e.t.j.p.i.JtaPlatformInitiator      [0;39m [2m:[0;39m HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-[2m2025-08-08T00:37:32.381-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Initialized JPA EntityManagerFactory for persistence unit 'default'
-[2m2025-08-08T00:37:32.448-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.security.JwtAuthenticationFilter    [0;39m [2m:[0;39m Filter 'jwtAuthenticationFilter' configured for use
-[2m2025-08-08T00:37:32.656-05:00[0;39m [33m WARN[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mJpaBaseConfiguration$JpaWebConfiguration[0;39m [2m:[0;39m spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-[2m2025-08-08T00:37:32.691-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerMapping[0;39m [2m:[0;39m 39 mappings in 'requestMappingHandlerMapping'
-[2m2025-08-08T00:37:32.729-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.w.s.handler.SimpleUrlHandlerMapping [0;39m [2m:[0;39m Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-[2m2025-08-08T00:37:32.748-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.s.web.DefaultSecurityFilterChain    [0;39m [2m:[0;39m Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@60ca1504, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2b3d8182, org.springframework.security.web.context.SecurityContextHolderFilter@44b0e077, org.springframework.security.web.header.HeaderWriterFilter@78e64c9b, org.springframework.web.filter.CorsFilter@4f169099, org.springframework.security.web.authentication.logout.LogoutFilter@c2516ce, org.example.security.JwtAuthenticationFilter@4ff8e074, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3ce74a79, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@76af5bea, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6481c5b8, org.springframework.security.web.session.SessionManagementFilter@6afab1aa, org.springframework.security.web.access.ExceptionTranslationFilter@41072515, org.springframework.security.web.access.intercept.AuthorizationFilter@447df823]
-[2m2025-08-08T00:37:32.772-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36ms.w.s.m.m.a.RequestMappingHandlerAdapter[0;39m [2m:[0;39m ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-[2m2025-08-08T00:37:32.778-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.m.m.a.ExceptionHandlerExceptionResolver[0;39m [2m:[0;39m ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-[2m2025-08-08T00:37:32.827-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [2m:[0;39m LiveReload server is running on port 35729
-[2m2025-08-08T00:37:32.833-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [2m:[0;39m Tomcat started on port 8080 (http) with context path ''
-[2m2025-08-08T00:37:32.835-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36mo.e.TimeSheetManagementApplication      [0;39m [2m:[0;39m Started TimeSheetManagementApplication in 0.794 seconds (process running for 972.607)
-[2m2025-08-08T00:37:32.854-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt 
-    from
-        Role r1_0 
-    where
-        r1_0.roleName=?
-Hibernate: 
-    select
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt 
-    from
-        Role r1_0 
-    where
-        r1_0.roleName=?
-[2m2025-08-08T00:37:32.856-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt 
-    from
-        Role r1_0 
-    where
-        r1_0.roleName=?
-Hibernate: 
-    select
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt 
-    from
-        Role r1_0 
-    where
-        r1_0.roleName=?
-[2m2025-08-08T00:37:32.857-05:00[0;39m [32mDEBUG[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36morg.hibernate.SQL                       [0;39m [2m:[0;39m 
-    select
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt 
-    from
-        Role r1_0 
-    where
-        r1_0.roleName=?
-Hibernate: 
-    select
-        r1_0.roleId,
-        r1_0.createdAt,
-        r1_0.description,
-        r1_0.permissions,
-        r1_0.roleName,
-        r1_0.updatedAt 
-    from
-        Role r1_0 
-    where
-        r1_0.roleName=?
-[2m2025-08-08T00:37:32.858-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[  restartedMain][0;39m [2m[0;39m[36m.ConditionEvaluationDeltaLoggingListener[0;39m [2m:[0;39m Condition evaluation unchanged
-[2m2025-08-08T00:38:37.261-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[ionShutdownHook][0;39m [2m[0;39m[36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Closing JPA EntityManagerFactory for persistence unit 'default'
-[2m2025-08-08T00:38:37.261-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[ionShutdownHook][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-4 - Shutdown initiated...
-[2m2025-08-08T00:38:37.263-05:00[0;39m [32m INFO[0;39m [35m18682[0;39m [2m---[0;39m [2m[ionShutdownHook][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-4 - Shutdown completed.
+[2m2025-08-09T16:04:12.770-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+[2m2025-08-09T16:04:12.770-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.s.w.s.m.m.a.HttpEntityMethodProcessor [0;39m [2m:[0;39m Writing [[DepartmentResponseDTO[departmentId=1, name=Software Development, headEmployeeId=1, headEmployeeName (truncated)...]
+[2m2025-08-09T16:04:12.772-05:00[0;39m [32mDEBUG[0;39m [35m11282[0;39m [2m---[0;39m [2m[nio-8080-exec-4][0;39m [2m[0;39m[36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed 200 OK
+[2m2025-08-09T16:04:31.621-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[ionShutdownHook][0;39m [2m[0;39m[36mj.LocalContainerEntityManagerFactoryBean[0;39m [2m:[0;39m Closing JPA EntityManagerFactory for persistence unit 'default'
+[2m2025-08-09T16:04:31.621-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[ionShutdownHook][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-2 - Shutdown initiated...
+[2m2025-08-09T16:04:31.623-05:00[0;39m [32m INFO[0;39m [35m11282[0;39m [2m---[0;39m [2m[ionShutdownHook][0;39m [2m[0;39m[36mcom.zaxxer.hikari.HikariDataSource      [0;39m [2m:[0;39m HikariPool-2 - Shutdown completed.

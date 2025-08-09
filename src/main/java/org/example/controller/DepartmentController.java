@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/departments")
-@CrossOrigin(origins = "*", maxAge = 3600)
 public class DepartmentController {
     private final DepartmentService departmentService;
 
@@ -36,7 +35,7 @@ public class DepartmentController {
     }
 
     @GetMapping
-    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or hasRole('EMPLOYEE')")
     public ResponseEntity<List<DepartmentResponseDTO>> getAllDepartments() {
         try {
             List<DepartmentResponseDTO> departments = departmentService.findAll();
