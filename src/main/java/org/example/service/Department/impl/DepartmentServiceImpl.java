@@ -9,6 +9,7 @@ import org.example.repository.EmployeeRepository;
 import org.example.service.Department.DepartmentService;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -34,6 +35,8 @@ public class DepartmentServiceImpl implements DepartmentService {
         Department department = new Department();
         department.setName(departmentRequestDTO.name());
         department.setHeadEmployee(headEmployee);
+        department.setCreatedAt(LocalDateTime.now());
+        department.setUpdatedAt(LocalDateTime.now());
 
         Department savedDepartment = departmentRepository.save(department);
         return toDepartmentResponseDTO(savedDepartment);
@@ -67,6 +70,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
         existingDepartment.setName(departmentRequestDTO.name());
         existingDepartment.setHeadEmployee(headEmployee);
+        existingDepartment.setUpdatedAt(LocalDateTime.now());
 
         Department updatedDepartment = departmentRepository.save(existingDepartment);
         return toDepartmentResponseDTO(updatedDepartment);
@@ -74,6 +78,9 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public void deleteById(Integer id) {
+        if (!departmentRepository.existsById(id)) {
+            throw new RuntimeException("Department not found with id: " + id);
+        }
         departmentRepository.deleteById(id);
     }
 

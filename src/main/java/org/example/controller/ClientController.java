@@ -1,31 +1,32 @@
 package org.example.controller;
 
-import java.util.List;
-
-import org.example.dto.request.DepartmentRequestDTO;
-import org.example.dto.response.DepartmentResponseDTO;
-import org.example.service.Department.DepartmentService;
+import org.example.dto.request.ClientRequestDTO;
+import org.example.dto.response.ClientResponseDTO;
+import org.example.service.Client.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/api/departments")
-public class DepartmentController {
-    private final DepartmentService departmentService;
+@RequestMapping("/api/clients")
+public class ClientController {
+    
+    private final ClientService clientService;
 
     @Autowired
-    public DepartmentController(DepartmentService departmentService) {
-        this.departmentService = departmentService;
+    public ClientController(ClientService clientService) {
+        this.clientService = clientService;
     }
 
     @PostMapping
-    @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<DepartmentResponseDTO> createDepartment(@RequestBody DepartmentRequestDTO departmentRequestDTO) {
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
+    public ResponseEntity<ClientResponseDTO> createClient(@RequestBody ClientRequestDTO clientRequestDTO) {
         try {
-            DepartmentResponseDTO created = departmentService.save(departmentRequestDTO);
+            ClientResponseDTO created = clientService.save(clientRequestDTO);
             return new ResponseEntity<>(created, HttpStatus.CREATED);
         } catch (RuntimeException e) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -36,22 +37,22 @@ public class DepartmentController {
 
     @GetMapping
     @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or hasRole('EMPLOYEE')")
-    public ResponseEntity<List<DepartmentResponseDTO>> getAllDepartments() {
+    public ResponseEntity<List<ClientResponseDTO>> getAllClients() {
         try {
-            List<DepartmentResponseDTO> departments = departmentService.findAll();
-            return new ResponseEntity<>(departments, HttpStatus.OK);
+            List<ClientResponseDTO> clients = clientService.findAll();
+            return new ResponseEntity<>(clients, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
-    public ResponseEntity<DepartmentResponseDTO> getDepartmentById(@PathVariable Integer id) {
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or hasRole('EMPLOYEE')")
+    public ResponseEntity<ClientResponseDTO> getClientById(@PathVariable Integer id) {
         try {
-            DepartmentResponseDTO department = departmentService.findById(id);
-            if (department != null) {
-                return new ResponseEntity<>(department, HttpStatus.OK);
+            ClientResponseDTO client = clientService.findById(id);
+            if (client != null) {
+                return new ResponseEntity<>(client, HttpStatus.OK);
             } else {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
@@ -61,10 +62,10 @@ public class DepartmentController {
     }
 
     @PutMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<DepartmentResponseDTO> updateDepartment(@PathVariable Integer id, @RequestBody DepartmentRequestDTO departmentRequestDTO) {
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
+    public ResponseEntity<ClientResponseDTO> updateClient(@PathVariable Integer id, @RequestBody ClientRequestDTO clientRequestDTO) {
         try {
-            DepartmentResponseDTO updated = departmentService.update(id, departmentRequestDTO);
+            ClientResponseDTO updated = clientService.update(id, clientRequestDTO);
             return new ResponseEntity<>(updated, HttpStatus.OK);
         } catch (RuntimeException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
@@ -75,14 +76,14 @@ public class DepartmentController {
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Object> deleteDepartment(@PathVariable Integer id) {
+    public ResponseEntity<Object> deleteClient(@PathVariable Integer id) {
         try {
-            departmentService.deleteById(id);
-            return ResponseEntity.ok(new DeleteResponse(true, "Department deleted successfully"));
+            clientService.deleteById(id);
+            return ResponseEntity.ok(new DeleteResponse(true, "Client deleted successfully"));
         } catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new DeleteResponse(false, e.getMessage()));
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new DeleteResponse(false, "Client not found"));
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new DeleteResponse(false, "Error deleting Department"));
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new DeleteResponse(false, "Error deleting Client"));
         }
     }
 

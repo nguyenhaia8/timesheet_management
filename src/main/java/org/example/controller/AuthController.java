@@ -5,6 +5,7 @@ import org.example.dto.request.SignupRequestDTO;
 import org.example.dto.response.JwtResponseDTO;
 import org.example.dto.response.MessageResponseDTO;
 import org.example.dto.response.UserResponseDTO;
+import org.example.dto.response.LoginErrorResponseDTO;
 import org.example.model.Employee;
 import org.example.model.Role;
 import org.example.model.User;
@@ -134,7 +135,8 @@ public class AuthController {
         } catch (Exception e) {
             System.out.println("Login failed with exception: " + e.getMessage());
             e.printStackTrace();
-            return ResponseEntity.status(401).body("Authentication failed: " + e.getMessage());
+            String errorMessage = "Invalid username or password. Please check your credentials and try again.";
+            return ResponseEntity.status(401).body(new LoginErrorResponseDTO(401, "AUTHENTICATION_FAILED", errorMessage));
         }
     }
 

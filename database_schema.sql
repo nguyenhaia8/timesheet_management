@@ -5,7 +5,7 @@ USE timesheetdb;
 CREATE TABLE Department (
     departmentId INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    headEmployeeId INT,
+    headEmployeeId INT NULL,
     createdAt DATETIME NOT NULL,
     updatedAt DATETIME NOT NULL
 );
