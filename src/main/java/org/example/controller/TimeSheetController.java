@@ -3,6 +3,7 @@ package org.example.controller;
 import org.example.dto.request.TimeSheetRequestDTO;
 import org.example.dto.request.TimeSheetWithEntriesRequestDTO;
 import org.example.dto.response.TimeSheetResponseDTO;
+import org.example.dto.response.MessageResponseDTO;
 import org.example.dto.response.TimeSheetDetailResponseDTO;
 import org.example.service.TimeSheet.TimeSheetService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -132,25 +133,24 @@ public class TimeSheetController {
 
     @GetMapping("/employee/{employeeId}")
     @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or hasRole('EMPLOYEE')")
-    public ResponseEntity<List<TimeSheetResponseDTO>> getTimeSheetsByEmployeeAndPeriod(
+    public ResponseEntity<?> getTimeSheetsByEmployeeAndPeriod(
             @PathVariable Integer employeeId,
-            @RequestParam LocalDate periodStart,
-            @RequestParam LocalDate periodEnd) {
+            @RequestParam(required = false) LocalDate periodStart,
+            @RequestParam(required = false) LocalDate periodEnd) {
         try {
-            List<TimeSheetResponseDTO> timeSheets = timeSheetService.findByEmployeeIdAndPeriod(employeeId, periodStart, periodEnd);
+            List<TimeSheetResponseDTO> timeSheets;
+            if (periodStart != null && periodEnd != null) {
+                timeSheets = timeSheetService.findByEmployeeIdAndPeriod(employeeId, periodStart, periodEnd);
+                if (timeSheets == null || timeSheets.isEmpty()) {
+                    String msg = String.format("No timesheets found for employeeId %d between %s and %s",
+                            employeeId, periodStart, periodEnd);
+                    return new ResponseEntity<>(new MessageResponseDTO(msg), HttpStatus.NOT_FOUND);
+                }
+            } else {
+                timeSheets = timeSheetService.findByEmployeeId(employeeId);
+            }
             
-            return new ResponseEntity<>(timeSheets, HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-
-    @GetMapping("/employee/{employeeId}/all")
-    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or hasRole('EMPLOYEE')")
-    public ResponseEntity<List<TimeSheetResponseDTO>> getTimeSheetsByEmployeeId(@PathVariable Integer employeeId) {
-        try {
-            List<TimeSheetResponseDTO> timeSheets = timeSheetService.findByEmployeeId(employeeId);
-            return new ResponseEntity<>(timeSheets, HttpStatus.OK);
+            return new ResponseEntity<List<TimeSheetResponseDTO>>(timeSheets, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
