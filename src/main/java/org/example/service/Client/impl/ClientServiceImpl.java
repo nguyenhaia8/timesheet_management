@@ -62,6 +62,9 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public void deleteById(Integer id) {
+        if (!clientRepository.existsById(id)) {
+            throw new RuntimeException("Client not found with id: " + id);
+        }
         clientRepository.deleteById(id);
     }
 

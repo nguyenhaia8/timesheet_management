@@ -81,7 +81,7 @@ public class ClientController {
             clientService.deleteById(id);
             return ResponseEntity.ok(new DeleteResponse(true, "Client deleted successfully"));
         } catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new DeleteResponse(false, "Client not found"));
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new DeleteResponse(false, e.getMessage()));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new DeleteResponse(false, "Error deleting Client"));
         }
