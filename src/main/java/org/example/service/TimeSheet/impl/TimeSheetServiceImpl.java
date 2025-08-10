@@ -134,6 +134,54 @@ public class TimeSheetServiceImpl implements TimeSheetService {
     }
 
     @Override
+    @Transactional
+    public TimeSheetResponseDTO updateWithEntries(Integer id, TimeSheetWithEntriesRequestDTO dto) {
+        TimeSheet existingTimeSheet = timeSheetRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Timesheet not found with id: " + id));
+
+        Employee employee = employeeRepository.findById(dto.employeeId())
+                .orElseThrow(() -> new RuntimeException("Employee not found with id: " + dto.employeeId()));
+
+        // Update timesheet basic information
+        existingTimeSheet.setEmployee(employee);
+        existingTimeSheet.setPeriodStartDate(dto.periodStartDate());
+        existingTimeSheet.setPeriodEndDate(dto.periodEndDate());
+        
+        if (dto.status() != null) {
+            existingTimeSheet.setStatus(TimeSheet.TimeSheetStatus.valueOf(dto.status().toUpperCase()));
+        }
+        
+        if (dto.submissionDate() != null) {
+            existingTimeSheet.setSubmissionDate(dto.submissionDate());
+        }
+        
+        if (dto.totalHours() != null) {
+            existingTimeSheet.setTotalHours(dto.totalHours());
+        }
+
+        TimeSheet updatedTimeSheet = timeSheetRepository.save(existingTimeSheet);
+
+        // Delete existing entries and create new ones
+        timeSheetEntryService.deleteByTimesheetId(id);
+        
+        // Create and save new timesheet entries
+        if (dto.timeSheetEntries() != null && !dto.timeSheetEntries().isEmpty()) {
+            for (TimeSheetEntryRequestDTO entryDto : dto.timeSheetEntries()) {
+                TimeSheetEntryRequestDTO newEntryDto = new TimeSheetEntryRequestDTO(
+                    updatedTimeSheet.getTimesheetId(),
+                    entryDto.date(),
+                    entryDto.projectId(),
+                    entryDto.taskDescription(),
+                    entryDto.hoursWorked()
+                );
+                timeSheetEntryService.save(newEntryDto);
+            }
+        }
+
+        return toTimeSheetResponseDTO(updatedTimeSheet);
+    }
+
+    @Override
     public void deleteById(Integer id) {
         timeSheetRepository.deleteById(id);
     }

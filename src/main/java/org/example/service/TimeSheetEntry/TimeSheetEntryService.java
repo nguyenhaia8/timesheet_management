@@ -11,5 +11,6 @@ public interface TimeSheetEntryService {
     TimeSheetEntryResponseDTO save(TimeSheetEntryRequestDTO timeSheetEntryRequestDTO);
     TimeSheetEntryResponseDTO update(Integer id, TimeSheetEntryRequestDTO timeSheetEntryRequestDTO);
     void deleteById(Integer id);
+    void deleteByTimesheetId(Integer timesheetId);
     List<TimeSheetEntryResponseDTO> findByTimesheetId(Integer timesheetId);
 }

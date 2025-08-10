@@ -169,6 +169,19 @@ public class TimeSheetController {
         }
     }
 
+    @PutMapping("/{id}/with-entries")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or #id == authentication.principal.employee.employeeId")
+    public ResponseEntity<TimeSheetResponseDTO> updateTimeSheetWithEntries(@PathVariable Integer id, @RequestBody TimeSheetWithEntriesRequestDTO timeSheetWithEntriesRequestDTO) {
+        try {
+            TimeSheetResponseDTO updatedTimeSheet = timeSheetService.updateWithEntries(id, timeSheetWithEntriesRequestDTO);
+            return new ResponseEntity<>(updatedTimeSheet, HttpStatus.OK);
+        } catch (RuntimeException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
     public ResponseEntity<Object> deleteTimeSheet(@PathVariable Integer id) {
