@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: timesheet-management
+
+resources:
+  - namespace.yaml
+  - configmap.yaml
+  - secret.yaml
+  - mysql-persistent-volume.yaml
+  - mysql-init-configmap.yaml
+  - mysql-deployment.yaml
+  - app-deployment.yaml
+  - ingress.yaml
+  - hpa.yaml
+
+commonLabels:
+  app: timesheet-management
+  version: v1.0.0

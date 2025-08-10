@@ -1,0 +1,101 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mysql-init-script
+  namespace: timesheet-management
+data:
+  init.sql: |
+    -- Initialize TimeSheet Management Database
+    USE timesheetdb;
+    
+    -- Disable safe updates for this session
+    SET SQL_SAFE_UPDATES = 0;
+    
+    -- Insert Roles
+    INSERT INTO Role (roleName, description, permissions, createdAt, updatedAt) VALUES 
+    ('ADMIN', 'Administrator with full access', '["ALL"]', NOW(), NOW()),
+    ('MANAGER', 'Manager with team management access', '["MANAGE_TEAM","APPROVE_TIMESHEETS"]', NOW(), NOW()),
+    ('EMPLOYEE', 'Regular employee', '["CREATE_TIMESHEETS","VIEW_OWN_DATA"]', NOW(), NOW()),
+    ('HR', 'Human Resources', '["VIEW_ALL_EMPLOYEES","MANAGE_EMPLOYEES"]', NOW(), NOW())
+    ON DUPLICATE KEY UPDATE updatedAt = NOW();
+    
+    -- Insert Clients
+    INSERT INTO Client (clientName, contactEmail, contactPhone, address, createdAt, updatedAt) VALUES 
+    ('TechCorp Solutions', 'john@techcorp.com', '+1-555-0101', '123 Tech Street, Silicon Valley, CA', NOW(), NOW()),
+    ('Global Industries', 'sarah@global.com', '+1-555-0102', '456 Business Ave, New York, NY', NOW(), NOW()),
+    ('Innovation Labs', 'mike@innovation.com', '+1-555-0103', '789 Innovation Blvd, Austin, TX', NOW(), NOW()),
+    ('Digital Dynamics', 'lisa@digital.com', '+1-555-0104', '321 Digital Way, Seattle, WA', NOW(), NOW())
+    ON DUPLICATE KEY UPDATE updatedAt = NOW();
+    
+    -- Insert Departments
+    INSERT INTO Department (name, headEmployeeId, createdAt, updatedAt) VALUES 
+    ('Software Development', NULL, NOW(), NOW()),
+    ('Quality Assurance', NULL, NOW(), NOW()),
+    ('Project Management', NULL, NOW(), NOW()),
+    ('Human Resources', NULL, NOW(), NOW()),
+    ('Design', NULL, NOW(), NOW())
+    ON DUPLICATE KEY UPDATE updatedAt = NOW();
+    
+    -- Insert Employees
+    INSERT INTO Employee (firstName, lastName, email, position, departmentId, managerId, createdAt, updatedAt) VALUES 
+    ('John', 'Doe', 'john.doe@company.com', 'Senior Developer', 1, NULL, NOW(), NOW()),
+    ('Jane', 'Smith', 'jane.smith@company.com', 'QA Engineer', 2, NULL, NOW(), NOW()),
+    ('Bob', 'Johnson', 'bob.johnson@company.com', 'Project Manager', 3, NULL, NOW(), NOW()),
+    ('Alice', 'Brown', 'alice.brown@company.com', 'HR Manager', 4, NULL, NOW(), NOW()),
+    ('Charlie', 'Wilson', 'charlie.wilson@company.com', 'UI/UX Designer', 5, NULL, NOW(), NOW()),
+    ('Diana', 'Davis', 'diana.davis@company.com', 'Developer', 1, 1, NOW(), NOW()),
+    ('Edward', 'Miller', 'edward.miller@company.com', 'Developer', 1, 1, NOW(), NOW()),
+    ('Fiona', 'Garcia', 'fiona.garcia@company.com', 'QA Engineer', 2, 2, NOW(), NOW()),
+    ('George', 'Martinez', 'george.martinez@company.com', 'Developer', 1, 1, NOW(), NOW()),
+    ('Helen', 'Robinson', 'helen.robinson@company.com', 'Designer', 5, 5, NOW(), NOW())
+    ON DUPLICATE KEY UPDATE updatedAt = NOW();
+    
+    -- Update Department heads
+    UPDATE Department SET headEmployeeId = 1 WHERE name = 'Software Development';
+    UPDATE Department SET headEmployeeId = 2 WHERE name = 'Quality Assurance';
+    UPDATE Department SET headEmployeeId = 3 WHERE name = 'Project Management';
+    UPDATE Department SET headEmployeeId = 4 WHERE name = 'Human Resources';
+    UPDATE Department SET headEmployeeId = 5 WHERE name = 'Design';
+    
+    -- Insert Projects
+    INSERT INTO Project (name, description, clientId, projectManagerId, startDate, endDate, status, createdAt, updatedAt) VALUES 
+    ('E-Commerce Platform', 'Modern e-commerce platform with payment integration', 1, 3, '2024-01-15', '2024-06-30', 'ACTIVE', NOW(), NOW()),
+    ('Mobile App Development', 'Cross-platform mobile application', 2, 3, '2024-02-01', '2024-08-15', 'ACTIVE', NOW(), NOW()),
+    ('Website Redesign', 'Complete website redesign and optimization', 3, 3, '2024-03-01', '2024-05-30', 'COMPLETED', NOW(), NOW()),
+    ('CRM System', 'Customer relationship management system', 4, 3, '2024-04-01', '2024-09-30', 'PLANNING', NOW(), NOW()),
+    ('Data Analytics Dashboard', 'Real-time analytics and reporting dashboard', 1, 3, '2024-05-01', '2024-07-31', 'ACTIVE', NOW(), NOW())
+    ON DUPLICATE KEY UPDATE updatedAt = NOW();
+    
+    -- Insert Employee-Project assignments
+    INSERT INTO EmployeeProject (employeeId, projectId, roleInProject, assignedDate, isActive, createdAt, updatedAt) VALUES 
+    (1, 1, 'Lead Developer', CURDATE(), true, NOW(), NOW()),
+    (6, 1, 'Developer', CURDATE(), true, NOW(), NOW()),
+    (7, 1, 'Developer', CURDATE(), true, NOW(), NOW()),
+    (2, 1, 'QA Lead', CURDATE(), true, NOW(), NOW()),
+    (8, 1, 'QA Engineer', CURDATE(), true, NOW(), NOW()),
+    (3, 2, 'Project Manager', CURDATE(), true, NOW(), NOW()),
+    (9, 2, 'Developer', CURDATE(), true, NOW(), NOW()),
+    (5, 2, 'UI/UX Lead', CURDATE(), true, NOW(), NOW()),
+    (10, 2, 'Designer', CURDATE(), true, NOW(), NOW()),
+    (1, 3, 'Technical Lead', CURDATE(), true, NOW(), NOW()),
+    (5, 3, 'Design Lead', CURDATE(), true, NOW(), NOW()),
+    (3, 4, 'Project Manager', CURDATE(), true, NOW(), NOW()),
+    (1, 5, 'Lead Developer', CURDATE(), true, NOW(), NOW()),
+    (6, 5, 'Developer', CURDATE(), true, NOW(), NOW())
+    ON DUPLICATE KEY UPDATE updatedAt = NOW();
+    
+    -- Insert Users (with BCrypt encoded passwords - all passwords are 'password123')
+    INSERT INTO User (userName, password, employeeId, isActive, lastLogin, createdAt, updatedAt) VALUES 
+    ('admin', '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 1, true, NULL, NOW(), NOW()),
+    ('manager', '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 3, true, NULL, NOW(), NOW()),
+    ('employee1', '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 6, true, NULL, NOW(), NOW()),
+    ('employee2', '$2a$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 7, true, NULL, NOW(), NOW())
+    ON DUPLICATE KEY UPDATE updatedAt = NOW();
+    
+    -- Insert User Roles
+    INSERT INTO UserRole (userId, roleId, createdAt, updatedAt) VALUES 
+    (1, 1, NOW(), NOW()),
+    (2, 2, NOW(), NOW()),
+    (3, 3, NOW(), NOW()),
+    (4, 3, NOW(), NOW())
+    ON DUPLICATE KEY UPDATE updatedAt = NOW();

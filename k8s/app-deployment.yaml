@@ -1,0 +1,81 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: timesheet-app
+  namespace: timesheet-management
+  labels:
+    app: timesheet-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: timesheet-app
+  template:
+    metadata:
+      labels:
+        app: timesheet-app
+    spec:
+      containers:
+      - name: timesheet-app
+        image: timesheet-management:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: "prod"
+        - name: APP_JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: timesheet-secrets
+              key: jwt-secret
+        - name: APP_JWT_EXPIRATION_IN_MS
+          value: "86400000"
+        - name: SERVER_PORT
+          value: "8080"
+        volumeMounts:
+        - name: app-config
+          mountPath: /app/config
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "1Gi"
+            cpu: "1000m"
+        livenessProbe:
+          httpGet:
+            path: /api/health
+            port: 8080
+          initialDelaySeconds: 60
+          periodSeconds: 30
+          timeoutSeconds: 10
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /api/health
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
+      volumes:
+      - name: app-config
+        configMap:
+          name: timesheet-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: timesheet-app-service
+  namespace: timesheet-management
+  labels:
+    app: timesheet-app
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8080
+    protocol: TCP
+  selector:
+    app: timesheet-app

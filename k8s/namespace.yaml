@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: timesheet-management
+  labels:
+    name: timesheet-management
+    app: timesheet-management
