@@ -15,10 +15,12 @@ spec:
       labels:
         app: timesheet-app
     spec:
+      imagePullSecrets:
+      - name: acr-secret
       containers:
       - name: timesheet-app
-        image: timesheet-management:latest
-        imagePullPolicy: IfNotPresent
+        image: ${ACR_NAME}.azurecr.io/timesheet-management:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
         env:
