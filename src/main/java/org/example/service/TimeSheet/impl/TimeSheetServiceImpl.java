@@ -9,6 +9,7 @@ import org.example.model.TimeSheet;
 import org.example.model.Employee;
 import org.example.repository.TimeSheetRepository;
 import org.example.repository.EmployeeRepository;
+import org.example.repository.ApprovalRepository;
 import org.example.service.TimeSheet.TimeSheetService;
 import org.example.service.TimeSheetEntry.TimeSheetEntryService;
 import org.springframework.stereotype.Service;
@@ -26,13 +27,16 @@ public class TimeSheetServiceImpl implements TimeSheetService {
     private final TimeSheetRepository timeSheetRepository;
     private final EmployeeRepository employeeRepository;
     private final TimeSheetEntryService timeSheetEntryService;
+    private final ApprovalRepository approvalRepository;
 
     public TimeSheetServiceImpl(TimeSheetRepository timeSheetRepository, 
                               EmployeeRepository employeeRepository,
-                              TimeSheetEntryService timeSheetEntryService) {
+                              TimeSheetEntryService timeSheetEntryService,
+                              ApprovalRepository approvalRepository) {
         this.timeSheetRepository = timeSheetRepository;
         this.employeeRepository = employeeRepository;
         this.timeSheetEntryService = timeSheetEntryService;
+        this.approvalRepository = approvalRepository;
     }
 
     @Override
@@ -182,7 +186,23 @@ public class TimeSheetServiceImpl implements TimeSheetService {
     }
 
     @Override
+    @Transactional
     public void deleteById(Integer id) {
+        TimeSheet timeSheet = timeSheetRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Timesheet not found with id: " + id));
+        
+        // Check if timesheet can be deleted (only DRAFT status can be deleted)
+        if (timeSheet.getStatus() != TimeSheet.TimeSheetStatus.DRAFT) {
+            throw new RuntimeException("Cannot delete timesheet with status: " + timeSheet.getStatus() + ". Only DRAFT timesheets can be deleted.");
+        }
+        
+        // Delete related approvals first
+        approvalRepository.deleteByTimesheetTimesheetId(id);
+        
+        // Delete related timesheet entries
+        timeSheetEntryService.deleteByTimesheetId(id);
+        
+        // Delete the timesheet
         timeSheetRepository.deleteById(id);
     }
 

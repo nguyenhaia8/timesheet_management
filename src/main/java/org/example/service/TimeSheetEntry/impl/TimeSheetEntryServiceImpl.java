@@ -10,10 +10,12 @@ import org.example.repository.TimeSheetEntryRepository;
 import org.example.repository.TimeSheetRepository;
 import org.example.service.TimeSheetEntry.TimeSheetEntryService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
 import java.time.LocalDateTime;
+import java.math.BigDecimal;
 
 @Service
 public class TimeSheetEntryServiceImpl implements TimeSheetEntryService {
@@ -88,8 +90,33 @@ public class TimeSheetEntryServiceImpl implements TimeSheetEntryService {
     }
 
     @Override
+    @Transactional
     public void deleteById(Integer id) {
+        TimeSheetEntry timeSheetEntry = timeSheetEntryRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Timesheet entry not found with id: " + id));
+        
+        // Check if parent timesheet has DRAFT status
+        TimeSheet parentTimeSheet = timeSheetEntry.getTimesheet();
+        if (parentTimeSheet == null) {
+            throw new RuntimeException("Timesheet entry has no associated timesheet");
+        }
+        
+        if (parentTimeSheet.getStatus() != TimeSheet.TimeSheetStatus.DRAFT) {
+            throw new RuntimeException("Cannot delete timesheet entry. Parent timesheet has status: " + parentTimeSheet.getStatus() + ". Only DRAFT timesheets can have entries deleted.");
+        }
+        
+        // Delete the entry
         timeSheetEntryRepository.deleteById(id);
+        
+        // Recalculate and update the timesheet's total hours
+        List<TimeSheetEntry> remainingEntries = timeSheetEntryRepository.findByTimesheetTimesheetId(parentTimeSheet.getTimesheetId());
+        BigDecimal newTotalHours = remainingEntries.stream()
+                .map(entry -> entry.getHoursWorked())
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+        
+        parentTimeSheet.setTotalHours(newTotalHours);
+        parentTimeSheet.setUpdatedAt(LocalDateTime.now());
+        timeSheetRepository.save(parentTimeSheet);
     }
 
     @Override

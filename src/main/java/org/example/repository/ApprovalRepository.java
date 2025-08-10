@@ -12,4 +12,5 @@ public interface ApprovalRepository extends JpaRepository<Approval, Integer> {
     List<Approval> findByApprovedByEmployeeId(Integer employeeId);
     List<Approval> findByStatus(Approval.ApprovalStatus status);
     Approval findByTimesheetTimesheetIdAndStatus(Integer timesheetId, Approval.ApprovalStatus status);
+    void deleteByTimesheetTimesheetId(Integer timesheetId);
 } 

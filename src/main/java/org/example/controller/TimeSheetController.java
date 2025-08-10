@@ -183,12 +183,16 @@ public class TimeSheetController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or hasRole('EMPLOYEE')")
     public ResponseEntity<Object> deleteTimeSheet(@PathVariable Integer id) {
         try {
             timeSheetService.deleteById(id);
             return ResponseEntity.ok(new DeleteResponse(true, "TimeSheet deleted successfully"));
         } catch (RuntimeException e) {
+            // Check if it's a business rule violation (status not DRAFT)
+            if (e.getMessage() != null && e.getMessage().contains("Cannot delete timesheet with status")) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new DeleteResponse(false, e.getMessage()));
+            }
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new DeleteResponse(false, "TimeSheet not found"));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new DeleteResponse(false, "Error deleting TimeSheet"));

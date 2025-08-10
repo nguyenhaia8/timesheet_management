@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/timesheet-entries")
-@CrossOrigin(origins = "*", maxAge = 3600)
 public class TimeSheetEntryController {
 
     @Autowired
@@ -33,7 +32,7 @@ public class TimeSheetEntryController {
     }
 
     @GetMapping
-    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or hasRole('EMPLOYEE')")
     public ResponseEntity<List<TimeSheetEntryResponseDTO>> getAllTimeSheetEntries() {
         try {
             List<TimeSheetEntryResponseDTO> entries = timeSheetEntryService.findAll();
@@ -74,12 +73,16 @@ public class TimeSheetEntryController {
     }
 
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or hasRole('EMPLOYEE')")
     public ResponseEntity<Object> deleteTimeSheetEntry(@PathVariable Integer id) {
         try {
             timeSheetEntryService.deleteById(id);
             return ResponseEntity.ok(new DeleteResponse(true, "TimeSheetEntry deleted successfully"));
         } catch (RuntimeException e) {
+            // Check if it's a business rule violation (parent timesheet not DRAFT)
+            if (e.getMessage() != null && e.getMessage().contains("Cannot delete timesheet entry. Parent timesheet has status")) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new DeleteResponse(false, e.getMessage()));
+            }
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new DeleteResponse(false, "TimeSheetEntry not found"));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new DeleteResponse(false, "Error deleting TimeSheetEntry"));
