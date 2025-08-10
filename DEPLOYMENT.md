@@ -4,7 +4,12 @@ This guide provides multiple deployment options for the TimeSheet Management Sys
 
 ## 📋 Prerequisites
 
-### For Docker Deployment
+### For Kubernetes Deployment
+- Kubernetes cluster (AKS, EKS, GKE, Minikube, Docker Desktop)
+- kubectl (Kubernetes CLI)
+- Docker (for building images)
+
+### For Docker Compose Deployment
 - Docker (version 20.10+)
 - Docker Compose (version 2.0+)
 
@@ -14,18 +19,28 @@ This guide provides multiple deployment options for the TimeSheet Management Sys
 - MySQL 8.0+
 
 ### For Cloud Deployment
-- Cloud platform account (AWS, GCP, Azure, Heroku, etc.)
+- Cloud platform account (Azure, GCP, Heroku, etc.)
 - Domain name (optional)
 
-## 🚀 Quick Start (Docker)
+## 🚀 Quick Start
 
-### 1. Development Deployment
+### 1. Kubernetes Deployment (Recommended)
 
 ```bash
 # Clone the repository
 git clone <your-repo-url>
 cd TimeSheetManagement
 
+# Deploy to Kubernetes
+kubectl apply -k k8s/
+
+# Check status
+kubectl get all -n timesheet-management
+```
+
+### 2. Docker Compose Deployment
+
+```bash
 # Deploy with Docker Compose
 ./deploy.sh
 # Select option 1: Docker Compose (Development)
@@ -43,7 +58,7 @@ docker-compose ps
 docker-compose logs -f
 ```
 
-### 2. Production Deployment
+### 3. Production Deployment
 
 ```bash
 # Copy environment variables
@@ -56,7 +71,20 @@ docker-compose -f docker-compose.prod.yml up --build -d
 
 ## 🏠 Local Deployment
 
-### 1. Database Setup
+### 1. Kubernetes (Minikube/Docker Desktop)
+
+```bash
+# Start Minikube
+minikube start
+
+# Deploy application
+kubectl apply -k k8s/
+
+# Access application
+minikube service timesheet-app-service -n timesheet-management
+```
+
+### 2. Docker Compose
 
 ```bash
 # Start MySQL with Docker
@@ -71,7 +99,7 @@ mysql -u root -p
 CREATE DATABASE timesheetdb;
 ```
 
-### 2. Application Setup
+### 3. Standalone Application
 
 ```bash
 # Build the application
@@ -83,40 +111,67 @@ java -jar target/TimeSheetManagement-1.0-SNAPSHOT.jar
 
 ## ☁️ Cloud Deployment
 
-### AWS Deployment
+### Google Cloud Deployment
 
-1. **Create EC2 Instance**
+1. **Create Compute Engine Instance**
 ```bash
-aws ec2 run-instances \
-  --image-id ami-12345678 \
-  --instance-type t3.medium \
-  --key-name your-key \
-  --security-group-ids sg-12345678
+gcloud compute instances create timesheet-app \
+  --zone=us-central1-a \
+  --machine-type=e2-medium \
+  --image-family=debian-11 \
+  --image-project=debian-cloud
 ```
 
-2. **Create RDS MySQL Instance**
+2. **Create Cloud SQL MySQL Instance**
 ```bash
-aws rds create-db-instance \
-  --db-instance-identifier timesheet-db \
-  --db-instance-class db.t3.micro \
-  --engine mysql \
-  --master-username admin \
-  --master-user-password YourPassword123!
+gcloud sql instances create timesheet-db \
+  --database-version=MYSQL_8_0 \
+  --tier=db-f1-micro \
+  --region=us-central1
 ```
 
 3. **Deploy Application**
 ```bash
-# SSH to EC2 instance
-ssh -i your-key.pem ec2-user@your-instance-ip
+# SSH to instance
+gcloud compute ssh timesheet-app --zone=us-central1-a
 
 # Install Java and Maven
-sudo yum update -y
-sudo yum install java-21-amazon-corretto maven -y
+sudo apt-get update
+sudo apt-get install openjdk-21-jdk maven -y
 
 # Clone and deploy
 git clone <your-repo-url>
 cd TimeSheetManagement
 ./deploy.sh
+```
+
+### Azure Deployment
+
+1. **Install Azure CLI**
+```bash
+# macOS
+brew install azure-cli
+
+# Windows
+# Download from https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-windows
+```
+
+2. **Deploy to Azure**
+```bash
+# Login to Azure
+az login
+
+# Create resource group
+az group create --name timesheet-rg --location eastus
+
+# Create AKS cluster
+az aks create --resource-group timesheet-rg --name timesheet-aks --node-count 2 --node-vm-size Standard_B2s
+
+# Get cluster credentials
+az aks get-credentials --resource-group timesheet-rg --name timesheet-aks
+
+# Deploy application
+kubectl apply -k k8s/
 ```
 
 ### Heroku Deployment

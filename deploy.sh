@@ -176,40 +176,25 @@ deploy_local() {
     fi
 }
 
-# Function to deploy to cloud (AWS, GCP, Azure)
+# Function to deploy to cloud (GCP, Azure, Heroku, Railway, DigitalOcean)
 deploy_cloud() {
     print_status "Cloud deployment options:"
-    echo "1. AWS (EC2 + RDS)"
-    echo "2. Google Cloud (Compute Engine + Cloud SQL)"
-    echo "3. Azure (VM + Azure Database for MySQL)"
-    echo "4. Heroku"
-    echo "5. Railway"
-    echo "6. DigitalOcean"
+    echo "1. Google Cloud (Compute Engine + Cloud SQL)"
+    echo "2. Azure (VM + Azure Database for MySQL)"
+    echo "3. Heroku"
+    echo "4. Railway"
+    echo "5. DigitalOcean"
     
-    read -p "Select cloud platform (1-6): " choice
+    read -p "Select cloud platform (1-5): " choice
     
     case $choice in
-        1) deploy_aws ;;
-        2) deploy_gcp ;;
-        3) deploy_azure ;;
-        4) deploy_heroku ;;
-        5) deploy_railway ;;
-        6) deploy_digitalocean ;;
+        1) deploy_gcp ;;
+        2) deploy_azure ;;
+        3) deploy_heroku ;;
+        4) deploy_railway ;;
+        5) deploy_digitalocean ;;
         *) print_error "Invalid choice" ;;
     esac
-}
-
-# Function to deploy to AWS
-deploy_aws() {
-    print_status "AWS deployment guide:"
-    echo "1. Create an EC2 instance (t3.medium or larger)"
-    echo "2. Create an RDS MySQL instance"
-    echo "3. Configure security groups"
-    echo "4. Upload and run the application"
-    echo ""
-    echo "Commands:"
-    echo "aws ec2 run-instances --image-id ami-12345678 --instance-type t3.medium --key-name your-key"
-    echo "aws rds create-db-instance --db-instance-identifier timesheet-db --db-instance-class db.t3.micro --engine mysql"
 }
 
 # Function to deploy to Heroku
