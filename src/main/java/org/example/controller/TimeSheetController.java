@@ -170,15 +170,19 @@ public class TimeSheetController {
     }
 
     @PutMapping("/{id}/with-entries")
-    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or #id == authentication.principal.employee.employeeId")
-    public ResponseEntity<TimeSheetResponseDTO> updateTimeSheetWithEntries(@PathVariable Integer id, @RequestBody TimeSheetWithEntriesRequestDTO timeSheetWithEntriesRequestDTO) {
+    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER') or hasRole('EMPLOYEE')")
+    public ResponseEntity<Object> updateTimeSheetWithEntries(@PathVariable Integer id, @RequestBody TimeSheetWithEntriesRequestDTO timeSheetWithEntriesRequestDTO) {
         try {
             TimeSheetResponseDTO updatedTimeSheet = timeSheetService.updateWithEntries(id, timeSheetWithEntriesRequestDTO);
             return new ResponseEntity<>(updatedTimeSheet, HttpStatus.OK);
         } catch (RuntimeException e) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            // Check if it's a business rule violation (status not DRAFT)
+            if (e.getMessage() != null && e.getMessage().contains("Cannot update timesheet with status")) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new UpdateResponse(false, e.getMessage()));
+            }
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new UpdateResponse(false, "TimeSheet not found"));
         } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new UpdateResponse(false, "Error updating TimeSheet"));
         }
     }
 
@@ -205,6 +209,33 @@ public class TimeSheetController {
         private String message;
 
         public DeleteResponse(boolean status, String message) {
+            this.status = status;
+            this.message = message;
+        }
+
+        public boolean isStatus() {
+            return status;
+        }
+
+        public void setStatus(boolean status) {
+            this.status = status;
+        }
+
+        public String getMessage() {
+            return message;
+        }
+
+        public void setMessage(String message) {
+            this.message = message;
+        }
+    }
+
+    // Inner class for update response
+    public static class UpdateResponse {
+        private boolean status;
+        private String message;
+
+        public UpdateResponse(boolean status, String message) {
             this.status = status;
             this.message = message;
         }

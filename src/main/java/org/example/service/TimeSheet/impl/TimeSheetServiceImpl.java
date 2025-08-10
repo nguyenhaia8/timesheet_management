@@ -143,6 +143,11 @@ public class TimeSheetServiceImpl implements TimeSheetService {
         TimeSheet existingTimeSheet = timeSheetRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Timesheet not found with id: " + id));
 
+        // Check if timesheet can be updated (only DRAFT status can be updated)
+        if (existingTimeSheet.getStatus() != TimeSheet.TimeSheetStatus.DRAFT) {
+            throw new RuntimeException("Cannot update timesheet with status: " + existingTimeSheet.getStatus() + ". Only DRAFT timesheets can be updated.");
+        }
+
         Employee employee = employeeRepository.findById(dto.employeeId())
                 .orElseThrow(() -> new RuntimeException("Employee not found with id: " + dto.employeeId()));
 
