@@ -6,7 +6,7 @@ metadata:
   labels:
     app: timesheet-app
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: timesheet-app
@@ -40,14 +40,14 @@ spec:
           mountPath: /app/config
         resources:
           requests:
-            memory: "128Mi"
-            cpu: "100m"
+            memory: "512Mi"
+            cpu: "500m"
           limits:
-            memory: "256Mi"
-            cpu: "200m"
+            memory: "1Gi"
+            cpu: "1000m"
         livenessProbe:
           httpGet:
-            path: /api/auth/health
+            path: /api/health
             port: 8080
           initialDelaySeconds: 60
           periodSeconds: 30
@@ -55,7 +55,7 @@ spec:
           failureThreshold: 3
         readinessProbe:
           httpGet:
-            path: /api/auth/health
+            path: /api/health
             port: 8080
           initialDelaySeconds: 30
           periodSeconds: 10

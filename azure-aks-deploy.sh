@@ -31,9 +31,9 @@ print_error() {
 
 # Configuration variables
 RESOURCE_GROUP="timesheet-rg"
-LOCATION="eastus"
+LOCATION="centralus"
 CLUSTER_NAME="timesheet-aks"
-NODE_COUNT=2
+NODE_COUNT=1
 NODE_SIZE="Standard_B2s"
 NAMESPACE="timesheet-management"
 IMAGE_NAME="timesheet-management"
@@ -86,7 +86,7 @@ create_acr() {
     if az acr show --name $ACR_NAME --resource-group $RESOURCE_GROUP &> /dev/null; then
         print_warning "ACR $ACR_NAME already exists"
     else
-        az acr create --resource-group $RESOURCE_GROUP --name $ACR_NAME --sku Basic
+        az acr create --resource-group $RESOURCE_GROUP --name $ACR_NAME --sku Basic --location $LOCATION
         print_success "ACR $ACR_NAME created"
     fi
     
