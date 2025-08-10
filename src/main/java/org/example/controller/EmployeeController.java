@@ -34,7 +34,6 @@ public class EmployeeController {
     }
 
     @GetMapping
-    @PreAuthorize("hasRole('ADMIN') or hasRole('MANAGER')")
     public ResponseEntity<List<EmployeeResponseDTO>> getAllEmployees() {
         try {
             List<EmployeeResponseDTO> employees = employeeService.findAll();
