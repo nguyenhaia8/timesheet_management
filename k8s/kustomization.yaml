@@ -4,17 +4,18 @@ kind: Kustomization
 namespace: timesheet-management
 
 resources:
-  - namespace.yaml
-  - configmap.yaml
-  - secret.yaml
-  - acr-secret.yaml
-  - mysql-persistent-volume.yaml
-  - mysql-init-configmap.yaml
-  - mysql-deployment.yaml
-  - app-deployment.yaml
-  - ingress.yaml
-  - hpa.yaml
+- namespace.yaml
+- secret.yaml
+- configmap.yaml
+- mysql-persistent-volume.yaml
+- mysql-init-configmap.yaml
+- mysql-deployment.yaml
+- app-deployment.yaml
+- cluster-issuer.yaml
+- nginx-https-direct.yaml
+- https-8080-replacement.yaml
+- acr-secret.yaml
 
-commonLabels:
-  app: timesheet-management
-  version: v1.0.0
+images:
+- name: timesheetacr.azurecr.io/timesheet-app
+  newTag: latest

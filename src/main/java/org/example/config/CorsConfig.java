@@ -16,6 +16,7 @@ public class CorsConfig implements WebMvcConfigurer {
         registry.addMapping("/**")
                 .allowedOriginPatterns(
                     "https://timesheet-hzo0vjn9n-nguyenhais-projects-02a5a8a4.vercel.app",
+                    "https://timesheet-fe-psi.vercel.app",
                     "https://*.vercel.app",
                     "http://localhost:3000",
                     "http://localhost:3001",
@@ -35,6 +36,7 @@ public class CorsConfig implements WebMvcConfigurer {
         
         // Allow specific origins including Vercel
         configuration.addAllowedOrigin("https://timesheet-hzo0vjn9n-nguyenhais-projects-02a5a8a4.vercel.app");
+        configuration.addAllowedOrigin("https://timesheet-fe-psi.vercel.app");
         configuration.addAllowedOrigin("http://localhost:3000");
         configuration.addAllowedOrigin("http://localhost:3001");
         configuration.addAllowedOrigin("http://localhost:8080");
