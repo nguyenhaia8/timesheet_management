@@ -35,21 +35,31 @@ spec:
           value: "86400000"
         - name: SERVER_PORT
           value: "8080"
+        - name: JAVA_OPTS
+          value: "-Xmx512m -Xms256m -XX:+UseG1GC -XX:MaxGCPauseMillis=200"
         volumeMounts:
         - name: app-config
           mountPath: /app/config
         resources:
           requests:
-            memory: "128Mi"
+            memory: "512Mi"
             cpu: "100m"
           limits:
-            memory: "256Mi"
+            memory: "1Gi"
             cpu: "200m"
+        startupProbe:
+          httpGet:
+            path: /api/auth/health
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 30
         livenessProbe:
           httpGet:
             path: /api/auth/health
             port: 8080
-          initialDelaySeconds: 60
+          initialDelaySeconds: 120
           periodSeconds: 30
           timeoutSeconds: 10
           failureThreshold: 3
