@@ -23,7 +23,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-@ActiveProfiles("integration")
+@ActiveProfiles({"integration", "ci"})
 @Transactional
 class ProjectIntegrationTest {
 
