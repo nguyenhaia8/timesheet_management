@@ -140,21 +140,107 @@ flowchart TD
 
 ### 5.4 Layer Descriptions
 
-- **Presentation Layer:**  
-  - Exposes REST APIs to clients (frontend or Postman).
-  - Handles HTTP requests, input validation, and error responses.
+#### **🎯 Presentation Layer (Controllers)**
+- **RESTful API Controllers**: 10 controllers handling HTTP requests and responses
+  - `TimeSheetController` - Manages timesheet CRUD operations with role-based access
+  - `TimeSheetEntryController` - Handles individual time entries within timesheets
+  - `ApprovalController` - Manages approval workflow for timesheets
+  - `EmployeeController` - Employee management operations
+  - `DepartmentController` - Department CRUD operations
+  - `ProjectController` - Project management functionality
+  - `ClientController` - Client relationship management
+  - `AuthController` - Authentication and authorization endpoints
+  - `UserController` - User management operations
+  - `GlobalExceptionHandler` - Centralized error handling and response formatting
 
-- **Service Layer:**  
-  - Implements business logic, validation, and calculations.
-  - Coordinates between controllers and repositories.
+- **Key Features**:
+  - Role-based access control with `@PreAuthorize` annotations
+  - Cross-origin resource sharing (CORS) configuration
+  - Input validation and error handling
+  - HTTP status code management
+  - DTO-based request/response handling
 
-- **Data Access Layer:**  
-  - Uses Spring Data JPA for database CRUD operations.
-  - Abstracts SQL and database details from the rest of the app.
+#### **⚙️ Service Layer (Business Logic)**
+- **Service Interfaces & Implementations**: 8 service modules with business logic
+  - `TimeSheetService` - Timesheet business operations and validation
+  - `TimeSheetEntryService` - Time entry calculations and rules
+  - `ApprovalService` - Approval workflow logic
+  - `EmployeeService` - Employee business operations
+  - `DepartmentService` - Department management logic
+  - `ProjectService` - Project lifecycle management
+  - `ClientService` - Client relationship business logic
+  - `UserService` - User authentication and management
 
-- **Database Layer:**  
-  - MySQL database with tables for Employee, Department, Project, Task, Timesheet, Approval, etc.
-  - Enforces relationships and data integrity.
+- **Key Features**:
+  - Business rule enforcement (e.g., daily hour limits, approval workflows)
+  - Data transformation between DTOs and entities
+  - Transaction management
+  - Validation logic
+  - Complex calculations (e.g., total work hours, period summaries)
+
+#### **🗄️ Data Access Layer (Repositories)**
+- **Spring Data JPA Repositories**: 11 repository interfaces for database operations
+  - `TimeSheetRepository` - Timesheet CRUD with custom queries
+  - `TimeSheetEntryRepository` - Time entry database operations
+  - `ApprovalRepository` - Approval status tracking
+  - `EmployeeRepository` - Employee data access
+  - `DepartmentRepository` - Department persistence
+  - `ProjectRepository` - Project data management
+  - `ClientRepository` - Client data operations
+  - `UserRepository` - User authentication data
+  - `RoleRepository` - Role-based access control data
+  - `UserRoleRepository` - User-role relationship management
+  - `EmployeeProjectRepository` - Employee-project assignments
+
+- **Key Features**:
+  - Custom query methods for complex business requirements
+  - Relationship management (e.g., employee-project assignments)
+  - Spring Data JPA automatic query generation
+  - Transactional data access
+
+#### **🔐 Security Layer**
+- **JWT Authentication & Authorization**:
+  - `JwtTokenProvider` - JWT token generation and validation
+  - `JwtAuthenticationFilter` - Request authentication filtering
+  - `JwtAuthenticationEntryPoint` - Authentication error handling
+  - `SecurityConfig` - Spring Security configuration
+  - `CorsConfig` - Cross-origin request handling
+
+#### **📊 Data Transfer Objects (DTOs)**
+- **Request DTOs**: 9 DTOs for API input validation
+  - `TimeSheetRequestDTO`, `TimeSheetWithEntriesRequestDTO`
+  - `ApprovalRequestDTO`, `EmployeeRequestDTO`
+  - `DepartmentRequestDTO`, `ProjectRequestDTO`
+  - `ClientRequestDTO`, `UserRequestDTO`
+  - `LoginRequestDTO`, `SignupRequestDTO`
+
+- **Response DTOs**: 11 DTOs for API output formatting
+  - `TimeSheetResponseDTO`, `TimeSheetDetailResponseDTO`, `TimeSheetEntryResponseDTO`
+  - `ApprovalResponseDTO`, `EmployeeResponseDTO`
+  - `DepartmentResponseDTO`, `ProjectResponseDTO`
+  - `ClientResponseDTO`, `UserResponseDTO`
+  - `JwtResponseDTO`, `MessageResponseDTO`
+
+#### **🏗️ Configuration Layer**
+- **Application Configuration**:
+  - `DataInitializer` - Database seeding and initialization
+  - `SecurityConfig` - Security and authentication setup
+  - `CorsConfig` - Cross-origin resource sharing configuration
+
+#### **🗄️ Database Layer**
+- **MySQL Database**: 12 entity tables with relationships
+  - Core entities: `Employee`, `Department`, `Project`, `Client`
+  - Time tracking: `TimeSheet`, `TimeSheetEntry`
+  - Workflow: `Approval`, `Task`
+  - Authentication: `User`, `Role`, `UserRole`
+  - Relationships: `EmployeeProject`
+  - Audit fields: `createdAt`, `updatedAt` timestamps
+
+- **Key Features**:
+  - Referential integrity with foreign key constraints
+  - Audit trail with automatic timestamp management
+  - Enum-based status tracking (e.g., `TimeSheetStatus`, `ProjectStatus`)
+  - Optimized indexes for performance
 
 ---
 
@@ -191,20 +277,6 @@ classDiagram
         -String position
         -LocalDateTime createdAt
         -LocalDateTime updatedAt
-        +getEmployeeId()
-        +setEmployeeId()
-        +getFirstName()
-        +setFirstName()
-        +getLastName()
-        +setLastName()
-        +getEmail()
-        +setEmail()
-        +getPosition()
-        +setPosition()
-        +getDepartment()
-        +setDepartment()
-        +getManager()
-        +setManager()
     }
 
     class Department {
@@ -212,12 +284,6 @@ classDiagram
         -String name
         -LocalDateTime createdAt
         -LocalDateTime updatedAt
-        +getDepartmentId()
-        +setDepartmentId()
-        +getName()
-        +setName()
-        +getHeadEmployee()
-        +setHeadEmployee()
     }
 
     class Project {
@@ -229,22 +295,6 @@ classDiagram
         -ProjectStatus status
         -LocalDateTime createdAt
         -LocalDateTime updatedAt
-        +getProjectId()
-        +setProjectId()
-        +getName()
-        +setName()
-        +getDescription()
-        +setDescription()
-        +getStartDate()
-        +setStartDate()
-        +getEndDate()
-        +setEndDate()
-        +getStatus()
-        +setStatus()
-        +getClient()
-        +setClient()
-        +getProjectManager()
-        +setProjectManager()
     }
 
     class Client {
@@ -255,16 +305,6 @@ classDiagram
         -String address
         -LocalDateTime createdAt
         -LocalDateTime updatedAt
-        +getClientId()
-        +setClientId()
-        +getClientName()
-        +setClientName()
-        +getContactEmail()
-        +setContactEmail()
-        +getContactPhone()
-        +setContactPhone()
-        +getAddress()
-        +setAddress()
     }
 
     class TimeSheet {
@@ -276,60 +316,24 @@ classDiagram
         -BigDecimal totalHours
         -LocalDateTime createdAt
         -LocalDateTime updatedAt
-        +getTimesheetId()
-        +setTimesheetId()
-        +getEmployee()
-        +setEmployee()
-        +getPeriodStartDate()
-        +setPeriodStartDate()
-        +getPeriodEndDate()
-        +setPeriodEndDate()
-        +getStatus()
-        +setStatus()
-        +getTotalHours()
-        +setTotalHours()
     }
 
     class TimeSheetEntry {
         -Integer entryId
         -LocalDate date
-        -BigDecimal hoursWorked
         -String taskDescription
+        -BigDecimal hoursWorked
         -LocalDateTime createdAt
         -LocalDateTime updatedAt
-        +getEntryId()
-        +setEntryId()
-        +getDate()
-        +setDate()
-        +getHoursWorked()
-        +setHoursWorked()
-        +getTaskDescription()
-        +setTaskDescription()
-        +getProject()
-        +setProject()
-        +getTimeSheet()
-        +setTimeSheet()
     }
 
     class Approval {
         -Integer approvalId
-        -ApprovalStatus status
         -LocalDateTime approvedAt
+        -ApprovalStatus status
         -String comments
         -LocalDateTime createdAt
         -LocalDateTime updatedAt
-        +getApprovalId()
-        +setApprovalId()
-        +getStatus()
-        +setStatus()
-        +getApprovedAt()
-        +setApprovedAt()
-        +getComments()
-        +setComments()
-        +getApprovedBy()
-        +setApprovedBy()
-        +getTimeSheet()
-        +setTimeSheet()
     }
 
     class User {
@@ -340,77 +344,32 @@ classDiagram
         -LocalDateTime lastLogin
         -LocalDateTime createdAt
         -LocalDateTime updatedAt
-        +getUserId()
-        +setUserId()
-        +getUserName()
-        +setUserName()
-        +getPassword()
-        +setPassword()
-        +getEmployee()
-        +setEmployee()
-        +getIsActive()
-        +setIsActive()
-        +getAuthorities()
-        +isAccountNonExpired()
-        +isAccountNonLocked()
-        +isCredentialsNonExpired()
-        +isEnabled()
     }
 
     class Role {
         -Integer roleId
         -String roleName
         -String description
-        -String permissions
         -LocalDateTime createdAt
         -LocalDateTime updatedAt
-        +getRoleId()
-        +setRoleId()
-        +getRoleName()
-        +setRoleName()
-        +getDescription()
-        +setDescription()
-        +getPermissions()
-        +setPermissions()
     }
 
     class UserRole {
         -Integer userRoleId
-        -LocalDate assignedDate
         -LocalDateTime createdAt
         -LocalDateTime updatedAt
-        +getUserRoleId()
-        +setUserRoleId()
-        +getAssignedDate()
-        +setAssignedDate()
-        +getUser()
-        +setUser()
-        +getRole()
-        +setRole()
     }
 
     class EmployeeProject {
         -Integer employeeProjectId
         -LocalDate assignedDate
-        -Boolean isActive
         -String roleInProject
+        -Boolean isActive
         -LocalDateTime createdAt
         -LocalDateTime updatedAt
-        +getEmployeeProjectId()
-        +setEmployeeProjectId()
-        +getAssignedDate()
-        +setAssignedDate()
-        +getIsActive()
-        +setIsActive()
-        +getRoleInProject()
-        +setRoleInProject()
-        +getEmployee()
-        +setEmployee()
-        +getProject()
-        +setProject()
     }
 
-    %% Enums
+    %% Enumerations
     class ProjectStatus {
         <<enumeration>>
         PLANNING
@@ -434,28 +393,33 @@ classDiagram
         REJECTED
     }
 
-    %% Relationships
-    Employee ||--o{ Employee : "manager"
-    Employee ||--o{ TimeSheet : "creates"
-    Employee ||--o{ Approval : "approves"
-    Employee ||--o{ User : "has"
-    Employee ||--o{ EmployeeProject : "assigned to"
-    Employee ||--o{ Project : "manages"
-    Employee ||--o{ Department : "heads"
+    %% Relationships with Multiplicity
+    Department ||--o{ Employee : "1..* employees"
+    Employee ||--o{ Employee : "0..1 manager"
+    Employee ||--o{ TimeSheet : "1..* timesheets"
+    Employee ||--o{ TimeSheetEntry : "1..* entries"
+    Employee ||--o{ Approval : "1..* approvals"
+    Employee ||--o{ EmployeeProject : "1..* assignments"
+    Employee ||--o{ Project : "1..* managed_projects"
+    Employee ||--o{ User : "0..1 user_account"
 
-    Department ||--o{ Employee : "contains"
-    Department ||--o{ Employee : "headed by"
+    Client ||--o{ Project : "1..* projects"
 
-    Project ||--o{ TimeSheetEntry : "has entries"
-    Project ||--o{ EmployeeProject : "assigned employees"
-    Project ||--o{ Employee : "managed by"
-    Project ||--o{ Client : "belongs to"
+    Project ||--o{ TimeSheetEntry : "1..* entries"
+    Project ||--o{ EmployeeProject : "1..* assignments"
 
-    Client ||--o{ Project : "owns"
+    TimeSheet ||--o{ TimeSheetEntry : "1..* entries"
+    TimeSheet ||--o{ Approval : "0..1 approval"
 
-    TimeSheet ||--o{ TimeSheetEntry : "contains"
-    TimeSheet ||--o{ Approval : "has"
-    TimeSheet ||--o{ Employee : "belongs to"
+    User ||--o{ UserRole : "1..* roles"
+
+    Role ||--o{ UserRole : "1..* user_assignments"
+
+    %% Enumeration Relationships
+    ProjectStatus ||--o{ Project : "1 status"
+    TimeSheetStatus ||--o{ TimeSheet : "1 status"
+    ApprovalStatus ||--o{ Approval : "1 status"
+```
 
     User ||--o{ UserRole : "has"
     User ||--o{ Employee : "represents"
