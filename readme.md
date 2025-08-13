@@ -394,31 +394,31 @@ classDiagram
     }
 
     %% Relationships with Multiplicity
-    Department ||--o{ Employee : "1..* employees"
-    Employee ||--o{ Employee : "0..1 manager"
-    Employee ||--o{ TimeSheet : "1..* timesheets"
-    Employee ||--o{ TimeSheetEntry : "1..* entries"
-    Employee ||--o{ Approval : "1..* approvals"
-    Employee ||--o{ EmployeeProject : "1..* assignments"
-    Employee ||--o{ Project : "1..* managed_projects"
-    Employee ||--o{ User : "0..1 user_account"
+    Department ||--o{ Employee : contains
+    Employee ||--o{ Employee : manages
+    Employee ||--o{ TimeSheet : creates
+    Employee ||--o{ TimeSheetEntry : logs
+    Employee ||--o{ Approval : approves
+    Employee ||--o{ EmployeeProject : assigned_to
+    Employee ||--o{ Project : manages
+    Employee ||--o{ User : has_account
 
-    Client ||--o{ Project : "1..* projects"
+    Client ||--o{ Project : owns
 
-    Project ||--o{ TimeSheetEntry : "1..* entries"
-    Project ||--o{ EmployeeProject : "1..* assignments"
+    Project ||--o{ TimeSheetEntry : has_entries
+    Project ||--o{ EmployeeProject : has_assignments
 
-    TimeSheet ||--o{ TimeSheetEntry : "1..* entries"
-    TimeSheet ||--o{ Approval : "0..1 approval"
+    TimeSheet ||--o{ TimeSheetEntry : contains
+    TimeSheet ||--o{ Approval : has_approval
 
-    User ||--o{ UserRole : "1..* roles"
+    User ||--o{ UserRole : has_roles
 
-    Role ||--o{ UserRole : "1..* user_assignments"
+    Role ||--o{ UserRole : assigned_to_users
 
     %% Enumeration Relationships
-    ProjectStatus ||--o{ Project : "1 status"
-    TimeSheetStatus ||--o{ TimeSheet : "1 status"
-    ApprovalStatus ||--o{ Approval : "1 status"
+    ProjectStatus ||--o{ Project : defines_status
+    TimeSheetStatus ||--o{ TimeSheet : defines_status
+    ApprovalStatus ||--o{ Approval : defines_status
 ```
 
     User ||--o{ UserRole : "has"
