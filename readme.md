@@ -266,4 +266,279 @@ flowchart TD
 
 ## 8. Class Diagram
 
+The class diagram below illustrates the complete data model of the TimeSheet Management System, showing all entities, their attributes, methods, and relationships.
 
+```mermaid
+classDiagram
+    %% Core Business Entities
+    class Employee {
+        -Integer employeeId
+        -String firstName
+        -String lastName
+        -String email
+        -String position
+        -LocalDateTime createdAt
+        -LocalDateTime updatedAt
+        +Employee()
+        +Employee(firstName, lastName, email, position, department, manager)
+        +getEmployeeId() Integer
+        +getFirstName() String
+        +getLastName() String
+        +getEmail() String
+        +getPosition() String
+        +getDepartment() Department
+        +getManager() Employee
+    }
+
+    class Department {
+        -Integer departmentId
+        -String name
+        -LocalDateTime createdAt
+        -LocalDateTime updatedAt
+        +Department()
+        +Department(name, headEmployee)
+        +getDepartmentId() Integer
+        +getName() String
+        +getHeadEmployee() Employee
+    }
+
+    class Project {
+        -Integer projectId
+        -String name
+        -String description
+        -LocalDate startDate
+        -LocalDate endDate
+        -ProjectStatus status
+        -LocalDateTime createdAt
+        -LocalDateTime updatedAt
+        +enum ProjectStatus
+        +Project()
+        +Project(name, description, startDate, endDate, client, projectManager)
+        +getProjectId() Integer
+        +getName() String
+        +getDescription() String
+        +getStartDate() LocalDate
+        +getEndDate() LocalDate
+        +getClient() Client
+        +getProjectManager() Employee
+        +getStatus() ProjectStatus
+    }
+
+    class Client {
+        -Integer clientId
+        -String clientName
+        -String contactEmail
+        -String contactPhone
+        -String address
+        -LocalDateTime createdAt
+        -LocalDateTime updatedAt
+        +Client()
+        +Client(clientName, contactEmail, contactPhone, address)
+        +getClientId() Integer
+        +getClientName() String
+        +getContactEmail() String
+        +getContactPhone() String
+        +getAddress() String
+    }
+
+    %% Time Tracking Entities
+    class TimeSheet {
+        -Integer timesheetId
+        -LocalDate periodStartDate
+        -LocalDate periodEndDate
+        -TimeSheetStatus status
+        -LocalDateTime submissionDate
+        -BigDecimal totalHours
+        -LocalDateTime createdAt
+        -LocalDateTime updatedAt
+        +enum TimeSheetStatus
+        +TimeSheet()
+        +TimeSheet(employee, periodStartDate, periodEndDate)
+        +getTimesheetId() Integer
+        +getEmployee() Employee
+        +getPeriodStartDate() LocalDate
+        +getPeriodEndDate() LocalDate
+        +getStatus() TimeSheetStatus
+        +getSubmissionDate() LocalDateTime
+        +getTotalHours() BigDecimal
+    }
+
+    class TimeSheetEntry {
+        -Integer entryId
+        -LocalDate date
+        -String taskDescription
+        -BigDecimal hoursWorked
+        -LocalDateTime createdAt
+        -LocalDateTime updatedAt
+        +TimeSheetEntry()
+        +TimeSheetEntry(timesheet, date, project, taskDescription, hoursWorked)
+        +getEntryId() Integer
+        +getTimesheet() TimeSheet
+        +getDate() LocalDate
+        +getProject() Project
+        +getTaskDescription() String
+        +getHoursWorked() BigDecimal
+    }
+
+    %% Approval Workflow
+    class Approval {
+        -Integer approvalId
+        -LocalDateTime approvedAt
+        -ApprovalStatus status
+        -String comments
+        -LocalDateTime createdAt
+        -LocalDateTime updatedAt
+        +enum ApprovalStatus
+        +Approval()
+        +Approval(timesheet, approvedBy)
+        +getApprovalId() Integer
+        +getTimesheet() TimeSheet
+        +getApprovedBy() Employee
+        +getApprovedAt() LocalDateTime
+        +getStatus() ApprovalStatus
+        +getComments() String
+    }
+
+    %% Authentication & Authorization
+    class User {
+        -Integer userId
+        -String userName
+        -String password
+        -Boolean isActive
+        -LocalDateTime lastLogin
+        -LocalDateTime createdAt
+        -LocalDateTime updatedAt
+        +User()
+        +User(userName, password, employee)
+        +getAuthorities() Collection~GrantedAuthority~
+        +getUsername() String
+        +isAccountNonExpired() boolean
+        +isAccountNonLocked() boolean
+        +isCredentialsNonExpired() boolean
+        +isEnabled() boolean
+        +getUserId() Integer
+        +getUserName() String
+        +getPassword() String
+        +getEmployee() Employee
+        +getIsActive() Boolean
+        +getLastLogin() LocalDateTime
+        +getUserRoles() List~UserRole~
+    }
+
+    class Role {
+        -Integer roleId
+        -String roleName
+        -String description
+        -String permissions
+        -LocalDateTime createdAt
+        -LocalDateTime updatedAt
+        +Role()
+        +Role(roleName, description)
+        +getRoleId() Integer
+        +getRoleName() String
+        +getDescription() String
+        +getPermissions() String
+    }
+
+    class UserRole {
+        -Integer userRoleId
+        -LocalDate assignedDate
+        -LocalDateTime createdAt
+        -LocalDateTime updatedAt
+        +UserRole()
+        +UserRole(user, role)
+        +getUserRoleId() Integer
+        +getUser() User
+        +getRole() Role
+        +getAssignedDate() LocalDate
+    }
+
+    %% Relationship Entities
+    class EmployeeProject {
+        -Integer employeeProjectId
+        -LocalDate assignedDate
+        -String roleInProject
+        -Boolean isActive
+        -LocalDateTime createdAt
+        -LocalDateTime updatedAt
+        +EmployeeProject()
+        +EmployeeProject(employee, project, roleInProject)
+        +getEmployeeProjectId() Integer
+        +getEmployee() Employee
+        +getProject() Project
+        +getAssignedDate() LocalDate
+        +getRoleInProject() String
+        +getIsActive() Boolean
+    }
+
+    %% Relationships
+    %% Employee Relationships
+    Employee ||--o{ Employee : "manager"
+    Employee ||--o{ TimeSheet : "creates"
+    Employee ||--o{ Approval : "approves"
+    Employee ||--o{ EmployeeProject : "assigned to"
+    Employee ||--o{ Project : "manages"
+    Employee ||--o{ Department : "heads"
+
+    %% Department Relationships
+    Department ||--o{ Employee : "contains"
+
+    %% Project Relationships
+    Project ||--o{ TimeSheetEntry : "has entries"
+    Project ||--o{ EmployeeProject : "has employees"
+    Project ||--|| Client : "belongs to"
+
+    %% TimeSheet Relationships
+    TimeSheet ||--o{ TimeSheetEntry : "contains"
+    TimeSheet ||--o{ Approval : "has approvals"
+
+    %% User Relationships
+    User ||--|| Employee : "authenticates"
+    User ||--o{ UserRole : "has roles"
+
+    %% Role Relationships
+    Role ||--o{ UserRole : "assigned to users"
+
+    %% Client Relationships
+    Client ||--o{ Project : "owns"
+```
+
+### 8.1 Class Diagram Explanation
+
+The class diagram represents the complete data model of the TimeSheet Management System with the following key components:
+
+#### **Core Business Entities**
+- **Employee**: Represents system users with personal information, position, and organizational relationships
+- **Department**: Organizational units that contain employees
+- **Project**: Work initiatives with defined timelines, managed by project managers
+- **Client**: External organizations that own projects
+
+#### **Time Tracking Entities**
+- **TimeSheet**: Weekly time tracking records with status management
+- **TimeSheetEntry**: Individual daily time entries within timesheets
+
+#### **Approval Workflow**
+- **Approval**: Manages the approval process for submitted timesheets
+
+#### **Authentication & Authorization**
+- **User**: System authentication accounts linked to employees
+- **Role**: System roles defining permissions and access levels
+- **UserRole**: Many-to-many relationship between users and roles
+
+#### **Relationship Entities**
+- **EmployeeProject**: Many-to-many relationship between employees and projects
+
+#### **Key Relationships**
+- **Employee Hierarchy**: Self-referencing relationship for manager-subordinate structure
+- **Organizational Structure**: Employees belong to departments with department heads
+- **Project Management**: Projects are owned by clients and managed by employees
+- **Time Tracking**: Employees create timesheets with entries linked to projects
+- **Approval Chain**: Timesheets go through approval workflow by managers
+- **Authentication**: Users are linked to employees for system access
+- **Role-Based Access**: Users have multiple roles through UserRole entity
+
+#### **Design Patterns**
+- **Audit Trail**: All entities include `createdAt` and `updatedAt` timestamps
+- **Status Management**: Enums for TimeSheetStatus, ProjectStatus, and ApprovalStatus
+- **Soft Relationships**: EmployeeProject includes `isActive` flag for assignment management
+- **Security**: User implements Spring Security's UserDetails interface
