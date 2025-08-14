@@ -14,7 +14,10 @@
 
 ## 1. Problem Description
 
-The Timesheet Management System is designed to address the need for efficient, accurate, and user-friendly tracking of employee work hours within a current-week-only scope. It enables employees to create tasks linked to predefined projects, log daily work hours, and submit weekly timesheets for managerial approval. Managers can view, approve, or reject submissions from their direct reports, ensuring accountability and oversight. The system enforces critical business rules such as role-based access, daily hour limits, and real-time total calculations, streamlining the approval workflow and laying a scalable foundation for future enhancements like historical tracking, advanced reporting, and cross-team functionality.
+Organizations often face challenges in tracking employee work hours, managing projects, and approving timesheets. Manual processes lead to errors, delays, and lack of transparency, affecting payroll accuracy, project monitoring, and overall productivity.
+Managers often spend more time chasing employees for submissions and checking hours than focusing on important decisions. Meanwhile, employees deal with unclear and inconsistent processes for submitting and updating their timesheets.
+
+Our Timesheet Management System addresses these problems by offering a single, easy-to-use platform where projects can be registered, clients and departments managed, timesheets recorded, and approvals handled quickly. This helps reduce errors, save time, and give everyone a clear view of work progress.
 
 ---
 
@@ -45,17 +48,17 @@ Our system follows a **4-layer N-tier architecture** using modern Java Spring Bo
 1. **Presentation Layer (Controller)**  
    - Exposes RESTful APIs for all business entities (Employee, Department, Project, Task, Timesheet, Approval, etc.).
    - Handles HTTP requests and responses, input validation, and error handling.
-   - Example: `EmployeeController`, `TaskController`, etc.
+   - Example: `EmployeeController`, `TimeSheetController`, etc.
 
 2. **Service Layer**  
    - Contains business logic and orchestrates data flow between controllers and repositories.
    - Handles validation, calculations (e.g., total work hours), and business rules.
-   - Example: `EmployeeServiceImpl`, `TaskServiceImpl`, etc.
+   - Example: `EmployeeServiceImpl`, `TimeSheetServiceImpl`, etc.
 
 3. **Data Access Layer (Repository/DAO)**  
    - Uses Spring Data JPA repositories to abstract and manage all database operations.
    - Provides CRUD and custom query methods for each entity.
-   - Example: `EmployeeRepository`, `TaskRepository`, etc.
+   - Example: `EmployeeRepository`, `TimeSheetRepository`, etc.
 
 4. **Database Layer**  
    - MySQL database stores all persistent data, including employees, timesheets, tasks, approvals, and more.
@@ -71,19 +74,19 @@ This separation ensures modularity, testability, and maintainability.
 flowchart TD
     subgraph Presentation Layer
         A1[EmployeeController]
-        A2[TaskController]
+        A2[DepartmentController]
         A3[TimeSheetController]
         A4[ApprovalController]
     end
     subgraph Service Layer
         B1[EmployeeServiceImpl]
-        B2[TaskServiceImpl]
+        B2[DepartmentServiceImpl]
         B3[TimeSheetServiceImpl]
         B4[ApprovalServiceImpl]
     end
     subgraph Data Access Layer
         C1[EmployeeRepository]
-        C2[TaskRepository]
+        C2[DepartmentRepository]
         C3[TimeSheetRepository]
         C4[ApprovalRepository]
     end
@@ -239,3 +242,105 @@ flowchart TD
 The class diagram below illustrates the complete data model of the TimeSheet Management System, showing all entities, their attributes, and relationships.
 
 ![Class Diagram](images/classDiagram.png)
+
+---
+
+## 7. Sequence Diagrams
+
+### 7.1 Create New Timesheet Sequence Diagram
+
+The following sequence diagram illustrates the complete flow for creating a new timesheet in the system, including authentication, validation, and data persistence.
+
+```mermaid
+sequenceDiagram
+    participant U as User/Employee
+    participant F as Frontend
+    participant AC as AuthController
+    participant JWT as JwtAuthenticationFilter
+    participant TSC as TimeSheetController
+    participant TSS as TimeSheetService
+    participant TES as TimeSheetEntryService
+    participant ESR as EmployeeService
+    participant TSR as TimeSheetRepository
+    participant TESR as TimeSheetEntryRepository
+    participant ESR as EmployeeRepository
+    participant DB as MySQL Database
+
+    Note over U,DB: Authentication Phase
+    U->>F: Login with credentials
+    F->>AC: POST /api/auth/login
+    AC->>JWT: Validate credentials
+    JWT->>AC: Generate JWT token
+    AC->>F: Return JWT token
+    F->>U: Store token & redirect to dashboard
+
+    Note over U,DB: Create Timesheet Phase
+    U->>F: Navigate to "Create Timesheet"
+    F->>U: Display timesheet form
+    
+    U->>F: Fill timesheet details<br/>(period dates, entries)
+    F->>F: Validate form data
+    F->>TSC: POST /api/timesheets<br/>{timesheetData, entries}
+    
+    Note over TSC: Request Processing
+    TSC->>JWT: Validate JWT token
+    JWT->>TSC: Extract user info
+    
+    TSC->>TSS: createTimeSheet(timesheetRequestDTO)
+    
+    Note over TSS: Business Logic Validation
+    TSS->>ESR: findEmployeeByUserId(userId)
+    ESR->>DB: SELECT employee WHERE userId = ?
+    DB->>ESR: Return employee data
+    ESR->>TSS: Employee object
+    
+    TSS->>TSS: Validate period dates
+    TSS->>TSS: Check for existing timesheet
+    TSS->>TSS: Validate total hours (max 40/week)
+    
+    Note over TSS: Create Timesheet Entity
+    TSS->>TSS: Create TimeSheet entity
+    TSS->>TSS: Set status = DRAFT
+    TSS->>TSS: Calculate total hours
+    TSS->>TSR: save(timesheet)
+    TSR->>DB: INSERT INTO TimeSheet
+    DB->>TSR: Return saved timesheet
+    
+    Note over TES: Process Time Entries
+    TSS->>TES: createTimeSheetEntries(entries, timesheet)
+    
+    loop For each time entry
+        TES->>TES: Validate entry data
+        TES->>TES: Check project assignment
+        TES->>TES: Validate hours (max 8/day)
+        TES->>TES: Create TimeSheetEntry entity
+        TES->>TESR: save(timeSheetEntry)
+        TESR->>DB: INSERT INTO TimeSheetEntry
+        DB->>TESR: Return saved entry
+    end
+    
+    TES->>TSS: Return created entries
+    TSS->>TSS: Update timesheet total hours
+    TSS->>TSR: save(updatedTimesheet)
+    TSR->>DB: UPDATE TimeSheet SET totalHours = ?
+    DB->>TSR: Return updated timesheet
+    
+    Note over TSC: Response Generation
+    TSS->>TSS: Create TimeSheetResponseDTO
+    TSS->>TSC: Return timesheet with entries
+    TSC->>F: HTTP 201 Created + timesheet data
+    F->>U: Display success message & timesheet ID
+
+    Note over U,DB: Error Handling
+    alt Validation Error
+        TSS->>TSS: Throw ValidationException
+        TSS->>TSC: Return error details
+        TSC->>F: HTTP 400 Bad Request
+        F->>U: Display validation errors
+    else Database Error
+        TSR->>TSS: Throw DataAccessException
+        TSS->>TSC: Return error details
+        TSC->>F: HTTP 500 Internal Server Error
+        F->>U: Display system error
+    end
+```
